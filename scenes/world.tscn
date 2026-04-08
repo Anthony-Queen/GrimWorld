@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://cw4duke6wlj6d"]
 
 [ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="Texture2D" uid="uid://cvdkwbqjhbbnk" path="res://assets/DungeonTileset/frames/floor_2.png" id="2_rwgxs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e5uuo"]
 size = Vector3(20, 0.095612526, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5uuo"]
 diffuse_mode = 2
-albedo_color = Color(0.38431373, 0.38431373, 0.38431373, 1)
+albedo_texture = ExtResource("2_rwgxs")
+uv1_scale = Vector3(30, 30, 30)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e5uuo"]
 size = Vector2(20, 20)

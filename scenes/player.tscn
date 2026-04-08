@@ -47,8 +47,9 @@ _data = {
 radius = 0.4553833
 height = 0.9107666
 
-[node name="Player" type="CharacterBody3D" unique_id=541045291]
+[node name="Player" type="CharacterBody3D" unique_id=541045291 node_paths=PackedStringArray("animation_player")]
 script = ExtResource("1_3vyb7")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=2142513921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14487916, 0)
@@ -68,3 +69,6 @@ libraries/ = SubResource("AnimationLibrary_ur7pv")
 [node name="PlayerAreaShape" type="CollisionShape3D" parent="PlayerArea" unique_id=1749027326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13226318, 0)
 shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=459222740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1)

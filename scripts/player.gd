@@ -4,21 +4,17 @@ class_name Player
 
 @export var animation_player : AnimationPlayer 
 
-const jump_speed : int = -400
-const speed : int = 200
-
-enum States {idle, running, jumping, falling, hurt, rolling, dead}
+enum States {idle, running, walking, hurt, rolling, dead}
 
 var state: States = States.idle : set = set_state
 
-var direction : float
+var direction : Vector2
 
 
-func _physics_process(delta: float) -> void :
-	
+func _physics_process(delta: float) -> void :  #Need to add state walking
 	if state != States.dead :
 		
-		direction = Input.get_axis("move_left", "move_right")
+		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		
 		
 		if not is_on_floor() :
@@ -30,12 +26,9 @@ func _physics_process(delta: float) -> void :
 			if velocity.x == 0 :
 				
 				state = States.idle
-			
-			if velocity.y > 0 :
-				
-				state = States.falling
-			
-			elif velocity.x != 0 and state != States.jumping :
+			elif velocity.x < 200:
+				state = States.walking
+			elif velocity.x >= 200:
 				
 				state = States.running
 		
@@ -55,7 +48,7 @@ func _physics_process(delta: float) -> void :
 
 func set_state(new_state : States) -> void :
 	
-	var previous_state : States = state
+	var _previous_state: States = state
 	
 	state = new_state
 	
@@ -63,13 +56,6 @@ func set_state(new_state : States) -> void :
 		
 		animation_player.play("idle")
 	
-	elif state == States.jumping :
-		
-		animation_player.play("jump")
-	
-	elif previous_state == States.jumping :
-		
-		animation_player.play("fall")
 	
 	elif state == States.running :
 		

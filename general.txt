@@ -4,11 +4,11 @@ Draw = Draw (No shit)
 
 FOR LEASX: FIX PLAYER SPRITE BEING ALL FREAKY
 
+-Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
 To-Do List: (Priorities first)
-	-Make Spawn Map (Anthony Making it rn)
-X		-Add fog
-		-Finish the Map, needs to look like a dystopian city kinda abandoned to itself or smthg
+	-Make Spawn Map (Anthony Making it rn) -> Act might change nodes structure, this looks better: 
+			https://youtu.be/A7txKkBkgXg?si=QQRL79IAx1gzhbVW
 	-Make Turn Based System for fighting
 		-Add Shield and weaknesses to enemies
 	-Make Dialogue System
