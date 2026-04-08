@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xuhg2x2ph7jy"]
+
+[sub_resource type="Environment" id="Environment_und3l"]
+
+[node name="MainScene" type="Node3D" unique_id=1801822702]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=131535743]
+environment = SubResource("Environment_und3l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1050269121]
