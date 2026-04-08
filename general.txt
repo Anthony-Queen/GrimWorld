@@ -9,3 +9,4 @@ To-Do List: (Priorities first)
 	-Make Dialogue System
 	-Draw RPG Battlefield, Main Charachter, and NPC's
 	-Draw Spawn
+	-Add Sanity System
