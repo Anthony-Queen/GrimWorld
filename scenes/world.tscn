@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cw4duke6wlj6d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5uuo"]
+size = Vector3(20, 0.38293839, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5uuo"]
+diffuse_mode = 2
+albedo_color = Color(0.38431373, 0.38431373, 0.38431373, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e5uuo"]
+size = Vector2(20, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e5uuo"]
+sky_top_color = Color(0.1702587, 0.1165634, 0, 1)
+sky_horizon_color = Color(0.11610017, 0.12991515, 0.18659294, 1)
+sky_curve = 0.46488506
+
+[sub_resource type="Sky" id="Sky_nnsk1"]
+sky_material = SubResource("ProceduralSkyMaterial_e5uuo")
+
+[sub_resource type="Environment" id="Environment_rwgxs"]
+background_mode = 2
+sky = SubResource("Sky_nnsk1")
+fog_enabled = true
+fog_light_color = Color(0.65882355, 0.67058825, 0.69803923, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.65882355, 0.67058825, 0.69803923, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.25
+adjustment_saturation = 0.0
+
+[node name="World" type="Node3D" unique_id=699868361]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=988089396]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=879452235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030273438, 0.026258826, 0.0068359375)
+shape = SubResource("BoxShape3D_e5uuo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=522241289]
+material_override = SubResource("StandardMaterial3D_e5uuo")
+mesh = SubResource("PlaneMesh_e5uuo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=333486200]
+environment = SubResource("Environment_rwgxs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1861998164]
+transform = Transform3D(0.036746696, 0.46057892, 0.88685775, 0.01495898, -0.88761127, 0.46035036, 0.9992127, -0.0036498685, -0.03950657, 19.538343, 9.465458, -0.5096102)
+light_color = Color(0.7882353, 0.79607844, 0.8392157, 1)

@@ -4,6 +4,8 @@ Draw = Draw (No shit)
 
 
 To-Do List: (Priorities first)
+	-Make Spawn Map (Anthony Making it rn)
+		-Add fog
 	-Make Turn Based System for fighting
 		-Add Shield and weaknesses to enemies
 	-Make Dialogue System
