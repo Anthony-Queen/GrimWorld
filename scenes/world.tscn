@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cw4duke6wlj6d"]
 
+[ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/player.tscn" id="1_nnsk1"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_e5uuo"]
-size = Vector3(20, 0.38293839, 20)
+size = Vector3(20, 0.095612526, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5uuo"]
 diffuse_mode = 2
@@ -29,14 +31,16 @@ volumetric_fog_albedo = Color(0.65882355, 0.67058825, 0.69803923, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.9
 adjustment_contrast = 1.25
-adjustment_saturation = 0.0
 
 [node name="World" type="Node3D" unique_id=699868361]
+
+[node name="Player" parent="." unique_id=541045291 instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7498808, 0)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=988089396]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=879452235]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030273438, 0.026258826, 0.0068359375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030273438, -0.010316968, 0.0068359375)
 shape = SubResource("BoxShape3D_e5uuo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=522241289]

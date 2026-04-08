@@ -2,13 +2,16 @@ Make = Program
 Draw = Draw (No shit)
 
 
+FOR LEASX: FIX PLAYER SPRITE BEING ALL FREAKY
+
 
 To-Do List: (Priorities first)
 	-Make Spawn Map (Anthony Making it rn)
-		-Add fog
+X		-Add fog
+		-Finish the Map, needs to look like a dystopian city kinda abandoned to itself or smthg
 	-Make Turn Based System for fighting
 		-Add Shield and weaknesses to enemies
 	-Make Dialogue System
-	-Draw RPG Battlefield, Main Charachter, and NPC's
+	-Draw RPG Battlefield, Main Charachter, and NPC's --If only Lapse worked I'd do this
 	-Draw Spawn
 	-Add Sanity System
