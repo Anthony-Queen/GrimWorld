@@ -8,26 +8,30 @@ enum States {idle, running, walking, hurt, rolling, dead}
 
 var state: States = States.idle : set = set_state
 
+const  speed : int = 10
+
 var direction : Vector2
 
-
 func _physics_process(delta: float) -> void :  #Need to add state walking
+	
 	if state != States.dead :
 		
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		
+		velocity.x = direction.x * speed
 		
-		if not is_on_floor() :
-			
-			velocity += get_gravity() * delta
+		velocity.z = direction.y * speed
 		
 		if state not in [States.hurt, States.rolling] :
 			
 			if velocity.x == 0 :
 				
 				state = States.idle
+			
 			elif velocity.x < 200:
+				
 				state = States.walking
+			
 			elif velocity.x >= 200:
 				
 				state = States.running
@@ -55,7 +59,6 @@ func set_state(new_state : States) -> void :
 	if state == States.idle :
 		
 		animation_player.play("idle")
-	
 	
 	elif state == States.running :
 		

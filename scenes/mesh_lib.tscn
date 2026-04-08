@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://it4lgoxksppx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v4jdl"]
+load_path = "res://.godot/imported/floor_2.png-7c0705547cf6958e3a2b7e567f9508bf.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qanu"]
+diffuse_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_v4jdl")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_djix4"]
+material = SubResource("StandardMaterial3D_1qanu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ud7lp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ck55"]
+load_path = "res://.godot/imported/wall_mid.png-842d4f03416369cc4f9ac8f2f49e4f8e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc700"]
+diffuse_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_2ck55")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_dpqbj"]
+material = SubResource("StandardMaterial3D_wc700")
+
+[node name="MeshLib" type="Node3D" unique_id=1897648186]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1544354900]
+mesh = SubResource("BoxMesh_djix4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1214590862]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=867066677]
+shape = SubResource("BoxShape3D_ud7lp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=492841096]
+mesh = SubResource("BoxMesh_dpqbj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=530051593]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=836611302]
+shape = SubResource("BoxShape3D_ud7lp")

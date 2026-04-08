@@ -1,10 +1,32 @@
 [gd_scene format=3 uid="uid://xuhg2x2ph7jy"]
 
-[sub_resource type="Environment" id="Environment_und3l"]
+[ext_resource type="PackedScene" uid="uid://cw4duke6wlj6d" path="res://scenes/world.tscn" id="1_w2twt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_und3l"]
+sky_top_color = Color(0.1702587, 0.1165634, 0, 1)
+sky_horizon_color = Color(0.11610017, 0.12991515, 0.18659294, 1)
+sky_curve = 0.46488506
+
+[sub_resource type="Sky" id="Sky_nnsk1"]
+sky_material = SubResource("ProceduralSkyMaterial_und3l")
+
+[sub_resource type="Environment" id="Environment_w2twt"]
+background_mode = 2
+sky = SubResource("Sky_nnsk1")
+fog_enabled = true
+fog_light_color = Color(0.65882355, 0.67058825, 0.69803923, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.65882355, 0.67058825, 0.69803923, 1)
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.25
 
 [node name="MainScene" type="Node3D" unique_id=1801822702]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=131535743]
-environment = SubResource("Environment_und3l")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1942217696]
+environment = SubResource("Environment_w2twt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1050269121]
+
+[node name="World" parent="." unique_id=699868361 instance=ExtResource("1_w2twt")]

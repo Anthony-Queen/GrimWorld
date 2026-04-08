@@ -2,15 +2,24 @@ Make = Program
 Draw = Draw (No shit)
 
 
-FOR LEASX: FIX PLAYER SPRITE BEING ALL FREAKY
+FOR LEASX: FIX PLAYER SPRITE BEING ALL FREAKY -> DONE 
+
+oh i've also done the movement
 
 -Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
 To-Do List: (Priorities first)
+	
 	-Make Spawn Map (Anthony Making it rn) -> Act might change nodes structure, this looks better: 
+		
 			https://youtu.be/A7txKkBkgXg?si=QQRL79IAx1gzhbVW
+			
+			(bro if you want i can do it)
+	
 	-Make Turn Based System for fighting
+	
 		-Add Shield and weaknesses to enemies
+	
 	-Make Dialogue System
 	-Draw RPG Battlefield, Main Charachter, and NPC's --If only Lapse worked I'd do this
 	-Draw Spawn
