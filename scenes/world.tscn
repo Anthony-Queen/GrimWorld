@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://cw4duke6wlj6d"]
 
 [ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://d2focwdfg7gi5" path="res://scenes/enemy.tscn" id="2_4wyf3"]
 [ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://assets/MeshLibrary/basic_library.meshlib" id="2_rwgxs"]
 
 [node name="World" type="Node3D" unique_id=699868361]
 
 [node name="Player" parent="." unique_id=541045291 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Enemy" parent="." unique_id=1377674737 instance=ExtResource("2_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7419434)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=2059141998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)

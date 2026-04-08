@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://ivdbvmft1vye" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://j1iqbof8t3hm" path="res://assets/Placeholders/OchettePositions.png" id="2_g2els"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
-radius = 0.45454407
-height = 0.90908813
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2els"]
+size = Vector3(0.58569336, 0.9370117, 0.1574707)
 
 [sub_resource type="Animation" id="Animation_3vyb7"]
 resource_name = "attack"
@@ -43,9 +42,8 @@ _data = {
 &"slide": SubResource("Animation_smehm")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
-radius = 0.4553833
-height = 0.9107666
+[sub_resource type="BoxShape3D" id="BoxShape3D_qhqgy"]
+size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
 [node name="Player" type="CharacterBody3D" unique_id=541045291 node_paths=PackedStringArray("animation_player")]
 axis_lock_linear_y = true
@@ -53,8 +51,8 @@ script = ExtResource("1_3vyb7")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=2142513921]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14487916, 0)
-shape = SubResource("CapsuleShape3D_u8vuu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005493164, -0.11338502, -0.0028076172)
+shape = SubResource("BoxShape3D_g2els")
 
 [node name="PlayerSprite" type="Sprite3D" parent="." unique_id=826601590]
 transform = Transform3D(2.582, 0, 0, 0, 2.582, 0, 0, 0, 2.582, 0.037906647, -0.10304576, 0)
@@ -69,8 +67,8 @@ libraries/ = SubResource("AnimationLibrary_ur7pv")
 [node name="PlayerArea" type="Area3D" parent="." unique_id=107720770]
 
 [node name="PlayerAreaShape" type="CollisionShape3D" parent="PlayerArea" unique_id=1749027326]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13226318, 0)
-shape = SubResource("CapsuleShape3D_3vyb7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019607544, -0.11639404, -0.0025482178)
+shape = SubResource("BoxShape3D_qhqgy")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=459222740]
 transform = Transform3D(1, 0, 0, 0, 0.9690804, 0.24674532, 0, -0.24674532, 0.9690804, 0, 0.54308414, 1.4820869)

@@ -14,6 +14,10 @@ config/name="GrimWorld"
 run/main_scene="uid://xuhg2x2ph7jy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+SaveData="*uid://bc0rtly6dsc8o"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
