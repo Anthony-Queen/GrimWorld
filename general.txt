@@ -1,0 +1,11 @@
+Make = Program
+Draw = Draw (No shit)
+
+
+
+To-Do List: (Priorities first)
+	-Make Turn Based System for fighting
+		-Add Shield and weaknesses to enemies
+	-Make Dialogue System
+	-Draw RPG Battlefield, Main Charachter, and NPC's
+	-Draw Spawn
