@@ -8,11 +8,11 @@ enum States {idle, running, walking, hurt, rolling, dead}
 
 var state: States = States.idle : set = set_state
 
-const  speed : int = 10
+const speed : int = 4
 
 var direction : Vector2
 
-func _physics_process(delta: float) -> void :  #Need to add state walking
+func _physics_process(_delta: float) -> void :  #Need to add state walking
 	
 	if state != States.dead :
 		
