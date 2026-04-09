@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://byncswt40wu8x"]
 
+[ext_resource type="Script" uid="uid://vk58vl6cut33" path="res://scripts/main_menu.gd" id="1_qwnig"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 120
 
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qwnig")
 
 [node name="Background(placeholder)" type="Sprite2D" parent="." unique_id=594850378]
 
@@ -28,26 +31,39 @@ offset_top = 307.0
 offset_right = 1152.0
 offset_bottom = 604.0
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=9755841]
+[node name="NewGame" type="Button" parent="VBoxContainer" unique_id=9755841]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
 text = "new game"
+flat = true
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1353223277]
+[node name="Load" type="Button" parent="VBoxContainer" unique_id=1353223277]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
 text = "load save"
+flat = true
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=2143833028]
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=2143833028]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
 text = "settings"
+flat = true
 
-[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1861460094]
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1861460094]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
 text = "exit"
+flat = true
+
+[connection signal="button_up" from="VBoxContainer/NewGame" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="VBoxContainer/Load" to="." method="_on_load_button_up"]
+[connection signal="button_up" from="VBoxContainer/Settings" to="." method="_on_settings_button_up"]
+[connection signal="button_up" from="VBoxContainer/Exit" to="." method="_on_exit_button_up"]

@@ -1,5 +1,19 @@
 [gd_scene format=3 uid="uid://d38cor1wunwxu"]
 
+[ext_resource type="Script" uid="uid://bgf0smhaiknod" path="res://scripts/settings.gd" id="1_t8pki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_feeb8"]
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_t8pki"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_32w1k"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_emn88"]
+font_size = 32
+
 [node name="Settings" type="Control" unique_id=1515908672]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +21,76 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t8pki")
+
+[node name="Background(placeholder)" type="Sprite2D" parent="." unique_id=618762154]
+
+[node name="Label" type="Label" parent="." unique_id=1032011361]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 165.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_feeb8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Label" unique_id=1128323818]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 103.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1728476329]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 215.0
+offset_right = 1110.0
+offset_bottom = 588.0
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=388057200]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Brightness"
+label_settings = SubResource("LabelSettings_t8pki")
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Label2" unique_id=2112966730]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 19.0
+offset_right = 990.0
+offset_bottom = 35.0
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=1918209476]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Difficulty"
+label_settings = SubResource("LabelSettings_32w1k")
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Label3" unique_id=866816843]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 19.0
+offset_right = 990.0
+offset_bottom = 35.0
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=2083779688]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Aspect Ratio"
+label_settings = SubResource("LabelSettings_emn88")
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Label4" unique_id=1015237726]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 19.0
+offset_right = 990.0
+offset_bottom = 35.0
+
+[connection signal="button_up" from="Label/Button" to="." method="_on_button_button_up"]

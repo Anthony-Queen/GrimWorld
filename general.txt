@@ -4,11 +4,13 @@ Draw = Draw (No shit)
 -Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
 To-Do List: (Priorities first)
-	-Make Dialogue System (Anthony Working on this rn) -> Lea pls help omg wtf why doesnt this work in 3Dihhhhhhhhhhhhhh
+
+	-Make Dialogue System (Anthony Working on this rn) -> Lea pls help omg wtf why doesnt this work in 3Dihhhhhhhhhhhhhh <- did it (maybe)
 	
 	-Make Spawn Map -> Anthony'll do it later, rn working on smthg else
 	
 	-Make Turn Based System for fighting
+	
 		-Add Shield and weaknesses to enemies (https://img.game8.co/3642716/4dd423d655cebd64c30176a406b5d2ee.png/show)
 	
 	-Figure out how to make Dialogue Panel more Translucent

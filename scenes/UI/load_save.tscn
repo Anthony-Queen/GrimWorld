@@ -1,9 +1,180 @@
 [gd_scene format=3 uid="uid://cqh3vrpl6lpi"]
 
+[ext_resource type="Script" uid="uid://52hjvgobcyph" path="res://scripts/v_scroll_bar.gd" id="1_jc5qg"]
+[ext_resource type="Script" uid="uid://4sugubinqcr0" path="res://scripts/load_save.gd" id="1_t20jw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xwjm"]
+font_size = 120
+
 [node name="LoadSave" type="Control" unique_id=372801624]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t20jw")
+
+[node name="Background(placeholder)" type="Sprite2D" parent="." unique_id=1074124327]
+
+[node name="Label" type="Label" parent="." unique_id=1162229170]
+z_index = 2
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 165.0
+text = "Load Save"
+label_settings = SubResource("LabelSettings_8xwjm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="ColorRect" parent="Label" unique_id=1037568926]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 165.0
+color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+
+[node name="Button" type="Button" parent="Label" unique_id=1691735399]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 103.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+flat = true
+
+[node name="VScrollBar" type="VScrollBar" parent="." unique_id=1183531302 node_paths=PackedStringArray("node_2d")]
+z_index = 3
+layout_mode = 0
+offset_left = 1139.0
+offset_top = 165.0
+offset_right = 1152.0
+offset_bottom = 649.0
+max_value = 725.0
+page = 20.0
+rounded = true
+script = ExtResource("1_jc5qg")
+node_2d = NodePath("../Node2D")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=677177933]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D" unique_id=79397363]
+offset_left = 50.0
+offset_top = 205.0
+offset_right = 1112.0
+offset_bottom = 1288.0
+
+[node name="TextureButton" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=2112177334]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton" unique_id=1599872086]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 0
+level :"
+
+[node name="TextureButton2" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1850282669]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton2" unique_id=95010930]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 1
+level :"
+
+[node name="TextureButton3" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1502417476]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton3" unique_id=705875160]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 2
+level :"
+
+[node name="TextureButton4" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=2046278409]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton4" unique_id=2032632459]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 3
+level :"
+
+[node name="TextureButton5" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1109994486]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton5" unique_id=322441755]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 4
+level :"
+
+[node name="TextureButton6" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=298092077]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton6" unique_id=957503220]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 5
+level :"
+
+[node name="TextureButton7" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1316504460]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton7" unique_id=1469150086]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 6
+level :"
+
+[node name="TextureButton8" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=945798988]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton8" unique_id=1103258646]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 7
+level :"
+
+[node name="TextureButton9" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=793759463]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton9" unique_id=498066941]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 8
+level :"
+
+[node name="TextureButton10" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=422616548]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton10" unique_id=1779948747]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "save 9
+level :"
+
+[connection signal="button_up" from="Label/Button" to="." method="_on_button_button_up"]
+[connection signal="value_changed" from="VScrollBar" to="VScrollBar" method="_on_value_changed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xuhg2x2ph7jy"]
 
-[ext_resource type="PackedScene" uid="uid://cw4duke6wlj6d" path="res://scenes/world.tscn" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://dop02csqna0ec" path="res://scripts/main_scene.gd" id="1_w2twt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_und3l"]
 sky_top_color = Color(0.1702587, 0.1165634, 0, 1)
@@ -22,11 +22,12 @@ adjustment_enabled = true
 adjustment_brightness = 0.9
 adjustment_contrast = 1.25
 
-[node name="MainScene" type="Node3D" unique_id=1801822702]
+[node name="MainScene" type="Node3D" unique_id=1801822702 node_paths=PackedStringArray("world_environment", "audio_player")]
+script = ExtResource("1_w2twt")
+world_environment = NodePath("WorldEnvironment")
+audio_player = NodePath("AudioStreamPlayer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1942217696]
 environment = SubResource("Environment_w2twt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1050269121]
-
-[node name="World" parent="." unique_id=699868361 instance=ExtResource("1_w2twt")]
