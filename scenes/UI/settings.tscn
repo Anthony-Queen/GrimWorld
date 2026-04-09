@@ -65,6 +65,20 @@ offset_top = 19.0
 offset_right = 990.0
 offset_bottom = 35.0
 
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=1686200728]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+text = "Master Sound"
+label_settings = SubResource("LabelSettings_t8pki")
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Label5" unique_id=723551482]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 19.0
+offset_right = 990.0
+offset_bottom = 35.0
+
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=1918209476]
 layout_mode = 2
 size_flags_horizontal = 0
