@@ -3,16 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://j0xiquv78ngj" path="res://assets/Placeholders/DialogueBox.png" id="1_jwyou"]
 [ext_resource type="Script" uid="uid://c5xfhlnf4kba5" path="res://scenes/dialogue.gd" id="2_3n4vj"]
 
-[node name="TextBox" type="NinePatchRect" unique_id=102646634]
+[node name="DialogueRect" type="NinePatchRect" unique_id=102646634]
 anchors_preset = -1
 anchor_left = 0.35200003
 anchor_top = 0.215
-anchor_right = 0.71500003
-anchor_bottom = 0.42400002
+anchor_right = 0.82900006
+anchor_bottom = 0.446
 offset_left = -0.5040283
 offset_top = -0.32000732
-offset_right = 0.3199463
-offset_bottom = 0.24798584
+offset_right = -0.008056641
+offset_bottom = -0.0079956055
 texture = ExtResource("1_jwyou")
 region_rect = Rect2(14.26734, 8.914634, 84.454285, 17.561146)
 patch_margin_left = 10
@@ -21,6 +21,7 @@ script = ExtResource("2_3n4vj")
 Text = "This is the first text"
 Text2 = "This is the second text"
 Text3 = "This is the third one"
+metadata/_edit_group_ = true
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=2065307621]
 layout_mode = 1
@@ -33,4 +34,4 @@ offset_left = -0.11100006
 offset_top = -0.015999794
 offset_right = -1.4970398
 offset_bottom = -0.019004822
-text = "I am not doing it mrrrow"
+text = "I'm meowing it"

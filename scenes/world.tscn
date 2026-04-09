@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://d2focwdfg7gi5" path="res://scenes/NPC.tscn" id="2_4wyf3"]
 [ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://assets/MeshLibrary/basic_library.meshlib" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://cyxlms6ea8dje" path="res://scenes/DialogueControl.gd" id="4_71j4m"]
+[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/dialogue.tscn" id="4_k0juu"]
 
 [node name="World" type="Node3D" unique_id=699868361]
 
@@ -10,7 +12,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Enemy" parent="." unique_id=1377674737 instance=ExtResource("2_4wyf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.7419434)
+transform = Transform3D(-0.9999682, 0, -0.007976121, 0, 1, 0, 0.007976121, 0, -0.9999682, -0.022899216, 0, -8.173271)
 
 [node name="GridMap" type="GridMap" parent="." unique_id=2059141998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
@@ -24,3 +26,23 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1861998164]
 transform = Transform3D(0.036746696, 0.46057892, 0.88685775, 0.01495898, -0.88761127, 0.46035036, 0.9992127, -0.0036498685, -0.03950657, 19.538343, 9.465458, -0.5096102)
 light_color = Color(0.7882353, 0.79607844, 0.8392157, 1)
+
+[node name="Control" type="Control" parent="." unique_id=2115450474 node_paths=PackedStringArray("target")]
+layout_mode = 3
+anchor_right = 0.619
+anchor_bottom = 0.34600002
+offset_right = -0.088012695
+offset_bottom = -0.013000488
+script = ExtResource("4_71j4m")
+target = NodePath("..")
+
+[node name="DialogueRect" parent="Control" unique_id=102646634 instance=ExtResource("4_k0juu")]
+layout_mode = 1
+anchor_left = 0.007
+anchor_top = 0.027
+anchor_right = 0.83900005
+anchor_bottom = 0.85200006
+offset_left = 0.0089998245
+offset_top = -0.05326557
+offset_right = -0.20703125
+offset_bottom = -11.01416

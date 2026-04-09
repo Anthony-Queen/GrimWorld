@@ -4,7 +4,7 @@ Draw = Draw (No shit)
 -Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
 To-Do List: (Priorities first)
-	-Make Dialogue System (Anthony Working on this rn)
+	-Make Dialogue System (Anthony Working on this rn) -> Lea pls help omg wtf why doesnt this work in 3Dihhhhhhhhhhhhhh
 	
 	-Make Spawn Map -> Anthony'll do it later, rn working on smthg else
 	
