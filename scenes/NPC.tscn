@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2focwdfg7gi5"]
 
-[ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Texture2D" uid="uid://j1iqbof8t3hm" path="res://assets/Placeholders/OchettePositions.png" id="2_4ra3w"]
+[ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/NPC.gd" id="1_6xvi5"]
+[ext_resource type="Texture2D" uid="uid://j1iqbof8t3hm" path="res://assets/Placeholders/OchettePositions.png" id="2_ktgr7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
 size = Vector3(0.58569336, 0.9370117, 0.1574707)
@@ -45,29 +45,29 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ra3w"]
 size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1377674737 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("1_md0e3")
+[node name="NPC" type="CharacterBody3D" unique_id=1377674737 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_6xvi5")
 animation_player = NodePath("AnimationPlayer")
 max_health = 20
 speed = 2
 
-[node name="EnemyCollision" type="CollisionShape3D" parent="." unique_id=1816543312]
+[node name="NPCCollision" type="CollisionShape3D" parent="." unique_id=1816543312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005493168, -0.11338503, -0.0028076172)
 shape = SubResource("BoxShape3D_md0e3")
 
-[node name="EnemySprite" type="Sprite3D" parent="." unique_id=1286249314]
+[node name="NPCSprite" type="Sprite3D" parent="." unique_id=1286249314]
 transform = Transform3D(2.582, 0, 0, 0, 2.582, 0, 0, 0, 2.582, 0.037906647, -0.10304576, 0)
 modulate = Color(0, 0, 0, 1)
 texture_filter = 0
-texture = ExtResource("2_4ra3w")
+texture = ExtResource("2_ktgr7")
 region_enabled = true
 region_rect = Rect2(360.4283, 224.60837, 30.223877, 41.49417)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=242761393]
 libraries/ = SubResource("AnimationLibrary_c4w8v")
 
-[node name="EnemyArea" type="Area3D" parent="." unique_id=38306647]
+[node name="NPCArea" type="Area3D" parent="." unique_id=38306647]
 
-[node name="EnemyAreaShape" type="CollisionShape3D" parent="EnemyArea" unique_id=931430894]
+[node name="EnemyAreaShape" type="CollisionShape3D" parent="NPCArea" unique_id=931430894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019607544, -0.11639404, -0.0025482178)
 shape = SubResource("BoxShape3D_4ra3w")
