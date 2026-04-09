@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b5q7lw3fcmoh3"]
+
+[ext_resource type="Texture2D" uid="uid://j0xiquv78ngj" path="res://assets/Placeholders/DialogueBox.png" id="1_vaa85"]
+
+[node name="Choice" type="Control" unique_id=26714987]
+layout_mode = 3
+anchor_top = 0.065000005
+anchor_right = 1.0
+anchor_bottom = 0.58500004
+offset_left = 2.0
+offset_top = -0.12000275
+offset_right = -2.0
+offset_bottom = -0.08001709
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoicePanel" type="Panel" parent="." unique_id=914898933]
+self_modulate = Color(1, 1, 1, 0.2)
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.87100005
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_right = -144.90808
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ChoicePanel" unique_id=188545302]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.134
+anchor_right = 0.998
+anchor_bottom = 0.39000002
+offset_left = -2.5
+offset_top = -0.15800095
+offset_right = -0.19702148
+offset_bottom = -0.04600525
+grow_horizontal = 2
+text = "We definitely gotta change the color to make it more fancy and transparent, but that's for later"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1048560001]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 150.0
+offset_right = 641.0
+offset_bottom = 210.0
+texture = ExtResource("1_vaa85")
+region_rect = Rect2(13.507767, 7.4202995, 86.49223, 20.10603)
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="NinePatchRect" unique_id=1848486239]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = 0.133
+anchor_right = 0.85400003
+anchor_bottom = 0.65000004
+offset_left = -4.960001
+offset_top = 0.01999998
+offset_right = -5.0200043
+text = "YES"
+flat = true
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1288341097]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 193.0
+offset_right = 641.0
+offset_bottom = 253.0
+texture = ExtResource("1_vaa85")
+region_rect = Rect2(13.507767, 7.4202995, 86.49223, 20.10603)
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="NinePatchRect2" unique_id=1498144710]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.192
+anchor_top = 0.133
+anchor_right = 0.85400003
+anchor_bottom = 0.65000004
+offset_left = -4.960001
+offset_top = 0.01999998
+offset_right = -5.0200043
+text = "NO"
+flat = true
