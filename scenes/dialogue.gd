@@ -1,0 +1,33 @@
+extends NinePatchRect
+
+#This is so you can have multiple texts one after the other or whatever, you get it bro, making 9 cuz I dont think we'll need more then that?
+@export var Text: String
+@export var Text2: String
+@export var Text3: String
+@export var Text4: String
+@export var Text5: String
+@export var Text6: String
+@export var Text7: String
+@export var Text8: String
+@export var Text9: String
+
+var x: int = 0
+var Dialogue: Array = []
+
+func _ready() -> void:
+	Dialogue = [Text, Text2, Text3, Text4, Text5, Text6, Text7, Text8, Text9]
+
+func _input(event) -> void:
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ENTER:
+			if Dialogue.size() > x:
+				change_text()
+
+func change_text():
+	# Check if you wrote something in the text, othwerwise finish conversation
+	if Dialogue[x] != "":
+		$Label.text = Dialogue[x]
+		print("Texted")
+		x += 1
+	else:
+		print("Nothing to see here...")
