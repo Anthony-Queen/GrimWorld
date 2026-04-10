@@ -3,34 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://d2focwdfg7gi5" path="res://scenes/NPC.tscn" id="2_4wyf3"]
 [ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://assets/MeshLibrary/basic_library.meshlib" id="2_rwgxs"]
-[ext_resource type="Script" uid="uid://cyxlms6ea8dje" path="res://scripts/DialogueControl.gd" id="4_71j4m"]
-[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/dialogue.tscn" id="4_k0juu"]
 
 [node name="World" type="Node3D" unique_id=699868361]
 
 [node name="Player" parent="." unique_id=541045291 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-
-[node name="NPCBubble" type="Control" parent="Player" unique_id=1344968694 node_paths=PackedStringArray("target")]
-layout_mode = 3
-anchor_right = 0.619
-anchor_bottom = 0.34600002
-offset_right = -0.088012695
-offset_bottom = -0.013000488
-script = ExtResource("4_71j4m")
-target = NodePath("..")
-offset_3d = Vector3(-2.1, 1, 0)
-
-[node name="NPCDialogue" parent="Player/NPCBubble" unique_id=102646634 instance=ExtResource("4_k0juu")]
-layout_mode = 1
-anchor_left = 0.007
-anchor_top = 0.027
-anchor_right = 0.83900005
-anchor_bottom = 0.85200006
-offset_left = 0.0089998245
-offset_top = -0.05326557
-offset_right = -0.20703125
-offset_bottom = -11.01416
 
 [node name="NPC" parent="." unique_id=1377674737 instance=ExtResource("2_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.439331)
