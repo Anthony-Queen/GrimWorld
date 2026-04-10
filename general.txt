@@ -4,14 +4,15 @@ Draw = Draw (No shit)
 -Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
 ----------------------------------------- UPDATES (Deloete after reading and update)
-- Add a Singleton (Global) for player's variables, cause it's easier, like you can just delete the scene and he keeps his shit.
-- Found some bugs (Try pressing back in any of the menus in main menu) -> For you to fix mrrrrow
+- Add a Singleton (Global), go in Globals.gd and see how to use it, using #'s (Its not in scripts for easier accessibility)
+- Fixed a Bug that crashed game when pressing Back in any of the menus
 - FIXED THE DIALOGUYE BOX YAYYYYY RAAAAAAHHHHHH
-
+- Add UI folder for scripts that are used in UI
 
 
 To-Do List: (Priorities first)
-
+	-Fix choice buttons not clicking
+	
 	-Make Dialogue System (Anthony Working on this rn) -> Lea pls help omg wtf why doesnt this work in 3Dihhhhhhhhhhhhhh <- did it (maybe)
 	
 	-Make Spawn Map -> Anthony'll do it later, rn working on smthg else

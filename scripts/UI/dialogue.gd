@@ -29,4 +29,10 @@ func change_text():
 		print("Texted")
 		x += 1
 	else:
-		print("Nothing to see here...")
+		if Globals.isChoiceBeingMade == false:
+			Globals.isChoiceBeingMade = true
+			make_choice()
+			print("Nothing to see here...")
+
+func make_choice():
+	Globals.choiceScene.emit() # Connects to world.gd

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3rpqut2nedpx"]
 
-[ext_resource type="Script" uid="uid://liw1wi46cw2c" path="res://scenes/UI/health.gd" id="1_1rh5d"]
-[ext_resource type="Script" uid="uid://cluojq0kpit7u" path="res://scenes/UI/mana.gd" id="2_h331c"]
+[ext_resource type="Script" uid="uid://liw1wi46cw2c" path="res://scripts/UI/health.gd" id="1_1rh5d"]
+[ext_resource type="Script" uid="uid://cluojq0kpit7u" path="res://scripts/UI/mana.gd" id="2_h331c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsoi"]
 bg_color = Color(0, 0, 0, 0.21960784)

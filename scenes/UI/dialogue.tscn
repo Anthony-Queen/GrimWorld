@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c23m57514oub6"]
 
 [ext_resource type="Texture2D" uid="uid://j0xiquv78ngj" path="res://assets/Placeholders/DialogueBox.png" id="1_jwyou"]
-[ext_resource type="Script" uid="uid://c5xfhlnf4kba5" path="res://scripts/dialogue.gd" id="2_3n4vj"]
+[ext_resource type="Script" uid="uid://c5xfhlnf4kba5" path="res://scripts/UI/dialogue.gd" id="2_3n4vj"]
 
 [node name="DialogueRect" type="NinePatchRect" unique_id=102646634]
 anchors_preset = -1

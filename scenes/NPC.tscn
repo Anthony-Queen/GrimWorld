@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/NPC.gd" id="1_6xvi5"]
 [ext_resource type="Texture2D" uid="uid://j1iqbof8t3hm" path="res://assets/Placeholders/OchettePositions.png" id="2_ktgr7"]
-[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/Scenes/dialogue.tscn" id="4_7pv12"]
+[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/dialogue.tscn" id="4_7pv12"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
 size = Vector3(0.58569336, 0.9370117, 0.1574707)
@@ -101,3 +101,9 @@ canvas_item_default_texture_filter = 0
 render_target_update_mode = 4
 
 [node name="DialogueRect" parent="SubViewportContainer/SubViewport" unique_id=102646634 instance=ExtResource("4_7pv12")]
+Text4 = null
+Text5 = null
+Text6 = null
+Text7 = null
+Text8 = null
+Text9 = null
