@@ -35,4 +35,5 @@ func change_text():
 			print("Nothing to see here...")
 
 func make_choice():
+	
 	Globals.choiceScene.emit() # Connects to world.gd
