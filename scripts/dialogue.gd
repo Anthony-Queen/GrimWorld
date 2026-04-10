@@ -18,10 +18,12 @@ func _ready() -> void:
 	Dialogue = [Text, Text2, Text3, Text4, Text5, Text6, Text7, Text8, Text9]
 
 func _input(event) -> void:
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ENTER:
-			if Dialogue.size() > x:
-				change_text()
+	
+	if event.is_action_released("ui_accept") :
+		
+		if Dialogue.size() > x :
+			
+			change_text()
 
 func change_text():
 	# Check if you wrote something in the text, othwerwise finish conversation
