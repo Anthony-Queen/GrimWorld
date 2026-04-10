@@ -7,7 +7,7 @@ Draw = Draw (No shit)
 - Add a Singleton (Global), go in Globals.gd and see how to use it, using #'s (Its not in scripts for easier accessibility)
 - Fixed a Bug that crashed game when pressing Back in any of the menus
 - FIXED THE DIALOGUYE BOX YAYYYYY RAAAAAAHHHHHH
-- Add UI folder for scripts that are used in UI
+- Add UI folder for scripts that are used in UI.
 
 
 To-Do List: (Priorities first)
