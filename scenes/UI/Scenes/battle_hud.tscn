@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnt8n12pxpwf2"]
 
 [ext_resource type="Texture2D" uid="uid://bl2eijklf2qye" path="res://assets/Backgrounds/Battleground3/Bright/Battleground3.png" id="1_n4iv4"]
-[ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_r3b37"]
+[ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/Scenes/stats.tscn" id="2_r3b37"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4iv4"]
 

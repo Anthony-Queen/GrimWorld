@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/NPC.gd" id="1_6xvi5"]
 [ext_resource type="Texture2D" uid="uid://j1iqbof8t3hm" path="res://assets/Placeholders/OchettePositions.png" id="2_ktgr7"]
-[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/dialogue.tscn" id="4_7pv12"]
+[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/Scenes/dialogue.tscn" id="4_7pv12"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
 size = Vector3(0.58569336, 0.9370117, 0.1574707)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ktgr7"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("SubViewportContainer/SubViewport")
 
 [sub_resource type="Animation" id="Animation_3vyb7"]
 resource_name = "attack"
@@ -55,11 +55,11 @@ animation_player = NodePath("AnimationPlayer")
 max_health = 20
 speed = 2
 
-[node name="NPCCollision" type="CollisionShape3D" parent="." unique_id=1816543312]
+[node name="NpcCollision" type="CollisionShape3D" parent="." unique_id=1816543312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005493168, -0.11338503, -0.0028076172)
 shape = SubResource("BoxShape3D_md0e3")
 
-[node name="NPCSprite" type="Sprite3D" parent="." unique_id=1286249314]
+[node name="NpcSprite" type="Sprite3D" parent="." unique_id=1286249314]
 transform = Transform3D(2.582, 0, 0, 0, 2.582, 0, 0, 0, 2.582, 0.037906647, -0.10304576, 0)
 modulate = Color(0, 0, 0, 1)
 texture_filter = 0
@@ -75,14 +75,26 @@ texture = SubResource("ViewportTexture_ktgr7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=242761393]
 libraries/ = SubResource("AnimationLibrary_c4w8v")
 
-[node name="NPCArea" type="Area3D" parent="." unique_id=38306647]
+[node name="NpcArea" type="Area3D" parent="." unique_id=38306647]
 
-[node name="EnemyAreaShape" type="CollisionShape3D" parent="NPCArea" unique_id=931430894]
+[node name="EnemyAreaShape" type="CollisionShape3D" parent="NpcArea" unique_id=931430894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019607544, -0.11639404, -0.0025482178)
 shape = SubResource("BoxShape3D_4ra3w")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=1110826347]
-transparent_bg = true
-canvas_item_default_texture_filter = 0
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1132334256]
+anchors_preset = -1
+anchor_right = 0.44400004
+anchor_bottom = 0.79
+offset_left = -1.0
+offset_right = -0.4880371
+offset_bottom = 0.07998657
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="DialogueRect" parent="SubViewport" unique_id=102646634 instance=ExtResource("4_7pv12")]
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1110826347]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+render_target_update_mode = 4
+
+[node name="DialogueRect" parent="SubViewportContainer/SubViewport" unique_id=102646634 instance=ExtResource("4_7pv12")]

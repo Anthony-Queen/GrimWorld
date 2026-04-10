@@ -17,4 +17,4 @@ func _on_button_button_up() -> void:
 	
 	self.queue_free()
 	
-	get_parent().add_child(main_menu.instantiate())
+	get_parent().add_child(main_menu.instantiate()) # This doesn't work! *Slaps you with a trout*

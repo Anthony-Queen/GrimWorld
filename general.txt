@@ -3,6 +3,12 @@ Draw = Draw (No shit)
 
 -Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
+----------------------------------------- UPDATES (Deloete after reading and update)
+- Add a Singleton (Global) for player's variables, cause it's easier, like you can just delete the scene and he keeps his shit.
+- Found some bugs (Try pressing back in any of the menus in main menu) -> For you to fix mrrrrow
+
+
+
 To-Do List: (Priorities first)
 
 	-Make Dialogue System (Anthony Working on this rn) -> Lea pls help omg wtf why doesnt this work in 3Dihhhhhhhhhhhhhh <- did it (maybe)

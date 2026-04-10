@@ -3,7 +3,7 @@ extends Node3D
 @export var world_environment : WorldEnvironment
 @export var audio_player: AudioStreamPlayer
 
-var main_menu : PackedScene = load("res://scenes/UI/main_menu.tscn")
+var main_menu : PackedScene = load("res://scenes/UI/Scenes/main_menu.tscn")
 
 func _ready() -> void:
 	

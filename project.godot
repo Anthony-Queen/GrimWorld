@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 SaveData="*uid://bc0rtly6dsc8o"
+PlayerVars="*uid://cbcnbgs81qxvg"
 
 [editor_plugins]
 
