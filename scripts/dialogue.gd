@@ -19,7 +19,6 @@ func _ready() -> void:
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		print("Imma slap u")
 		if Dialogue.size() > x :
 			change_text()
 

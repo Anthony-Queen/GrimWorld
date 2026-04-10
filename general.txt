@@ -6,6 +6,7 @@ Draw = Draw (No shit)
 ----------------------------------------- UPDATES (Deloete after reading and update)
 - Add a Singleton (Global) for player's variables, cause it's easier, like you can just delete the scene and he keeps his shit.
 - Found some bugs (Try pressing back in any of the menus in main menu) -> For you to fix mrrrrow
+- FIXED THE DIALOGUYE BOX YAYYYYY RAAAAAAHHHHHH
 
 
 
