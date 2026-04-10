@@ -49,9 +49,10 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ra3w"]
 size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
-[node name="NPC" type="CharacterBody3D" unique_id=1377674737 node_paths=PackedStringArray("animation_player")]
+[node name="NPC" type="CharacterBody3D" unique_id=1377674737 node_paths=PackedStringArray("animation_player", "dialogue")]
 script = ExtResource("1_6xvi5")
 animation_player = NodePath("AnimationPlayer")
+dialogue = NodePath("Dialogue")
 max_health = 20
 speed = 2
 
@@ -69,6 +70,7 @@ region_rect = Rect2(360.4283, 224.60837, 30.223877, 41.49417)
 
 [node name="Dialogue" type="Sprite3D" parent="." unique_id=881259296]
 transform = Transform3D(1, 0, 0, 0, 0.9690157, 0.24699901, 0, -0.24699901, 0.9690157, -1.2650809, -0.09229803, 0)
+visible = false
 texture_filter = 0
 texture = SubResource("ViewportTexture_ktgr7")
 
@@ -100,4 +102,5 @@ handle_input_locally = false
 canvas_item_default_texture_filter = 0
 render_target_update_mode = 4
 
-[node name="DialogueRect" parent="SubViewportContainer/SubViewport" unique_id=102646634 instance=ExtResource("4_7pv12")]
+[node name="DialogueRect" parent="SubViewportContainer/SubViewport" unique_id=102646634 node_paths=PackedStringArray("npc") instance=ExtResource("4_7pv12")]
+npc = NodePath("../../..")

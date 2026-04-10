@@ -11,15 +11,22 @@ extends NinePatchRect
 @export var Text8: String
 @export var Text9: String
 
+@export var npc: NPC
+
 var x: int = 0
+var choice_made : bool = false
 var Dialogue: Array = []
 
 func _ready() -> void:
+	
 	Dialogue = [Text, Text2, Text3, Text4, Text5, Text6, Text7, Text8, Text9]
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	
+	if event.is_action_pressed("ui_accept") and npc.intereactable :
+		
 		if Dialogue.size() > x :
+			
 			change_text()
 
 func change_text():
@@ -29,11 +36,16 @@ func change_text():
 		print("Texted")
 		x += 1
 	else:
-		if Globals.isChoiceBeingMade == false:
+		if Globals.isChoiceBeingMade == false and not choice_made:
+			
 			Globals.isChoiceBeingMade = true
+			
 			make_choice()
+			
 			print("Nothing to see here...")
 
 func make_choice():
 	
 	Globals.choiceScene.emit() # Connects to world.gd
+	
+	choice_made = true
