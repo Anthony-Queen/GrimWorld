@@ -1,33 +1,15 @@
 [gd_scene format=3 uid="uid://cnt8n12pxpwf2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da3k0"]
-draw_center = false
-border_width_left = 4
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[ext_resource type="Texture2D" uid="uid://bl2eijklf2qye" path="res://assets/Backgrounds/Battleground3/Bright/Battleground3.png" id="1_n4iv4"]
+[ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_r3b37"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4iv4"]
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_blend = true
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4iv4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3b37"]
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3b37"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aln3r"]
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 4
-border_width_bottom = 2
+[sub_resource type="SpriteFrames" id="SpriteFrames_aln3r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mdofh"]
 
 [node name="battle HUD" type="Control" unique_id=1109364801]
 layout_mode = 3
@@ -37,314 +19,70 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=26050884]
+[node name="Background" type="TextureRect" parent="." unique_id=362825045]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_bottom = -0.64801025
+texture = ExtResource("1_n4iv4")
+expand_mode = 1
+
+[node name="Carachter1" type="AnimatedSprite2D" parent="." unique_id=999283942]
+position = Vector2(824, 354)
+sprite_frames = SubResource("SpriteFrames_n4iv4")
+
+[node name="Carachter2" type="AnimatedSprite2D" parent="." unique_id=758847840]
+position = Vector2(862, 414)
+sprite_frames = SubResource("SpriteFrames_r3b37")
+
+[node name="Carachter3" type="AnimatedSprite2D" parent="." unique_id=50136967]
+position = Vector2(900, 487)
+sprite_frames = SubResource("SpriteFrames_aln3r")
+
+[node name="Carachter4" type="AnimatedSprite2D" parent="." unique_id=2000759230]
+position = Vector2(939, 569)
+sprite_frames = SubResource("SpriteFrames_mdofh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=378028887]
 layout_mode = 0
-offset_top = 12.0
-offset_right = 649.0
-offset_bottom = 30.0
+offset_left = 1002.0
+offset_top = 47.0
+offset_right = 1151.0
+offset_bottom = 596.0
+alignment = 1
 
-[node name="TextureProgressBar2" type="TextureProgressBar" parent="." unique_id=1406514367]
-layout_mode = 0
-offset_top = 32.0
-offset_right = 649.0
-offset_bottom = 50.0
-
-[node name="TextureProgressBar3" type="TextureProgressBar" parent="." unique_id=517768061]
-layout_mode = 0
-offset_top = 52.0
-offset_right = 649.0
-offset_bottom = 70.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=71660769]
-layout_mode = 0
-offset_top = 469.0
-offset_right = 1152.0
-offset_bottom = 648.0
-theme_override_constants/separation = 0
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=454968877]
-custom_minimum_size = Vector2(200, 0)
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=23374453]
 layout_mode = 2
-size_flags_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_da3k0")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer" unique_id=828900651]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=679906971]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
+theme_override_constants/margin_bottom = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=1183960348]
+[node name="Stats" parent="VBoxContainer/MarginContainer" unique_id=1358228673 instance=ExtResource("2_r3b37")]
 layout_mode = 2
-text = "Attack"
-flat = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=195212023]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/PanelContainer2" unique_id=1606777429]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=1507506556]
 layout_mode = 2
-text = "Spells"
-flat = true
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=71943546]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
+theme_override_constants/margin_bottom = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3" unique_id=1016587337]
+[node name="Stats" parent="VBoxContainer/MarginContainer2" unique_id=89808803 instance=ExtResource("2_r3b37")]
 layout_mode = 2
-text = "Items"
-flat = true
-
-[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=147232209]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/PanelContainer4" unique_id=485723522]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" unique_id=879534273]
 layout_mode = 2
-text = "Spare"
-flat = true
-
-[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer" unique_id=304085932]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
+theme_override_constants/margin_bottom = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/PanelContainer5" unique_id=1959917418]
+[node name="Stats" parent="VBoxContainer/MarginContainer3" unique_id=1247001660 instance=ExtResource("2_r3b37")]
 layout_mode = 2
-text = "Escape"
-flat = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=1519389626]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_r3b37")
-
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer/PanelContainer2" unique_id=133042302]
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=411670158]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer" unique_id=1009244959]
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" unique_id=1255909192]
 layout_mode = 2
-flat = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=504555435]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
 
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer2" unique_id=1763703210]
+[node name="Stats" parent="VBoxContainer/MarginContainer4" unique_id=334033526 instance=ExtResource("2_r3b37")]
 layout_mode = 2
-flat = true
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=887732875]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer3" unique_id=2122829595]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=1734458238]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer4" unique_id=1801008391]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=651782993]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer5" unique_id=447895324]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer6" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=1044099785]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer6" unique_id=1799505648]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer7" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=945753745]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer7" unique_id=1930447819]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer8" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=2053860389]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer8" unique_id=1330698584]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer9" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=1591673781]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer9" unique_id=847778596]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer10" type="PanelContainer" parent="HBoxContainer/PanelContainer2/GridContainer" unique_id=582673648]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer2/GridContainer/PanelContainer10" unique_id=1916098860]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer" unique_id=1360352651]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_aln3r")
-
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer/PanelContainer3" unique_id=427441139]
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-columns = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=1889370796]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer" unique_id=1834060071]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=1223658950]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer2" unique_id=201324950]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=2117593779]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer3" unique_id=1353530156]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=513419591]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer4" unique_id=1108558027]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=843602716]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer5" unique_id=2080053322]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer6" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=2069867018]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer6" unique_id=995132376]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer7" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=930688665]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer7" unique_id=894521647]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer8" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=750255704]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer8" unique_id=1130575036]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer9" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=1565672276]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer9" unique_id=1963609565]
-layout_mode = 2
-flat = true
-
-[node name="PanelContainer10" type="PanelContainer" parent="HBoxContainer/PanelContainer3/GridContainer" unique_id=570847161]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
-
-[node name="Button" type="Button" parent="HBoxContainer/PanelContainer3/GridContainer/PanelContainer10" unique_id=1674051856]
-layout_mode = 2
-flat = true
