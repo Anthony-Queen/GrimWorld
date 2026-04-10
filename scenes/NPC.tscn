@@ -101,9 +101,3 @@ canvas_item_default_texture_filter = 0
 render_target_update_mode = 4
 
 [node name="DialogueRect" parent="SubViewportContainer/SubViewport" unique_id=102646634 instance=ExtResource("4_7pv12")]
-Text4 = null
-Text5 = null
-Text6 = null
-Text7 = null
-Text8 = null
-Text9 = null
