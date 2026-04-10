@@ -106,3 +106,6 @@ offset_bottom = -0.010066986
 texture = ExtResource("1_vaa85")
 region_rect = Rect2(13.507767, 7.4202995, 86.49223, 20.10603)
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

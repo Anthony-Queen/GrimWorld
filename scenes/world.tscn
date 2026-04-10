@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cw4duke6wlj6d"]
 
-[ext_resource type="Script" uid="uid://c5183l7jrg5t5" path="res://scenes/world.gd" id="1_k0juu"]
+[ext_resource type="Script" uid="uid://c5183l7jrg5t5" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="PackedScene" uid="uid://d2focwdfg7gi5" path="res://scenes/NPC.tscn" id="2_4wyf3"]
 [ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://assets/MeshLibrary/basic_library.meshlib" id="2_rwgxs"]
