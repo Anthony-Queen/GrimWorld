@@ -14,7 +14,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_emn88"]
 font_size = 32
 
-[node name="Settings" type="Control" unique_id=1515908672]
+[node name="Settings" type="Control" unique_id=1515908672 node_paths=PackedStringArray("brightness", "master_volume")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +22,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t8pki")
+brightness = NodePath("VBoxContainer/Label2/Brightness")
+master_volume = NodePath("VBoxContainer/Label5/MasterVolume")
 
 [node name="Background(placeholder)" type="Sprite2D" parent="." unique_id=618762154]
 
@@ -58,12 +60,17 @@ size_flags_vertical = 6
 text = "Brightness"
 label_settings = SubResource("LabelSettings_t8pki")
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/Label2" unique_id=2112966730]
+[node name="Brightness" type="HSlider" parent="VBoxContainer/Label2" unique_id=2112966730]
 layout_mode = 0
 offset_left = 467.0
 offset_top = 19.0
 offset_right = 990.0
 offset_bottom = 35.0
+max_value = 2.0
+step = 0.1
+value = 1.0
+tick_count = 11
+ticks_position = 3
 
 [node name="Label5" type="Label" parent="VBoxContainer" unique_id=1686200728]
 layout_mode = 2
@@ -72,12 +79,17 @@ size_flags_vertical = 6
 text = "Master Sound"
 label_settings = SubResource("LabelSettings_t8pki")
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/Label5" unique_id=723551482]
+[node name="MasterVolume" type="HSlider" parent="VBoxContainer/Label5" unique_id=723551482]
 layout_mode = 0
 offset_left = 467.0
 offset_top = 19.0
 offset_right = 990.0
 offset_bottom = 35.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+tick_count = 11
+ticks_position = 3
 
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=1918209476]
 layout_mode = 2
@@ -86,7 +98,7 @@ size_flags_vertical = 6
 text = "Difficulty"
 label_settings = SubResource("LabelSettings_32w1k")
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/Label3" unique_id=866816843]
+[node name="Difficulty" type="HSlider" parent="VBoxContainer/Label3" unique_id=866816843]
 layout_mode = 0
 offset_left = 467.0
 offset_top = 19.0
@@ -100,7 +112,7 @@ size_flags_vertical = 6
 text = "Aspect Ratio"
 label_settings = SubResource("LabelSettings_emn88")
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/Label4" unique_id=1015237726]
+[node name="AspectRatio" type="HSlider" parent="VBoxContainer/Label4" unique_id=1015237726]
 layout_mode = 0
 offset_left = 467.0
 offset_top = 19.0
@@ -108,3 +120,5 @@ offset_right = 990.0
 offset_bottom = 35.0
 
 [connection signal="button_up" from="Label/Button" to="." method="_on_button_button_up"]
+[connection signal="value_changed" from="VBoxContainer/Label2/Brightness" to="." method="_on_brightness_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Label5/MasterVolume" to="." method="_on_master_volume_value_changed"]

@@ -11,8 +11,8 @@ func _ready() -> void:
 		
 		SaveData.settings = ResourceLoader.load("user://settings.tres")
 	
-	world_environment.environment.adjustment_brightness = SaveData.settings.brightness / 100
+	world_environment.environment.adjustment_brightness = SaveData.settings.brightness
 	
-	audio_player.volume_linear = SaveData.settings.master_sound / 100
+	audio_player.volume_linear = SaveData.settings.master_sound
 	
 	add_child(main_menu.instantiate())

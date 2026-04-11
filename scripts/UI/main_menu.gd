@@ -1,5 +1,9 @@
 extends Control
 
+func _ready() -> void:
+	
+	SaveData.calc_files()
+
 func _on_new_game_button_up() -> void :
 	
 	SaveData.player_data = PlayerData.new() 
@@ -9,6 +13,10 @@ func _on_new_game_button_up() -> void :
 	self.queue_free()
 	
 	get_parent().add_child(game.instantiate())
+	
+	ResourceSaver.save(SaveData.player_data, "user://save_data" + str(SaveData.save_files) + ".tres")
+	
+	SaveData.current_data = SaveData.save_files
 
 func _on_load_button_up() -> void :
 	

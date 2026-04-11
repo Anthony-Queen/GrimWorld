@@ -11,16 +11,11 @@ sky_curve = 0.46488506
 sky_material = SubResource("ProceduralSkyMaterial_und3l")
 
 [sub_resource type="Environment" id="Environment_w2twt"]
-background_mode = 2
+background_mode = 3
 sky = SubResource("Sky_nnsk1")
-fog_enabled = true
-fog_light_color = Color(0.65882355, 0.67058825, 0.69803923, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(0.65882355, 0.67058825, 0.69803923, 1)
 adjustment_enabled = true
-adjustment_brightness = 0.9
-adjustment_contrast = 1.25
 
 [node name="MainScene" type="Node3D" unique_id=1801822702 node_paths=PackedStringArray("world_environment", "audio_player")]
 script = ExtResource("1_w2twt")
@@ -28,6 +23,9 @@ world_environment = NodePath("WorldEnvironment")
 audio_player = NodePath("AudioStreamPlayer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1942217696]
+environment = SubResource("Environment_w2twt")
+
+[node name="CanvasEnvironment" type="WorldEnvironment" parent="." unique_id=1556489444]
 environment = SubResource("Environment_w2twt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1050269121]

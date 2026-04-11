@@ -66,110 +66,110 @@ offset_top = 205.0
 offset_right = 1112.0
 offset_bottom = 1288.0
 
-[node name="TextureButton" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=2112177334]
+[node name="load0" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=2112177334]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton" unique_id=1599872086]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load0" unique_id=1599872086]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 0
 level :"
 
-[node name="TextureButton2" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1850282669]
+[node name="load1" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1850282669]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton2" unique_id=95010930]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load1" unique_id=95010930]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 1
 level :"
 
-[node name="TextureButton3" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1502417476]
+[node name="load2" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1502417476]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton3" unique_id=705875160]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load2" unique_id=705875160]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 2
 level :"
 
-[node name="TextureButton4" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=2046278409]
+[node name="load3" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=2046278409]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton4" unique_id=2032632459]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load3" unique_id=2032632459]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 3
 level :"
 
-[node name="TextureButton5" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1109994486]
+[node name="load4" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1109994486]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton5" unique_id=322441755]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load4" unique_id=322441755]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 4
 level :"
 
-[node name="TextureButton6" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=298092077]
+[node name="load5" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=298092077]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton6" unique_id=957503220]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load5" unique_id=957503220]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 5
 level :"
 
-[node name="TextureButton7" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1316504460]
+[node name="load6" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=1316504460]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton7" unique_id=1469150086]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load6" unique_id=1469150086]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 6
 level :"
 
-[node name="TextureButton8" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=945798988]
+[node name="load7" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=945798988]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton8" unique_id=1103258646]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load7" unique_id=1103258646]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 7
 level :"
 
-[node name="TextureButton9" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=793759463]
+[node name="load8" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=793759463]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton9" unique_id=498066941]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load8" unique_id=498066941]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "save 8
 level :"
 
-[node name="TextureButton10" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=422616548]
+[node name="load9" type="TextureButton" parent="Node2D/VBoxContainer" unique_id=422616548]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Label" type="Label" parent="Node2D/VBoxContainer/TextureButton10" unique_id=1779948747]
+[node name="Label" type="Label" parent="Node2D/VBoxContainer/load9" unique_id=1779948747]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -178,3 +178,13 @@ level :"
 
 [connection signal="button_up" from="Label/Button" to="." method="_on_button_button_up"]
 [connection signal="value_changed" from="VScrollBar" to="VScrollBar" method="_on_value_changed"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load0" to="." method="_on_load_0_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load1" to="." method="_on_load_1_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load2" to="." method="_on_load_2_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load3" to="." method="_on_load_3_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load4" to="." method="_on_load_4_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load5" to="." method="_on_load_5_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load6" to="." method="_on_load_6_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load7" to="." method="_on_load_7_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load8" to="." method="_on_load_8_button_up"]
+[connection signal="button_up" from="Node2D/VBoxContainer/load9" to="." method="_on_load_9_button_up"]
