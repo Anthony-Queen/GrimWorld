@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://djsmxvly3xi3h"]
+
+[ext_resource type="Script" uid="uid://so8btfnff40v" path="res://scripts/UI/exit_menu.gd" id="1_clgl0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e2ql"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_clgl0"]
+font_size = 32
+
+[node name="ExitMenu" type="Control" unique_id=1702023806]
+layout_mode = 3
+anchor_left = 0.24000001
+anchor_top = 0.34600002
+anchor_right = 0.76000005
+anchor_bottom = 0.65400004
+offset_left = -0.480011
+offset_top = -0.20800781
+offset_right = 0.47991943
+offset_bottom = 0.2079773
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clgl0")
+
+[node name="Border" type="PanelContainer" parent="." unique_id=659764441]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+
+[node name="bg" type="Sprite2D" parent="Border" unique_id=926640562]
+position = Vector2(0, -44)
+
+[node name="Label" type="Label" parent="Border" unique_id=1165276354]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Exit"
+label_settings = SubResource("LabelSettings_clgl0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonBorder" type="PanelContainer" parent="." unique_id=1601024498]
+layout_mode = 0
+offset_top = 44.0
+offset_right = 600.0
+offset_bottom = 198.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ButtonBorder" unique_id=1716319010]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ButtonBorder/VBoxContainer" unique_id=841681004]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Are you sure you want to exit the game ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ButtonBorder/VBoxContainer" unique_id=1719661053]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "yes"
+
+[connection signal="button_up" from="ButtonBorder/VBoxContainer/Button" to="." method="_on_button_button_up"]
