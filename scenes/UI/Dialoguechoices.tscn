@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5q7lw3fcmoh3"]
 
 [ext_resource type="Script" uid="uid://c0ljc3cvtm5ig" path="res://scripts/UI/DialogueChoices.gd" id="1_dr3ll"]
-[ext_resource type="Texture2D" uid="uid://j0xiquv78ngj" path="res://assets/Placeholders/DialogueBox.png" id="1_vaa85"]
+[ext_resource type="Texture2D" uid="uid://ca7r50b43dh25" path="res://assets/Original/BoxyBox.png" id="2_hj3ci"]
 
 [node name="Choice" type="Control" unique_id=26714987]
 layout_mode = 3
@@ -53,14 +53,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=652473502]
 anchors_preset = -1
-anchor_left = 0.4455417
-anchor_top = 0.30900002
-anchor_right = 0.5555347
-anchor_bottom = 0.356
-offset_left = -7.264038
-offset_top = 78.76799
-offset_right = -6.976013
-offset_bottom = 79.312
+anchor_left = 0.439
+anchor_top = 0.43100002
+anchor_right = 0.549
+anchor_bottom = 0.47800002
+offset_left = 0.27197266
+offset_top = -0.2880249
+offset_right = 0.55200195
+offset_bottom = 0.25598145
 text = "YES"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -76,20 +76,20 @@ offset_left = 3.0800004
 offset_top = -0.0019841194
 offset_right = 1.9839935
 offset_bottom = 0.013015747
-texture = ExtResource("1_vaa85")
+texture = ExtResource("2_hj3ci")
 region_rect = Rect2(13.507767, 7.4202995, 86.49223, 20.10603)
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="CanvasLayer" unique_id=1215249847]
 anchors_preset = -1
-anchor_left = 0.44500002
-anchor_top = 0.397
-anchor_right = 0.55600005
-anchor_bottom = 0.44400004
-offset_left = -6.6400146
-offset_top = 78.74399
-offset_right = -7.512085
-offset_bottom = 79.287964
+anchor_left = 0.439
+anchor_top = 0.51900005
+anchor_right = 0.549
+anchor_bottom = 0.56600004
+offset_left = 0.27197266
+offset_top = -0.31204224
+offset_right = 0.55200195
+offset_bottom = 0.23196411
 text = "NO"
 flat = true
 metadata/_edit_use_anchors_ = true
@@ -105,7 +105,7 @@ offset_left = 3.0800004
 offset_top = -0.0019841194
 offset_right = 1.9839935
 offset_bottom = 0.013015747
-texture = ExtResource("1_vaa85")
+texture = ExtResource("2_hj3ci")
 region_rect = Rect2(13.507767, 7.4202995, 86.49223, 20.10603)
 metadata/_edit_use_anchors_ = true
 

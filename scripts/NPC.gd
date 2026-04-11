@@ -2,12 +2,12 @@ extends CharacterBody3D
 
 class_name NPC
 
-@export var animation_player: AnimationPlayer
-@export var dialogue: Sprite3D
-
 @export var max_health : int
 @export var speed : int
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var dialogue: Sprite3D = $Dialogue
+@onready var SmallDialogue: Sprite3D = $SmallDialogue
 @onready var player: Player = $"../Player"
 
 var pos : Vector3 
@@ -15,17 +15,14 @@ var pos : Vector3
 var intereactable : bool = false
 
 func _physics_process(_delta: float) -> void :
-	
 	pos = self.position - player.position
 	
 	if (pos.z < 1 and pos.z > - 1 and pos.x < 1 and pos.x > - 1) :
-		
+		SmallDialogue.visible = false
 		dialogue.visible = true
-		
 		intereactable = true
 	
 	else :
-		
+		SmallDialogue.visible = true
 		dialogue.visible = false
-		
 		intereactable = false

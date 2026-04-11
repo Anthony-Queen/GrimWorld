@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/NPC.gd" id="1_6xvi5"]
 [ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://assets/Original/Main_Character.png" id="2_ktgr7"]
+[ext_resource type="Texture2D" uid="uid://uleyi5fslloh" path="res://assets/Original/Small-Dialogue-Box.png" id="3_jnjht"]
 [ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/dialogue.tscn" id="4_7pv12"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
@@ -49,10 +50,8 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ra3w"]
 size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
-[node name="NPC" type="CharacterBody3D" unique_id=1377674737 node_paths=PackedStringArray("animation_player", "dialogue")]
+[node name="NPC" type="CharacterBody3D" unique_id=1377674737]
 script = ExtResource("1_6xvi5")
-animation_player = NodePath("AnimationPlayer")
-dialogue = NodePath("Dialogue")
 max_health = 20
 speed = 2
 
@@ -64,6 +63,10 @@ shape = SubResource("BoxShape3D_md0e3")
 transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, -0.0014112592, -0.12506372, 0)
 texture_filter = 0
 texture = ExtResource("2_ktgr7")
+
+[node name="SmallDialogue" type="Sprite3D" parent="." unique_id=1494292814]
+transform = Transform3D(0.219, 0, 0, 0, 0.219, 0, 0, 0, 0.219, 0, 0.5133096, 0)
+texture = ExtResource("3_jnjht")
 
 [node name="Dialogue" type="Sprite3D" parent="." unique_id=881259296]
 transform = Transform3D(0.568, 0, 0, 0, 0.55081964, 0.13864256, 0, -0.13864256, 0.55081964, 0.1934374, 0.92624027, -0.26128662)

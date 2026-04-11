@@ -2,6 +2,8 @@ Make = Program
 Draw = Draw (No shit)
 
 -Anthony is cooking up some sprites frfr rn
+-Soooo... I MIGHT've deleted the mainScene thingy, so now settings doesn't work.... Fix it pretty please?
+
 
  Meow:
 	Added Bars to HP and Mana and XP
