@@ -109,15 +109,17 @@ offset_bottom = 35.0
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 6
-text = "Aspect Ratio"
+text = "Resolution"
 label_settings = SubResource("LabelSettings_emn88")
 
-[node name="AspectRatio" type="HSlider" parent="VBoxContainer/Label4" unique_id=1015237726]
+[node name="Resolution" type="OptionButton" parent="VBoxContainer/Label4" unique_id=381346068]
 layout_mode = 0
 offset_left = 467.0
 offset_top = 19.0
 offset_right = 990.0
-offset_bottom = 35.0
+offset_bottom = 39.0
+item_count = 1
+popup/item_0/id = 0
 
 [connection signal="button_up" from="Label/Button" to="." method="_on_button_button_up"]
 [connection signal="value_changed" from="VBoxContainer/Label2/Brightness" to="." method="_on_brightness_value_changed"]
