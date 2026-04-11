@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2focwdfg7gi5"]
 
 [ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/NPC.gd" id="1_6xvi5"]
-[ext_resource type="Texture2D" uid="uid://j1iqbof8t3hm" path="res://assets/Placeholders/OchettePositions.png" id="2_ktgr7"]
+[ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://assets/Original/Main_Character.png" id="2_ktgr7"]
 [ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/dialogue.tscn" id="4_7pv12"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
@@ -61,15 +61,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005493168, -0.11338503, -0
 shape = SubResource("BoxShape3D_md0e3")
 
 [node name="NpcSprite" type="Sprite3D" parent="." unique_id=1286249314]
-transform = Transform3D(2.582, 0, 0, 0, 2.582, 0, 0, 0, 2.582, 0.037906647, -0.10304576, 0)
-modulate = Color(0, 0, 0, 1)
+transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, -0.0014112592, -0.12506372, 0)
 texture_filter = 0
 texture = ExtResource("2_ktgr7")
-region_enabled = true
-region_rect = Rect2(360.4283, 224.60837, 30.223877, 41.49417)
 
 [node name="Dialogue" type="Sprite3D" parent="." unique_id=881259296]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.5381999, -0.010626137, 0)
+transform = Transform3D(0.568, 0, 0, 0, 0.55081964, 0.13864256, 0, -0.13864256, 0.55081964, 0.1934374, 0.92624027, -0.26128662)
 texture_filter = 0
 texture = SubResource("ViewportTexture_ktgr7")
 
@@ -84,24 +81,32 @@ shape = SubResource("BoxShape3D_4ra3w")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1132334256]
 anchors_preset = -1
-anchor_left = -0.453
-anchor_top = 0.030000001
-anchor_right = -0.009000001
-anchor_bottom = 0.795
-offset_left = -0.14398193
-offset_top = -16.44
-offset_right = 0.36800098
-offset_bottom = -0.16003418
+anchor_left = -1.4180001
+anchor_top = 0.023000002
+anchor_right = -1.0090001
+anchor_bottom = 0.36400002
+offset_left = -0.4638672
+offset_top = 6.095999
+offset_right = 0.368042
+offset_bottom = 0.12799072
 size_flags_horizontal = 3
 size_flags_vertical = 3
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1110826347]
 transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
+size = Vector2i(472, 215)
 render_target_update_mode = 4
 
 [node name="DialogueRect" parent="SubViewportContainer/SubViewport" unique_id=102646634 node_paths=PackedStringArray("npc") instance=ExtResource("4_7pv12")]
-offset_right = -0.72805786
-offset_bottom = -0.5920105
+anchor_left = 0.026
+anchor_top = 0.017
+anchor_right = 0.994
+anchor_bottom = 0.98200005
+offset_left = 0.37599945
+offset_top = -0.40800095
+offset_right = -0.0060424805
+offset_bottom = 0.2159729
 npc = NodePath("../../..")

@@ -16,7 +16,7 @@ var intereactable : bool = false
 
 func _physics_process(_delta: float) -> void :
 	
-	pos = self.position - player.position 
+	pos = self.position - player.position
 	
 	if (pos.z < 1 and pos.z > - 1 and pos.x < 1 and pos.x > - 1) :
 		
