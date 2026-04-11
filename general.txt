@@ -3,8 +3,15 @@ Draw = Draw (No shit)
 
 -Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
 
-To-Do List: (Priorities first)
+ BROOOOO what i did :
 	
+	fixed dialogue choice
+	you can only see the dialogue box and intereact with it if you are in a range of 1 m from the NPC
+	i made the camera view look more like octopath traveler 2 (i think)
+	i dont know what to do cuz i dont have sprites
+	changed dialogue's panel to color rect to easely change alpha ecc... 
+
+To-Do List: (Priorities first)
 	
 	-Make Spawn Map -> Anthony'll do it later, rn working on smthg else
 	
