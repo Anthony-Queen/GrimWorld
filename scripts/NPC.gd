@@ -8,7 +8,7 @@ class_name NPC
 @export var max_health : int
 @export var speed : int
 
-@onready var player : Player = $"/root/MainScene/World/Player"
+@onready var player: Player = $"../Player"
 
 var pos : Vector3 
 

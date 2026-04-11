@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GrimWorld"
-run/main_scene="uid://xuhg2x2ph7jy"
+run/main_scene="uid://byncswt40wu8x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
@@ -79,3 +79,4 @@ toggle_exit={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
