@@ -3,7 +3,7 @@ extends Node3D
 var ChoiceScene = load("res://scenes/UI/Dialoguechoices.tscn")
 var ExitScene = load("res://scenes/UI/exit_menu.tscn")
 
-var exit_scene : int = 0
+var exit_scene : bool = false
 
 func _ready() -> void:
 	
@@ -15,16 +15,16 @@ func _spawn_choice() -> void:
 
 func _input(event: InputEvent) -> void :
 	
-	if event.is_action_released("toggle_exit") :
+	if event.is_action_released("toggle_exit"):
 		
-		if exit_scene == 0 :
+		if exit_scene == false:
 			
 			get_child(0).add_child(ExitScene.instantiate())
 			
-			exit_scene = 1
+			exit_scene = true
 		
-		else :
+		elif exit_scene:
 			
-			get_node("/root/MainScene/World/Player/ExitMenu").queue_free()
+			get_node("/root/World/Player/ExitMenu").queue_free()
 			
-			exit_scene = 0
+			exit_scene = false

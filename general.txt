@@ -1,15 +1,10 @@
 Make = Program
 Draw = Draw (No shit)
 
--Anthony: I'll try and fix Lapse not working and then I'll cook up some sprites frfr 
+-Anthony is cooking up some sprites frfr rn
 
- BROOOOO what i did :
-	
-	fixed dialogue choice
-	you can only see the dialogue box and intereact with it if you are in a range of 1 m from the NPC
-	i made the camera view look more like octopath traveler 2 (i think)
-	i dont know what to do cuz i dont have sprites
-	changed dialogue's panel to color rect to easely change alpha ecc... 
+ Meow:
+	Added Bars to HP and Mana and XP
 
 To-Do List: (Priorities first)
 	

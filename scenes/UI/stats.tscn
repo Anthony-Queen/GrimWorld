@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c3rpqut2nedpx"]
 
 [ext_resource type="Script" uid="uid://liw1wi46cw2c" path="res://scripts/UI/health.gd" id="1_1rh5d"]
+[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://assets/Bars/Bar 3 Red0001.png" id="1_h331c"]
 [ext_resource type="Script" uid="uid://cluojq0kpit7u" path="res://scripts/UI/mana.gd" id="2_h331c"]
+[ext_resource type="Texture2D" uid="uid://b07w8uvrhsrj" path="res://assets/Bars/Bar 3 Blue0001.png" id="3_ybc7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsoi"]
 bg_color = Color(0, 0, 0, 0.21960784)
@@ -10,37 +12,43 @@ bg_color = Color(0, 0, 0, 0.21960784)
 anchors_preset = -1
 anchor_right = 0.102000006
 anchor_bottom = 0.102000006
-offset_right = 0.49599457
-offset_bottom = -0.09600067
+offset_right = 57.495995
+offset_bottom = 8.903999
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpsoi")
 
 [node name="Label" type="Label" parent="." unique_id=1604069753]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.305
-anchor_right = 0.703
+anchor_right = 1.0
 anchor_bottom = 0.34800002
-offset_left = 0.0099983215
-offset_right = 0.04599762
 offset_bottom = 0.031999588
 text = "Hikari"
+horizontal_alignment = 1
 
 [node name="Health" type="TextureProgressBar" parent="." unique_id=1186429030]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.39400002
-anchor_right = 0.90000004
-anchor_bottom = 0.52000004
-offset_top = -0.0040016174
+anchor_left = 0.171
+anchor_top = 0.33100003
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 0.074998856
+offset_top = -74.825005
+offset_bottom = 57.5
+value = 100.0
+texture_progress = ExtResource("1_h331c")
 script = ExtResource("1_1rh5d")
 
 [node name="Mana" type="TextureProgressBar" parent="." unique_id=45482719]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.56
-anchor_right = 0.90000004
-anchor_bottom = 0.68200004
-offset_bottom = -0.012001038
+anchor_left = 0.171
+anchor_top = 0.58900005
+anchor_right = 1.0
+anchor_bottom = 0.711
+offset_left = 0.074998856
+offset_top = -77.175
+offset_bottom = 58.675
+value = 100.0
+texture_progress = ExtResource("3_ybc7q")
 script = ExtResource("2_h331c")
