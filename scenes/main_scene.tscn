@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ck036m48ix3cx"]
+
+[ext_resource type="Script" uid="uid://dop02csqna0ec" path="res://scripts/main_scene.gd" id="1_w2twt"]
+
+[sub_resource type="Environment" id="Environment_w2twt"]
+background_mode = 3
+background_canvas_max_layer = -1
+adjustment_enabled = true
+
+[node name="MainScene" type="Node3D" unique_id=1438953692 node_paths=PackedStringArray("world_environment", "audio_player")]
+script = ExtResource("1_w2twt")
+world_environment = NodePath("CanvasEnvironment")
+audio_player = NodePath("AudioStreamPlayer")
+
+[node name="CanvasEnvironment" type="WorldEnvironment" parent="." unique_id=1477201799]
+environment = SubResource("Environment_w2twt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=599215233]

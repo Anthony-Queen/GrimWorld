@@ -25,6 +25,6 @@ func _input(event: InputEvent) -> void :
 		
 		elif exit_scene:
 			
-			get_node("/root/World/Player/ExitMenu").queue_free()
+			get_node("/root/MainScene/World/Player/ExitMenu").queue_free()
 			
 			exit_scene = false
