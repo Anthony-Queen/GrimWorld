@@ -29,7 +29,7 @@ anchor_right = 0.74600005
 anchor_bottom = 0.707
 offset_left = 0.32800293
 offset_top = -0.1760025
-offset_right = 0.091918945
+offset_right = 0.60791016
 offset_bottom = -0.13601685
 grow_horizontal = 2
 grow_vertical = 2
@@ -47,8 +47,9 @@ offset_top = -0.15800095
 offset_right = -0.19702148
 offset_bottom = -0.04600525
 grow_horizontal = 2
-text = "We definitely gotta change the color to make it more fancy and transparent, but that's for later"
+text = "Do you wish to fight me ?"
 horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=652473502]
@@ -108,6 +109,10 @@ offset_bottom = 0.013015747
 texture = ExtResource("2_hj3ci")
 region_rect = Rect2(13.507767, 7.4202995, 86.49223, 20.10603)
 metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=268523627]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
