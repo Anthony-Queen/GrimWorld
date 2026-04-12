@@ -46,7 +46,7 @@ sprite_frames = SubResource("SpriteFrames_mdofh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=378028887]
 layout_mode = 0
-offset_left = 1002.0
+offset_left = 979.0
 offset_top = 47.0
 offset_right = 1151.0
 offset_bottom = 596.0
@@ -68,7 +68,6 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Stats" parent="VBoxContainer/MarginContainer2" unique_id=89808803 instance=ExtResource("2_r3b37")]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" unique_id=879534273]
 layout_mode = 2
