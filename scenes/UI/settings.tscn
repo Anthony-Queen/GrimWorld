@@ -14,7 +14,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_emn88"]
 font_size = 32
 
-[node name="Settings" type="Control" unique_id=1515908672]
+[node name="Settings" type="Control" unique_id=1515908672 node_paths=PackedStringArray("brightness", "master_volume")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +22,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t8pki")
+brightness = NodePath("VBoxContainer/Label2/Brightness")
+master_volume = NodePath("VBoxContainer/Label5/MasterVolume")
 
 [node name="Background(placeholder)" type="Sprite2D" parent="." unique_id=618762154]
 
