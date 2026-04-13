@@ -1,11 +1,15 @@
 extends Node3D
 
+@onready var audio_stream_player: AudioStreamPlayer = $"/root/MainScene/AudioStreamPlayer"
+
 var ChoiceScene = load("res://scenes/UI/Dialoguechoices.tscn")
 var ExitScene = load("res://scenes/UI/exit_menu.tscn")
 
 var exit_scene : bool = false
 
 func _ready() -> void:
+	
+	audio_stream_player.playing = false
 	
 	Globals.choiceScene.connect(_spawn_choice)
 
@@ -25,6 +29,6 @@ func _input(event: InputEvent) -> void :
 		
 		elif exit_scene:
 			
-			get_node("/root/World/Player/ExitMenu").queue_free()
+			get_node("/root/MainScene/World/Player/ExitMenu").queue_free()
 			
 			exit_scene = false

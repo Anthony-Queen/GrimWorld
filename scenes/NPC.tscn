@@ -112,4 +112,7 @@ offset_left = 0.37599945
 offset_top = -0.40800095
 offset_right = -0.0060424805
 offset_bottom = 0.2159729
+Text = "Hello there "
+Text2 = "You seem really strong"
+Text3 = "Shall we fight ?"
 npc = NodePath("../../..")

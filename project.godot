@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GrimWorld"
-run/main_scene="uid://byncswt40wu8x"
+run/main_scene="uid://ck036m48ix3cx"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
