@@ -6,6 +6,7 @@ extends Node3D
 var main_menu : PackedScene = load("res://scenes/UI/main_menu.tscn")
 
 func _ready() -> void:
+	
 	Globals.audio_stream_player = $AudioStreamPlayer
 	
 	if FileAccess.file_exists("user://settings.tres") :

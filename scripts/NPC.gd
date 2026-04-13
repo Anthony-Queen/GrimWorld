@@ -2,13 +2,18 @@ extends CharacterBody3D
 
 class_name NPC
 
-@export var max_health : int
-@export var speed : int
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var dialogue: Sprite3D = $Dialogue
 @onready var SmallDialogue: Sprite3D = $SmallDialogue
 @onready var player: Player = $"../Player"
+
+
+@export var max_health : int
+@export var weaknesses : Array[String]
+@export var shield : int 
+@export var speed : int
+
 
 var pos : Vector3 
 

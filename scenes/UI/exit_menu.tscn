@@ -50,6 +50,7 @@ border_blend = true
 
 [node name="ExitMenu" type="Control" unique_id=1702023806 node_paths=PackedStringArray("exit_prompt")]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2

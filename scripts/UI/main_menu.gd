@@ -1,7 +1,10 @@
 extends Control
 
 func _ready() -> void:
-	Globals.audio_stream_player.playing = true
+	
+	if Globals.audio_stream_player.playing == false :
+		
+		Globals.audio_stream_player.playing = true
 	
 	SaveData.calc_files()
 
