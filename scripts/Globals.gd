@@ -11,3 +11,4 @@ signal choiceScene
 @warning_ignore_restore("unused_signal")
 
 var isChoiceBeingMade: bool = false
+var InBattle : bool = false

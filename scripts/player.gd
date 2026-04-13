@@ -4,7 +4,7 @@ class_name Player
 
 @export var animation_player : AnimationPlayer 
 
-enum States {idle, running, walking, hurt, rolling, dead}
+enum States {idle, running, walking, attacking, hurt, dead}
 
 var state: States = States.idle : set = set_state
 
@@ -14,7 +14,7 @@ var direction : Vector2
 
 func _physics_process(_delta: float) -> void :  #Need to add state walking
 	
-	if state != States.dead :
+	if state != States.dead and Globals.InBattle == false :
 		
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		
@@ -22,7 +22,7 @@ func _physics_process(_delta: float) -> void :  #Need to add state walking
 		
 		velocity.z = direction.y * speed
 		
-		if state not in [States.hurt, States.rolling] :
+		if state != States.hurt :
 			
 			if velocity.x == 0 :
 				
@@ -41,12 +41,6 @@ func _physics_process(_delta: float) -> void :  #Need to add state walking
 			if is_on_floor() :
 				
 				velocity.x = 0
-			
-			if state == States.rolling :
-				
-				pass
-				
-				#velocity.x = SaveData.player_data.sprite_flipped * speed
 		
 		move_and_slide()
 
@@ -67,10 +61,6 @@ func set_state(new_state : States) -> void :
 	elif state == States.hurt :
 		
 		animation_player.play("hit")
-	
-	elif state == States.rolling :
-		
-		animation_player.play("slide")
 	
 	elif state == States.dead :
 		
