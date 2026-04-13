@@ -8,6 +8,9 @@ signal choice1
 signal choice2
 signal choiceScene
 
+# Combat signals
+signal entered_battle
+
 @warning_ignore_restore("unused_signal")
 
 var isChoiceBeingMade: bool = false

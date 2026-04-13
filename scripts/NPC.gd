@@ -25,25 +25,26 @@ func _ready() -> void:
 	Globals.connect("choice2", _on_choice_2)
 
 func _physics_process(_delta: float) -> void :
+	
 	pos = self.position - player.position
 	
 	if (pos.z < 1 and pos.z > - 1 and pos.x < 1 and pos.x > - 1) :
+		
 		SmallDialogue.visible = false
 		dialogue.visible = true
 		intereactable = true
 	
 	else :
+		
 		SmallDialogue.visible = true
 		dialogue.visible = false
 		intereactable = false
 
 func _on_choice_1() :
 	
-	var battle_scene : PackedScene = load("res://scenes/arena_3d.tscn")
+	Globals.InBattle = true
 	
-	get_parent().queue_free()
-	
-	get_parent().get_parent().add_child(battle_scene.instantiate()) 
+	Globals.emit_signal("entered_battle")
 
 func _on_choice_2() :
 	

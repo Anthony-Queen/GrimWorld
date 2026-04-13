@@ -12,6 +12,10 @@ const speed : int = 4
 
 var direction : Vector2
 
+func _ready() -> void:
+	
+	Globals.connect("entered_battle", _on_battle_entered)
+
 func _physics_process(_delta: float) -> void :  #Need to add state walking
 	
 	if state != States.dead and Globals.InBattle == false :
@@ -65,3 +69,8 @@ func set_state(new_state : States) -> void :
 	elif state == States.dead :
 		
 		animation_player.play("death")
+
+
+func _on_battle_entered() :
+	
+	pass
