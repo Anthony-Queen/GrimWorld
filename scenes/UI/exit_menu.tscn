@@ -1,42 +1,199 @@
 [gd_scene format=3 uid="uid://djsmxvly3xi3h"]
 
 [ext_resource type="Script" uid="uid://so8btfnff40v" path="res://scripts/UI/exit_menu.gd" id="1_clgl0"]
+[ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_fuvnj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clgl0"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e2ql"]
 draw_center = false
-border_width_left = 2
+border_width_left = 4
 border_width_top = 2
-border_width_right = 2
+border_width_right = 4
 border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuvnj"]
+draw_center = false
+border_width_left = 4
+border_width_top = 2
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ra6fi"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_clgl0"]
 font_size = 32
 
-[node name="ExitMenu" type="Control" unique_id=1702023806]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aesx5"]
+draw_center = false
+border_width_top = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[node name="ExitMenu" type="Control" unique_id=1702023806 node_paths=PackedStringArray("exit_prompt")]
 layout_mode = 3
-anchor_left = 0.24000001
-anchor_top = 0.34600002
-anchor_right = 0.76000005
-anchor_bottom = 0.65400004
-offset_left = -0.480011
-offset_top = -0.20800781
-offset_right = 0.47991943
-offset_bottom = 0.2079773
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_clgl0")
+exit_prompt = NodePath("ExitPrompt")
 
-[node name="Border" type="PanelContainer" parent="." unique_id=659764441]
+[node name="Map" type="Sprite2D" parent="." unique_id=1627714742]
+
+[node name="OptionsContainer" type="VBoxContainer" parent="." unique_id=1665243402]
+layout_mode = 0
+offset_right = 125.0
+offset_bottom = 648.0
+theme_override_constants/separation = 0
+
+[node name="StatsBorder" type="PanelContainer" parent="OptionsContainer" unique_id=715988910]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_clgl0")
+
+[node name="Stats" type="Button" parent="OptionsContainer/StatsBorder" unique_id=213272838]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Stats"
+flat = true
+
+[node name="HealBorder" type="PanelContainer" parent="OptionsContainer" unique_id=1912352099]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+
+[node name="Heal" type="Button" parent="OptionsContainer/HealBorder" unique_id=1061896339]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Heal"
+flat = true
+
+[node name="ItemsBorder" type="PanelContainer" parent="OptionsContainer" unique_id=138304205]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+
+[node name="Items" type="Button" parent="OptionsContainer/ItemsBorder" unique_id=541320064]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Items"
+flat = true
+
+[node name="ExitBorder" type="PanelContainer" parent="OptionsContainer" unique_id=221139405]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuvnj")
+
+[node name="Exit" type="Button" parent="OptionsContainer/ExitBorder" unique_id=1006408574]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+flat = true
+
+[node name="CharactersStatsContainer" type="VBoxContainer" parent="." unique_id=55753494]
+layout_mode = 0
+offset_left = 952.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 0
+
+[node name="StatsBorder1" type="PanelContainer" parent="CharactersStatsContainer" unique_id=1709426143]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_clgl0")
+
+[node name="StatsChar1" parent="CharactersStatsContainer/StatsBorder1" unique_id=1358228673 instance=ExtResource("2_fuvnj")]
+layout_mode = 2
+
+[node name="Char1" type="Sprite2D" parent="CharactersStatsContainer/StatsBorder1" unique_id=627192323]
+
+[node name="StatsBorder2" type="PanelContainer" parent="CharactersStatsContainer" unique_id=2140478884]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+
+[node name="StatsChar2" parent="CharactersStatsContainer/StatsBorder2" unique_id=305760855 instance=ExtResource("2_fuvnj")]
+layout_mode = 2
+
+[node name="Char2" type="Sprite2D" parent="CharactersStatsContainer/StatsBorder2" unique_id=913761701]
+
+[node name="StatsBorder3" type="PanelContainer" parent="CharactersStatsContainer" unique_id=1137051659]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+
+[node name="StatsChar3" parent="CharactersStatsContainer/StatsBorder3" unique_id=276754165 instance=ExtResource("2_fuvnj")]
+layout_mode = 2
+
+[node name="Char3" type="Sprite2D" parent="CharactersStatsContainer/StatsBorder3" unique_id=1858419317]
+
+[node name="StatsBorder4" type="PanelContainer" parent="CharactersStatsContainer" unique_id=259151753]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuvnj")
+
+[node name="StatsChar4" parent="CharactersStatsContainer/StatsBorder4" unique_id=1914562146 instance=ExtResource("2_fuvnj")]
+layout_mode = 2
+
+[node name="Char4" type="Sprite2D" parent="CharactersStatsContainer/StatsBorder4" unique_id=1223141199]
+
+[node name="StatsBorder5" type="PanelContainer" parent="CharactersStatsContainer" unique_id=1888932599]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuvnj")
+
+[node name="StatsChar5" parent="CharactersStatsContainer/StatsBorder5" unique_id=1576093396 instance=ExtResource("2_fuvnj")]
+layout_mode = 2
+
+[node name="Char5" type="Sprite2D" parent="CharactersStatsContainer/StatsBorder5" unique_id=1763392987]
+
+[node name="ExitPrompt" type="Control" parent="." unique_id=2053546004]
+visible = false
+layout_mode = 1
+anchor_left = 0.24000001
+anchor_top = 0.34600002
+anchor_right = 0.76000005
+anchor_bottom = 0.65300006
+offset_left = -0.480011
+offset_top = -0.20800781
+offset_right = 0.47991943
+offset_bottom = -0.14404297
+
+[node name="Panel" type="Panel" parent="ExitPrompt" unique_id=1719711303]
+self_modulate = Color(1, 1, 1, 0.6862745)
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 199.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
 
-[node name="bg" type="Sprite2D" parent="Border" unique_id=926640562]
+[node name="Border" type="PanelContainer" parent="ExitPrompt" unique_id=659764441]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ra6fi")
+
+[node name="bg" type="Sprite2D" parent="ExitPrompt/Border" unique_id=926640562]
 position = Vector2(0, -44)
 
-[node name="Label" type="Label" parent="Border" unique_id=1165276354]
+[node name="Label" type="Label" parent="ExitPrompt/Border" unique_id=1165276354]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Exit"
@@ -44,28 +201,29 @@ label_settings = SubResource("LabelSettings_clgl0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonBorder" type="PanelContainer" parent="." unique_id=1601024498]
+[node name="ButtonBorder" type="PanelContainer" parent="ExitPrompt" unique_id=1601024498]
 layout_mode = 0
-offset_top = 44.0
+offset_top = 49.0
 offset_right = 600.0
-offset_bottom = 198.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_8e2ql")
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aesx5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ButtonBorder" unique_id=1716319010]
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitPrompt/ButtonBorder" unique_id=1716319010]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="ButtonBorder/VBoxContainer" unique_id=841681004]
+[node name="Label2" type="Label" parent="ExitPrompt/ButtonBorder/VBoxContainer" unique_id=841681004]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Are you sure you want to exit the game ?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ButtonBorder/VBoxContainer" unique_id=1719661053]
+[node name="Button" type="Button" parent="ExitPrompt/ButtonBorder/VBoxContainer" unique_id=1719661053]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "yes"
 
-[connection signal="button_up" from="ButtonBorder/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="OptionsContainer/ExitBorder/Exit" to="." method="_on_exit_button_up"]
+[connection signal="button_up" from="ExitPrompt/ButtonBorder/VBoxContainer/Button" to="." method="_on_button_button_up"]

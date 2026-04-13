@@ -10,10 +10,10 @@ bg_color = Color(0, 0, 0, 0.21960784)
 
 [node name="Stats" type="Panel" unique_id=1358228673]
 anchors_preset = -1
-anchor_right = 0.102000006
-anchor_bottom = 0.102000006
-offset_right = 57.495995
-offset_bottom = 8.903999
+anchor_right = 0.15200001
+anchor_bottom = 0.116000004
+offset_right = -0.104003906
+offset_bottom = -0.16799927
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpsoi")
 
 [node name="Label" type="Label" parent="." unique_id=1604069753]
@@ -28,13 +28,10 @@ horizontal_alignment = 1
 [node name="Health" type="TextureProgressBar" parent="." unique_id=1186429030]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.171
-anchor_top = 0.33100003
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 0.074998856
-offset_top = -74.825005
-offset_bottom = 57.5
+offset_left = -4.000002
+offset_top = -45.0
+offset_right = 141.0
+offset_bottom = 100.0
 value = 100.0
 texture_progress = ExtResource("1_h331c")
 script = ExtResource("1_1rh5d")
@@ -42,13 +39,10 @@ script = ExtResource("1_1rh5d")
 [node name="Mana" type="TextureProgressBar" parent="." unique_id=45482719]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.171
-anchor_top = 0.58900005
-anchor_right = 1.0
-anchor_bottom = 0.711
-offset_left = 0.074998856
-offset_top = -77.175
-offset_bottom = 58.675
+offset_left = -4.000002
+offset_top = -30.0
+offset_right = 141.0
+offset_bottom = 115.0
 value = 100.0
 texture_progress = ExtResource("3_ybc7q")
 script = ExtResource("2_h331c")
