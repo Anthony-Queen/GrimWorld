@@ -33,9 +33,10 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhqgy"]
 size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
-[node name="Player" type="CharacterBody3D" unique_id=541045291 node_paths=PackedStringArray("animation_player")]
+[node name="Player" type="CharacterBody3D" unique_id=541045291 node_paths=PackedStringArray("camera_3d", "animation_player")]
 axis_lock_linear_y = true
 script = ExtResource("1_3vyb7")
+camera_3d = NodePath("Camera3D")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=2142513921]
@@ -60,6 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019607544, -0.11639404, -
 shape = SubResource("BoxShape3D_qhqgy")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=459222740]
-transform = Transform3D(1, 0, 0, 0, 0.92710537, 0.37480074, 0, -0.37480074, 0.92710537, 0, 0.848662, 2.157484)
+transform = Transform3D(1, 0, 0, 0, 0.92710537, 0.37480077, 0, -0.37480077, 0.92710537, 0, 0.848662, 2.157484)
 current = true
 fov = 85.0

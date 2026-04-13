@@ -1,6 +1,7 @@
 extends Control
 
 @export var exit_prompt: Control
+@export var stats_menu: Control
 
 func _on_button_button_up() -> void:
 	
@@ -14,3 +15,13 @@ func _on_button_button_up() -> void:
 func _on_exit_button_up() -> void:
 	
 	exit_prompt.visible = not exit_prompt.visible
+
+
+func _on_stats_button_up() -> void:
+	
+	stats_menu.visible = not stats_menu.visible
+
+
+func _on_close_button_up() -> void:
+	
+	stats_menu.visible = not stats_menu.visible

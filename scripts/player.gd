@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 class_name Player
 
+@export var camera_3d: Camera3D
 @export var animation_player : AnimationPlayer 
 
 enum States {idle, running, walking, attacking, hurt, dead}
@@ -74,3 +75,11 @@ func set_state(new_state : States) -> void :
 func _on_battle_entered() :
 	
 	pass
+	
+	# I'll do this later
+	
+	#camera_3d.rotation.y = -90
+	
+	#camera_3d.position.x = -3
+	
+	#camera_3d.position.z = 

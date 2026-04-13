@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://so8btfnff40v" path="res://scripts/UI/exit_menu.gd" id="1_clgl0"]
 [ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_fuvnj"]
+[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://assets/Bars/Bar 3 Red0001.png" id="3_sewfn"]
+[ext_resource type="Texture2D" uid="uid://b07w8uvrhsrj" path="res://assets/Bars/Bar 3 Blue0001.png" id="4_u6w4c"]
+[ext_resource type="Texture2D" uid="uid://0y1lqwla0evr" path="res://assets/Bars/Bar 3 Purple0001.png" id="5_67fdm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clgl0"]
 draw_center = false
@@ -48,7 +51,58 @@ border_width_top = 2
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
-[node name="ExitMenu" type="Control" unique_id=1702023806 node_paths=PackedStringArray("exit_prompt")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjlm5"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.39308554, 0.39308554, 0.39308533, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1c8h"]
+font_size = 120
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbadn"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jw4k"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuchg"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_om71q"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_hb4h2"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_fljgc"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrao2"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_st8gi"]
+font_size = 24
+
+[node name="ExitMenu" type="Control" unique_id=1702023806 node_paths=PackedStringArray("exit_prompt", "stats_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,6 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_clgl0")
 exit_prompt = NodePath("ExitPrompt")
+stats_menu = NodePath("StatsMenu")
 
 [node name="Map" type="Sprite2D" parent="." unique_id=1627714742]
 
@@ -226,5 +281,196 @@ size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "yes"
 
+[node name="StatsMenu" type="Control" parent="." unique_id=320344460]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Border" type="PanelContainer" parent="StatsMenu" unique_id=245784376]
+z_index = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vjlm5")
+
+[node name="Bg" type="ColorRect" parent="StatsMenu" unique_id=209134653]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.23392546, 0.23392546, 0.23392543, 1)
+
+[node name="Close" type="Button" parent="StatsMenu" unique_id=71765130]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 105.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 32
+text = "Close"
+flat = true
+
+[node name="Stats" type="Label" parent="StatsMenu" unique_id=1902064583]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 165.0
+text = "Stats"
+label_settings = SubResource("LabelSettings_m1c8h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StatsMenu" unique_id=565218372]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 226.0
+offset_right = 1132.0
+offset_bottom = 638.0
+
+[node name="PanelContainer" type="PanelContainer" parent="StatsMenu/HBoxContainer" unique_id=124669791]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_dbadn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsMenu/HBoxContainer/PanelContainer" unique_id=806634240]
+custom_minimum_size = Vector2(537, 395)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 32
+
+[node name="Hp" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer" unique_id=66750579]
+layout_mode = 2
+text = "HP"
+
+[node name="Health" type="TextureProgressBar" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer/Hp" unique_id=499838618]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -59.0
+offset_right = 546.0
+offset_bottom = 69.0
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("3_sewfn")
+
+[node name="Mana" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1745149378]
+layout_mode = 2
+text = "Mana"
+
+[node name="Mana" type="TextureProgressBar" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer/Mana" unique_id=171230772]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -59.0
+offset_right = 546.0
+offset_bottom = 69.0
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("4_u6w4c")
+
+[node name="Insanity" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer" unique_id=74994614]
+layout_mode = 2
+text = "Insanity"
+
+[node name="Insanity" type="TextureProgressBar" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer/Insanity" unique_id=2071647686]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -59.0
+offset_right = 546.0
+offset_bottom = 69.0
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("5_67fdm")
+
+[node name="PanelContainer" type="PanelContainer" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer" unique_id=166489711]
+custom_minimum_size = Vector2(527, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3jw4k")
+
+[node name="CharSprite" type="Sprite2D" parent="StatsMenu/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=1150861635]
+
+[node name="PanelContainer2" type="PanelContainer" parent="StatsMenu/HBoxContainer" unique_id=121600281]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_kuchg")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="StatsMenu/HBoxContainer/PanelContainer2" unique_id=1317121668]
+custom_minimum_size = Vector2(537, 395)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 24
+
+[node name="Levels" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2" unique_id=587622955]
+layout_mode = 2
+text = "Levels"
+label_settings = SubResource("LabelSettings_om71q")
+horizontal_alignment = 1
+
+[node name="Health" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2" unique_id=1568544178]
+layout_mode = 2
+text = "Health"
+label_settings = SubResource("LabelSettings_hb4h2")
+
+[node name="SpinBox" type="SpinBox" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2/Health" unique_id=1578494431]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 520.5
+offset_bottom = 33.0
+max_value = 99.0
+rounded = true
+update_on_text_changed = true
+
+[node name="Mana" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2" unique_id=227418893]
+layout_mode = 2
+text = "Mana"
+label_settings = SubResource("LabelSettings_fljgc")
+
+[node name="SpinBox" type="SpinBox" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2/Mana" unique_id=2065353868]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 520.5
+offset_bottom = 33.0
+max_value = 99.0
+rounded = true
+update_on_text_changed = true
+
+[node name="Damage" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2" unique_id=836829476]
+layout_mode = 2
+text = "damage"
+label_settings = SubResource("LabelSettings_xrao2")
+
+[node name="SpinBox" type="SpinBox" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2/Damage" unique_id=1493391969]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 520.5
+offset_bottom = 33.0
+max_value = 99.0
+rounded = true
+update_on_text_changed = true
+
+[node name="Speed" type="Label" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2" unique_id=168938340]
+layout_mode = 2
+text = "Speed"
+label_settings = SubResource("LabelSettings_st8gi")
+
+[node name="SpinBox" type="SpinBox" parent="StatsMenu/HBoxContainer/PanelContainer2/VBoxContainer2/Speed" unique_id=1875895844]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 520.5
+offset_bottom = 33.0
+max_value = 99.0
+rounded = true
+update_on_text_changed = true
+
+[connection signal="button_up" from="OptionsContainer/StatsBorder/Stats" to="." method="_on_stats_button_up"]
 [connection signal="button_up" from="OptionsContainer/ExitBorder/Exit" to="." method="_on_exit_button_up"]
 [connection signal="button_up" from="ExitPrompt/ButtonBorder/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="StatsMenu/Close" to="." method="_on_close_button_up"]
