@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://cnt8n12pxpwf2"]
 
 [ext_resource type="Texture2D" uid="uid://bl2eijklf2qye" path="res://assets/Backgrounds/Battleground3/Bright/Battleground3.png" id="1_n4iv4"]
+[ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://assets/Original/Main_Character.png" id="2_aln3r"]
 [ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_r3b37"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdofh"]
+atlas = ExtResource("2_aln3r")
+region = Rect2(0, 0, 480, 900)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4iv4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdofh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r3b37"]
 
@@ -29,7 +43,8 @@ texture = ExtResource("1_n4iv4")
 expand_mode = 1
 
 [node name="Carachter1" type="AnimatedSprite2D" parent="." unique_id=999283942]
-position = Vector2(824, 354)
+position = Vector2(802, 321.99997)
+scale = Vector2(0.154, 0.154)
 sprite_frames = SubResource("SpriteFrames_n4iv4")
 
 [node name="Carachter2" type="AnimatedSprite2D" parent="." unique_id=758847840]
@@ -46,7 +61,7 @@ sprite_frames = SubResource("SpriteFrames_mdofh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=378028887]
 layout_mode = 0
-offset_left = 1002.0
+offset_left = 975.0
 offset_top = 47.0
 offset_right = 1151.0
 offset_bottom = 596.0

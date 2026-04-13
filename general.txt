@@ -10,7 +10,7 @@ Draw = Draw (No shit)
 
 To-Do List: (Priorities first)
 	
-	-Make Spawn Map -> Anthony'll do it later, rn working on smthg else
+	-Make Spawn Map
 	
 	-Make Turn Based System for fighting
 	
