@@ -1,13 +1,8 @@
 extends Sprite3D
 
-class_name Enemy
-
-@onready var characters : Node3D = $"../../Characters"
+class_name Character
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-var target_index : int = randi() % 3
-var target : Sprite3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,10 +13,30 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func take_damage() :
+	
+	animation_player.play("hurt")
+
 func attack() :
 	
-	target = characters.get_child(target_index)
-	
 	animation_player.play("attack")
+
+func cast_spell() :
 	
-	target.take_damage()
+	animation_player.play("cast")
+
+func defend() :
+	
+	animation_player.play("defend")
+
+func use_item() :
+	
+	animation_player.play("use_item")
+
+func spare() :
+	
+	animation_player.play("spare")
+
+func run() :
+	
+	animation_player.play("run")

@@ -4,10 +4,13 @@ extends Node3D
 @export var audio_player: AudioStreamPlayer
 
 var main_menu : PackedScene = load("res://scenes/UI/main_menu.tscn")
+var battle : PackedScene = load("res://scenes/battle.tscn")
 
 func _ready() -> void:
 	
 	Globals.audio_stream_player = $AudioStreamPlayer
+	
+	Globals.connect("entered_battle", _on_battle_entered)
 	
 	if FileAccess.file_exists("user://settings.tres") :
 		
@@ -18,3 +21,11 @@ func _ready() -> void:
 	audio_player.volume_linear = SaveData.settings.master_sound
 	
 	add_child(main_menu.instantiate())
+
+
+
+func _on_battle_entered() :
+	
+	get_child(2).queue_free()
+	
+	add_child(battle.instantiate())

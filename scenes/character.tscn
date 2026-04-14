@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnvtsw51tjj4a"]
+
+[ext_resource type="Script" uid="uid://b6safnvxbrvhl" path="res://scripts/character.gd" id="1_agfs1"]
+
+[sub_resource type="Animation" id="Animation_rkhd4"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lrhn5"]
+_data = {
+&"attack": SubResource("Animation_rkhd4")
+}
+
+[node name="Character" type="Sprite3D" unique_id=1078168755 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_agfs1")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=283846898]
+libraries/ = SubResource("AnimationLibrary_lrhn5")

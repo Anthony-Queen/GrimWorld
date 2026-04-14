@@ -13,9 +13,6 @@ const speed : int = 4
 
 var direction : Vector2
 
-func _ready() -> void:
-	
-	Globals.connect("entered_battle", _on_battle_entered)
 
 func _physics_process(_delta: float) -> void :  #Need to add state walking
 	
@@ -70,16 +67,3 @@ func set_state(new_state : States) -> void :
 	elif state == States.dead :
 		
 		animation_player.play("death")
-
-
-func _on_battle_entered() :
-	
-	pass
-	
-	# I'll do this later
-	
-	#camera_3d.rotation.y = -90
-	
-	#camera_3d.position.x = -3
-	
-	#camera_3d.position.z = 
