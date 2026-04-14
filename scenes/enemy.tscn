@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ba43cd1lwgtqt"]
+
+[ext_resource type="Script" uid="uid://dmyv36ocxb8xg" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="Animation" id="Animation_md0e3"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ra3w"]
+_data = {
+&"attack": SubResource("Animation_md0e3")
+}
+
+[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_7p1mj")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1879315971]
+libraries/ = SubResource("AnimationLibrary_4ra3w")
