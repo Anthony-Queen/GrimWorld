@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cnt8n12pxpwf2"]
 
+[ext_resource type="Script" uid="uid://f702d3kpp74" path="res://scripts/battle_action.gd" id="2_aln3r"]
 [ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_r3b37"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4iv4"]
@@ -69,12 +70,14 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=472318959]
+visible = false
 layout_mode = 0
 offset_left = 700.0
 offset_top = 250.0
 offset_right = 930.0
 offset_bottom = 425.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_n4iv4")
+script = ExtResource("2_aln3r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1697860383]
 layout_mode = 2
@@ -109,3 +112,11 @@ text = "Spare"
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
 text = "Run"
+
+[connection signal="visibility_changed" from="PanelContainer" to="PanelContainer" method="_on_visibility_changed"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Attack" to="PanelContainer" method="_on_attack_button_up"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Spell" to="PanelContainer" method="_on_spell_button_up"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Defend" to="PanelContainer" method="_on_defend_button_up"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Item" to="PanelContainer" method="_on_item_button_up"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Spare" to="PanelContainer" method="_on_spare_button_up"]
+[connection signal="button_up" from="PanelContainer/VBoxContainer/Run" to="PanelContainer" method="_on_run_button_up"]

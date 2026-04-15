@@ -20,6 +20,7 @@ signal turn_changed
 var isChoiceBeingMade: bool = false
 var InBattle : bool = false
 var turn : int = 0
+var char_turn : Character
 
 var current_char1 : Player
 var current_char2 : Player
@@ -30,6 +31,8 @@ func _ready() -> void:
 	
 	self.connect("turn_changed", _on_turn_changed)
 
-func _on_turn_changed() :
+func _on_turn_changed(cur_char : Character) :
 	
 	turn += 1
+	
+	cur_char.your_turn = false
