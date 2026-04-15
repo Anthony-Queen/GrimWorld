@@ -3,7 +3,9 @@ extends CharacterBody3D
 class_name Player
 
 @export var camera_3d: Camera3D
-@export var animation_player : AnimationPlayer 
+@export var animation_player : AnimationPlayer
+ 
+@export var player_sprite: Sprite3D
 
 enum States {idle, running, walking, attacking, hurt, dead}
 
@@ -12,6 +14,13 @@ var state: States = States.idle : set = set_state
 const speed : int = 4
 
 var direction : Vector2
+
+func _ready() -> void:
+	
+	Globals.current_char1 = self
+	Globals.current_char2 = self
+	Globals.current_char3 = self
+	Globals.current_char4 = self
 
 
 func _physics_process(_delta: float) -> void :  #Need to add state walking

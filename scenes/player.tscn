@@ -33,21 +33,23 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhqgy"]
 size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
-[node name="Player" type="CharacterBody3D" unique_id=541045291 node_paths=PackedStringArray("camera_3d", "animation_player")]
+[node name="Player" type="CharacterBody3D" unique_id=541045291 node_paths=PackedStringArray("camera_3d", "animation_player", "player_sprite")]
 axis_lock_linear_y = true
 script = ExtResource("1_3vyb7")
 camera_3d = NodePath("Camera3D")
 animation_player = NodePath("AnimationPlayer")
+player_sprite = NodePath("PlayerSprite")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="." unique_id=2142513921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005493164, -0.11338502, -0.0028076172)
 shape = SubResource("BoxShape3D_g2els")
 
 [node name="PlayerSprite" type="Sprite3D" parent="." unique_id=826601590]
-transform = Transform3D(2.582, 0, 0, 0, 2.582, 0, 0, 0, 2.582, 0.037906647, -0.10304576, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.037906647, -0.10304576, 0)
 texture_filter = 0
 texture = ExtResource("2_g2els")
-region_enabled = true
+hframes = 10
+vframes = 15
 region_rect = Rect2(360.4283, 224.60837, 30.223877, 41.49417)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=742483359]

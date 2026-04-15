@@ -50,8 +50,9 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_4ra3w"]
 size = Vector3(0.6154938, 0.9682617, 0.18765259)
 
-[node name="NPC" type="CharacterBody3D" unique_id=1377674737]
+[node name="NPC" type="CharacterBody3D" unique_id=1377674737 node_paths=PackedStringArray("npc_sprite")]
 script = ExtResource("1_6xvi5")
+npc_sprite = NodePath("NpcSprite")
 max_health = 20
 speed = 2
 

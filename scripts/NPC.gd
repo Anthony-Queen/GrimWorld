@@ -8,6 +8,8 @@ class_name NPC
 @onready var SmallDialogue: Sprite3D = $SmallDialogue
 @onready var player: Player = $"../Player"
 
+@export var npc_sprite: Sprite3D
+
 
 @export var max_health : int
 @export var weaknesses : Array[String]
