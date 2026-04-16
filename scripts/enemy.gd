@@ -6,6 +6,8 @@ class_name Enemy
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+var class_name_ : String = "Enemy"
+
 var target_index : int = randi() % 3
 var target : Sprite3D
 
@@ -34,9 +36,11 @@ func _process(_delta: float) -> void:
 		
 		self.position.x = -2.5
 
+
 func take_damage() :
 	
 	animation_player.play("hurt")
+
 
 func attack() :
 	

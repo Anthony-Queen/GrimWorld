@@ -37,4 +37,12 @@ func _on_turn_changed(cur_char : Sprite3D) :
 	
 	cur_char.your_turn = false
 	
-	cur_char.battle_hud.get_child(1).visible = false
+	if cur_char.class_name_ == "Character" :
+		
+		cur_char.battle_hud.get_child(1).visible = false
+	
+	else :
+		
+		if cur_char.get_index() == 3 :
+			
+			turn = 0

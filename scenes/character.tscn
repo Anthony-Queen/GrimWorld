@@ -5,14 +5,17 @@
 [sub_resource type="Animation" id="Animation_rkhd4"]
 resource_name = "attack"
 
+[sub_resource type="Animation" id="Animation_agfs1"]
+resource_name = "hurt"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lrhn5"]
 _data = {
-&"attack": SubResource("Animation_rkhd4")
+&"attack": SubResource("Animation_rkhd4"),
+&"hurt": SubResource("Animation_agfs1")
 }
 
-[node name="Character" type="Sprite3D" unique_id=1078168755 node_paths=PackedStringArray("animation_player")]
+[node name="Character" type="Sprite3D" unique_id=1078168755]
 script = ExtResource("1_agfs1")
-animation_player = NodePath("AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=283846898]
 libraries/ = SubResource("AnimationLibrary_lrhn5")

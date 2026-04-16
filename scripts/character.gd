@@ -7,6 +7,8 @@ class_name Character
 
 var your_turn : bool = false
 
+var class_name_ : String = "Character"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
