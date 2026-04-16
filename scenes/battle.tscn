@@ -76,6 +76,9 @@ fov = 100.0
 
 [node name="battle HUD" parent="." unique_id=1109364801 instance=ExtResource("4_a12nh")]
 
+[node name="PanelContainer" parent="battle HUD" index="1" unique_id=472318959]
+offset = Vector2(25, 25)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1022023833]
 transform = Transform3D(0.036746696, 0.46057892, 0.88685775, 0.01495898, -0.88761127, 0.46035036, 0.9992127, -0.0036498685, -0.03950657, 19.538343, 9.465458, -0.5096102)
 light_color = Color(0.7882353, 0.79607844, 0.8392157, 1)
@@ -84,3 +87,5 @@ light_angular_distance = 45.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2109246576]
 environment = SubResource("Environment_lpir7")
+
+[editable path="battle HUD"]
