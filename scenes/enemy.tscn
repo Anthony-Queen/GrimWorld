@@ -2,20 +2,59 @@
 
 [ext_resource type="Script" uid="uid://dmyv36ocxb8xg" path="res://scripts/enemy.gd" id="1_7p1mj"]
 
-[sub_resource type="Animation" id="Animation_md0e3"]
-resource_name = "attack"
-
-[sub_resource type="Animation" id="Animation_7p1mj"]
-resource_name = "hurt"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ra3w"]
-_data = {
-&"attack": SubResource("Animation_md0e3"),
-&"hurt": SubResource("Animation_7p1mj")
+[sub_resource type="Animation" id="Animation_lrhn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
-[node name="Enemy" type="Sprite3D" unique_id=1052066221]
-script = ExtResource("1_7p1mj")
+[sub_resource type="Animation" id="Animation_rkhd4"]
+resource_name = "attack"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1879315971]
-libraries/ = SubResource("AnimationLibrary_4ra3w")
+[sub_resource type="Animation" id="Animation_agfs1"]
+resource_name = "hurt"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [46, 46, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p1mj"]
+_data = {
+&"RESET": SubResource("Animation_lrhn5"),
+&"attack": SubResource("Animation_rkhd4"),
+&"hurt": SubResource("Animation_agfs1")
+}
+
+[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("timer")]
+hframes = 10
+vframes = 18
+script = ExtResource("1_7p1mj")
+timer = NodePath("Timer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=232169584]
+libraries/ = SubResource("AnimationLibrary_7p1mj")
+
+[node name="Timer" type="Timer" parent="." unique_id=408492943]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

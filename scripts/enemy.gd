@@ -2,13 +2,14 @@ extends Sprite3D
 
 class_name Enemy
 
+@export var timer: Timer
+
 @onready var characters : Node3D = $"../../Characters"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var class_name_ : String = "Enemy"
 
-var target_index : int = randi() % 3
 var target : Sprite3D
 
 var your_turn : bool = false
@@ -28,9 +29,11 @@ func _process(_delta: float) -> void:
 	
 	if your_turn == true :
 		
-		self.position.x = -1.5
+		if timer.is_stopped() == true :
+			
+			timer.start()
 		
-		attack()
+		self.position.x = -1.5
 	
 	else :
 		
@@ -44,6 +47,8 @@ func take_damage() :
 
 func attack() :
 	
+	var target_index : int = randi() % 4
+	
 	target = characters.get_child(target_index)
 	
 	target.take_damage()
@@ -51,3 +56,8 @@ func attack() :
 	animation_player.play("attack")
 	
 	Globals.emit_signal("turn_changed", self)
+
+
+func _on_timer_timeout() -> void:
+	
+	attack()
