@@ -36,3 +36,5 @@ func _on_turn_changed(cur_char : Character) :
 	turn += 1
 	
 	cur_char.your_turn = false
+	
+	cur_char.battle_hud.get_child(1).visible = false
