@@ -1,6 +1,7 @@
 extends PanelContainer
 
 @export var offset : Vector2
+@export var camera_3d: Camera3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,8 +16,7 @@ func _process(_delta: float) -> void:
 
 func _on_visibility_changed() -> void:
 	
-	self.position.x = Globals.char_turn.position.x
-	self.position.y = Globals.char_turn.position.y
+	self.position = camera_3d.unproject_position(Globals.char_turn.position) + offset
 
 
 func _on_attack_button_up() -> void:
