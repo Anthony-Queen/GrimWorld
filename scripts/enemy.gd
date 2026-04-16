@@ -9,19 +9,41 @@ class_name Enemy
 var target_index : int = randi() % 3
 var target : Sprite3D
 
+var your_turn : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	
+	self.texture = Globals.get("current_char" + str(get_index() + 1)).player_sprite.texture
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	
+	if (get_index() + 4) == Globals.turn :
+		
+		your_turn = true
+	
+	if your_turn == true :
+		
+		self.position.x = -1.5
+		
+		attack()
+	
+	else :
+		
+		self.position.x = -2.5
+
+func take_damage() :
+	
+	animation_player.play("hurt")
 
 func attack() :
 	
 	target = characters.get_child(target_index)
 	
+	target.take_damage()
+	
 	animation_player.play("attack")
 	
-	target.take_damage()
+	Globals.emit_signal("turn_changed", self)

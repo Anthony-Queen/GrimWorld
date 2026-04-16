@@ -31,7 +31,7 @@ func _ready() -> void:
 	
 	self.connect("turn_changed", _on_turn_changed)
 
-func _on_turn_changed(cur_char : Character) :
+func _on_turn_changed(cur_char : Sprite3D) :
 	
 	turn += 1
 	
