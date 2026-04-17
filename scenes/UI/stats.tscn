@@ -1,20 +1,22 @@
 [gd_scene format=3 uid="uid://c3rpqut2nedpx"]
 
-[ext_resource type="Script" uid="uid://liw1wi46cw2c" path="res://scripts/UI/health.gd" id="1_1rh5d"]
 [ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://assets/Bars/Bar 3 Red0001.png" id="1_h331c"]
-[ext_resource type="Script" uid="uid://cluojq0kpit7u" path="res://scripts/UI/mana.gd" id="2_h331c"]
+[ext_resource type="Script" uid="uid://b0au6f41xj7x5" path="res://scripts/UI/stats.gd" id="1_ybc7q"]
 [ext_resource type="Texture2D" uid="uid://b07w8uvrhsrj" path="res://assets/Bars/Bar 3 Blue0001.png" id="3_ybc7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsoi"]
 bg_color = Color(0, 0, 0, 0.21960784)
 
-[node name="Stats" type="Panel" unique_id=1358228673]
+[node name="Stats" type="Panel" unique_id=1358228673 node_paths=PackedStringArray("health", "mana")]
 anchors_preset = -1
 anchor_right = 0.15200001
 anchor_bottom = 0.116000004
 offset_right = -0.104003906
 offset_bottom = -0.16799927
 theme_override_styles/panel = SubResource("StyleBoxFlat_kpsoi")
+script = ExtResource("1_ybc7q")
+health = NodePath("Health")
+mana = NodePath("Mana")
 
 [node name="Label" type="Label" parent="." unique_id=1604069753]
 layout_mode = 1
@@ -34,7 +36,6 @@ offset_right = 141.0
 offset_bottom = 100.0
 value = 100.0
 texture_progress = ExtResource("1_h331c")
-script = ExtResource("1_1rh5d")
 
 [node name="Mana" type="TextureProgressBar" parent="." unique_id=45482719]
 layout_mode = 1
@@ -45,4 +46,3 @@ offset_right = 141.0
 offset_bottom = 115.0
 value = 100.0
 texture_progress = ExtResource("3_ybc7q")
-script = ExtResource("2_h331c")

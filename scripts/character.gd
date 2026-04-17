@@ -2,8 +2,13 @@ extends Sprite3D
 
 class_name Character
 
+
+@export var stats: Stats
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var battle_hud: Control = $"../../battle HUD"
+
+var dead : bool = false
 
 var your_turn : bool = false
 
@@ -36,7 +41,15 @@ func _process(_delta: float) -> void:
 
 func take_damage() :
 	
+	stats.health.value -= 10
+	
 	animation_player.play("hurt")
+	
+	if stats.health.value <= 0 :
+		
+		dead = true
+		
+		animation_player.play("dead")
 
 func attack() :
 	
@@ -45,6 +58,8 @@ func attack() :
 	Globals.emit_signal("turn_changed", self)
 
 func cast_spell() :
+	
+	stats.mana.value -= 10
 	
 	animation_player.play("cast")
 	

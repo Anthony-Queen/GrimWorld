@@ -20,6 +20,12 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_rkhd4"]
 resource_name = "attack"
 
+[sub_resource type="Animation" id="Animation_my7n2"]
+resource_name = "cast"
+
+[sub_resource type="Animation" id="Animation_dp8ca"]
+resource_name = "dead"
+
 [sub_resource type="Animation" id="Animation_agfs1"]
 resource_name = "hurt"
 length = 0.2
@@ -41,6 +47,8 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_lrhn5"),
 &"attack": SubResource("Animation_rkhd4"),
+&"cast": SubResource("Animation_my7n2"),
+&"dead": SubResource("Animation_dp8ca"),
 &"hurt": SubResource("Animation_agfs1")
 }
 

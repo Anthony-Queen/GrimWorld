@@ -51,11 +51,17 @@ func attack() :
 	
 	target = characters.get_child(target_index)
 	
-	target.take_damage()
+	if target.dead == true :
+		
+		target_index = randi() % 4
 	
-	animation_player.play("attack")
-	
-	Globals.emit_signal("turn_changed", self)
+	else :
+		
+		target.take_damage()
+		
+		animation_player.play("attack")
+		
+		Globals.emit_signal("turn_changed", self)
 
 
 func _on_timer_timeout() -> void:
