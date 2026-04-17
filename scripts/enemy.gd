@@ -2,7 +2,11 @@ extends Sprite3D
 
 class_name Enemy
 
+@export var health: TextureProgressBar
+@export var camera_3d: Camera3D
 @export var timer: Timer
+
+@export var hp_offset : Vector2
 
 @onready var characters : Node3D = $"../../Characters"
 
@@ -36,13 +40,19 @@ func _process(_delta: float) -> void:
 			self.attack()
 		
 		self.position.x = -1.5
+		
+		health.visible = true
 	
 	else :
+		
+		health.visible = false
 		
 		self.position.x = -2.5
 
 
 func take_damage() :
+	
+	health.value -= 50
 	
 	animation_player.play("hurt")
 
@@ -73,3 +83,8 @@ func _on_timer_timeout() -> void:
 	Globals.emit_signal("turn_changed", self)
 	
 	self.attacked = false
+
+
+func _on_health_visibility_changed() -> void:
+	
+	health.position = (camera_3d.unproject_position(self.position) + hp_offset)

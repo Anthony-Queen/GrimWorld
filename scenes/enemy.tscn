@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba43cd1lwgtqt"]
 
 [ext_resource type="Script" uid="uid://dmyv36ocxb8xg" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://assets/Bars/Bar 3 Red0001.png" id="2_md0e3"]
 
 [sub_resource type="Animation" id="Animation_lrhn5"]
 length = 0.001
@@ -44,11 +45,13 @@ _data = {
 &"hurt": SubResource("Animation_agfs1")
 }
 
-[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("timer")]
+[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("health", "timer")]
 hframes = 10
 vframes = 18
 script = ExtResource("1_7p1mj")
+health = NodePath("Health")
 timer = NodePath("Timer")
+hp_offset = Vector2(-50, -100)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=232169584]
 libraries/ = SubResource("AnimationLibrary_7p1mj")
@@ -56,4 +59,13 @@ libraries/ = SubResource("AnimationLibrary_7p1mj")
 [node name="Timer" type="Timer" parent="." unique_id=408492943]
 one_shot = true
 
+[node name="Health" type="TextureProgressBar" parent="." unique_id=1165830978]
+visible = false
+offset_right = 100.0
+offset_bottom = 100.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("2_md0e3")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="visibility_changed" from="Health" to="." method="_on_health_visibility_changed"]
