@@ -14,6 +14,8 @@ var target : Sprite3D
 
 var your_turn : bool = false
 
+var attacked : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -29,9 +31,9 @@ func _process(_delta: float) -> void:
 	
 	if your_turn == true :
 		
-		if timer.is_stopped() == true :
+		if attacked == false :
 			
-			timer.start()
+			self.attack()
 		
 		self.position.x = -1.5
 	
@@ -47,23 +49,27 @@ func take_damage() :
 
 func attack() :
 	
+	self.attacked = true 
+	
 	var target_index : int = randi() % 4
 	
 	target = characters.get_child(target_index)
 	
-	if target.dead == true :
+	while target.dead == true :
 		
 		target_index = randi() % 4
+		
+		target = characters.get_child(target_index)
 	
-	else :
-		
-		target.take_damage()
-		
-		animation_player.play("attack")
-		
-		Globals.emit_signal("turn_changed", self)
+	timer.start()
 
 
 func _on_timer_timeout() -> void:
 	
-	attack()
+	target.take_damage()
+	
+	animation_player.play("attack")
+	
+	Globals.emit_signal("turn_changed", self)
+	
+	self.attacked = false

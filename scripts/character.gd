@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 		
 		your_turn = true
 	
-	if your_turn == true :
+	if your_turn == true and not dead :
 		
 		Globals.char_turn = self
 		
@@ -35,13 +35,18 @@ func _process(_delta: float) -> void:
 		
 		battle_hud.get_child(1).visible = true
 	
-	else :
+	elif your_turn == true and dead :
+		
+		Globals.emit_signal("turn_changed", self)
+	
+	elif your_turn == false :
 		
 		self.position.x = 2.5
 
+
 func take_damage() :
 	
-	stats.health.value -= 10
+	stats.health.value -= 50
 	
 	animation_player.play("hurt")
 	

@@ -54,7 +54,6 @@ timer = NodePath("Timer")
 libraries/ = SubResource("AnimationLibrary_7p1mj")
 
 [node name="Timer" type="Timer" parent="." unique_id=408492943]
-wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
