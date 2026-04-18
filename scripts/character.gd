@@ -6,6 +6,7 @@ class_name Character
 @export var stats: Stats
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var enemies: Node3D = $"../../Enemies"
 @onready var battle_hud: Control = $"../../battle HUD"
 
 var dead : bool = false
@@ -13,6 +14,10 @@ var dead : bool = false
 var your_turn : bool = false
 
 var class_name_ : String = "Character"
+
+var target_index : int = 0
+
+var target : Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,7 +32,7 @@ func _process(_delta: float) -> void:
 		
 		your_turn = true
 	
-	if your_turn == true and not dead :
+	if your_turn and not dead :
 		
 		Globals.char_turn = self
 		
@@ -35,11 +40,11 @@ func _process(_delta: float) -> void:
 		
 		battle_hud.get_child(1).visible = true
 	
-	elif your_turn == true and dead :
+	elif your_turn and dead :
 		
 		Globals.emit_signal("turn_changed", self)
 	
-	elif your_turn == false :
+	elif not your_turn :
 		
 		self.position.x = 2.5
 
@@ -58,7 +63,11 @@ func take_damage() :
 
 func attack() :
 	
+	target = enemies.get_child(target_index)
+	
 	animation_player.play("attack")
+	
+	target.take_damage()
 	
 	Globals.emit_signal("turn_changed", self)
 
@@ -93,3 +102,13 @@ func run() :
 	animation_player.play("run")
 	
 	Globals.emit_signal("turn_changed", self)
+
+func _input(event: InputEvent) -> void:
+	
+	if event.is_action_released("ui_right") :
+		
+		target_index += 1
+	
+	elif event.is_action_released("ui_left") :
+		
+		target_index -= 1 

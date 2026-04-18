@@ -21,6 +21,9 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_rkhd4"]
 resource_name = "attack"
 
+[sub_resource type="Animation" id="Animation_md0e3"]
+resource_name = "dead"
+
 [sub_resource type="Animation" id="Animation_agfs1"]
 resource_name = "hurt"
 length = 0.2
@@ -42,6 +45,7 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_lrhn5"),
 &"attack": SubResource("Animation_rkhd4"),
+&"dead": SubResource("Animation_md0e3"),
 &"hurt": SubResource("Animation_agfs1")
 }
 
@@ -60,7 +64,6 @@ libraries/ = SubResource("AnimationLibrary_7p1mj")
 one_shot = true
 
 [node name="Health" type="TextureProgressBar" parent="." unique_id=1165830978]
-visible = false
 offset_right = 100.0
 offset_bottom = 100.0
 value = 100.0
