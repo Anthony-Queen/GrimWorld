@@ -21,12 +21,14 @@ func _on_visibility_changed() -> void:
 
 func _on_attack_button_up() -> void:
 	
-	Globals.char_turn.attack()
+	Globals.char_turn.attacking = true
+	
+	Globals.char_turn.choose_enemy()
 
 
 func _on_spell_button_up() -> void:
 	
-	Globals.char_turn.cast_spell()
+	Globals.char_turn.choose_enemy()
 
 
 func _on_defend_button_up() -> void:
@@ -36,12 +38,12 @@ func _on_defend_button_up() -> void:
 
 func _on_item_button_up() -> void:
 	
-	Globals.char_turn.use_item()
+	Globals.char_turn.choose_enemy()
 
 
 func _on_spare_button_up() -> void:
 	
-	Globals.char_turn.spare()
+	Globals.char_turn.choose_enemy()
 
 
 func _on_run_button_up() -> void:

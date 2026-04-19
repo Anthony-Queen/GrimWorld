@@ -9,7 +9,13 @@ class_name Character
 @onready var enemies: Node3D = $"../../Enemies"
 @onready var battle_hud: Control = $"../../battle HUD"
 
+@onready var selector = load("res://scenes/UI/selecter.tscn")
+
 var dead : bool = false
+
+var attacking : bool = false
+
+var choosing : bool = false
 
 var your_turn : bool = false
 
@@ -69,6 +75,10 @@ func attack() :
 	
 	target.take_damage()
 	
+	attacking = false
+	
+	choosing = false
+	
 	Globals.emit_signal("turn_changed", self)
 
 func cast_spell() :
@@ -103,12 +113,45 @@ func run() :
 	
 	Globals.emit_signal("turn_changed", self)
 
+func choose_enemy() :
+	
+	if not choosing :
+		
+		choosing = true
+		
+		target_index = 0
+		
+		target = enemies.get_child(target_index)
+		
+		target.add_child(selector.instantiate())
+
 func _input(event: InputEvent) -> void:
 	
-	if event.is_action_released("ui_right") :
+	if event.is_action_released("ui_right") and choosing and target_index != 0 :
+		
+		target = enemies.get_child(target_index)
+		target.get_child(3).queue_free()
+		
+		target_index -= 1
+		
+		target = enemies.get_child(target_index)
+		target.add_child(selector.instantiate())
+	
+	elif event.is_action_released("ui_left") and choosing and target_index != 3 :
+		
+		target = enemies.get_child(target_index)
+		target.get_child(3).queue_free()
 		
 		target_index += 1
-	
-	elif event.is_action_released("ui_left") :
 		
-		target_index -= 1 
+		target = enemies.get_child(target_index)
+		target.add_child(selector.instantiate())
+	
+	elif event.is_action_released("ui_accept") and choosing :
+		
+		target = enemies.get_child(target_index)
+		target.get_child(3).queue_free()
+		
+		if attacking :
+			
+			attack()

@@ -67,6 +67,8 @@ func take_damage() :
 		dead = true
 		
 		animation_player.play("dead")
+	
+	print("hit" + str(self.get_index()))
 
 
 func attack() :

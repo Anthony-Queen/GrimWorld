@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnt8n12pxpwf2"]
 
-[ext_resource type="Script" uid="uid://f702d3kpp74" path="res://scripts/battle_action.gd" id="2_aln3r"]
+[ext_resource type="Script" uid="uid://f702d3kpp74" path="res://scripts/UI/battle_action.gd" id="2_aln3r"]
 [ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_r3b37"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4iv4"]
@@ -85,32 +85,50 @@ theme_override_constants/separation = 1
 
 [node name="Attack" type="Button" parent="PanelContainer/VBoxContainer" unique_id=626330300]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Attack"
 
 [node name="Spell" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1165403758]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Spell"
 
 [node name="Defend" type="Button" parent="PanelContainer/VBoxContainer" unique_id=675127005]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Defend"
 
 [node name="Item" type="Button" parent="PanelContainer/VBoxContainer" unique_id=68666862]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Item"
 
 [node name="Spare" type="Button" parent="PanelContainer/VBoxContainer" unique_id=498009233]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Spare"
 
 [node name="Run" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1077111563]
 layout_mode = 2
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_r3b37")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Run"
 
 [connection signal="visibility_changed" from="PanelContainer" to="PanelContainer" method="_on_visibility_changed"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bnms2r64vv5sa"]
+
+[ext_resource type="Script" uid="uid://ysqicxi1yblu" path="res://scripts/UI/selector.gd" id="1_l37ci"]
+
+[node name="Selector" type="Control" unique_id=328396245]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="placeholder" type="ColorRect" parent="." unique_id=1026051069]
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 35.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_l37ci")
+self_offset = Vector2(-2, -70)

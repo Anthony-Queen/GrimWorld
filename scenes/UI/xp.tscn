@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://0y1lqwla0evr" path="res://assets/Bars/Bar 3 Purple0001.png" id="1_aypeu"]
 [ext_resource type="Texture2D" uid="uid://c5gqmstn86lt0" path="res://assets/Bars/Bar 3 Green0001.png" id="2_o1o7n"]
-[ext_resource type="Script" uid="uid://wrjwqoygh1fj" path="res://scripts/xp.gd" id="3_o1o7n"]
+[ext_resource type="Script" uid="uid://wrjwqoygh1fj" path="res://scripts/UI/xp.gd" id="3_o1o7n"]
 
 [node name="XP" type="TextureProgressBar" unique_id=2064951176]
 offset_right = 40.0
