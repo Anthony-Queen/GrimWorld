@@ -18,8 +18,6 @@ var target : Sprite3D
 
 var your_turn : bool = false
 
-var dead : bool = false
-
 var attacked : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +33,7 @@ func _process(_delta: float) -> void:
 		
 		your_turn = true
 	
-	if your_turn and not dead :
+	if your_turn :
 		
 		if attacked == false :
 			
@@ -45,11 +43,7 @@ func _process(_delta: float) -> void:
 		
 		health.visible = true
 	
-	elif your_turn and dead :
-		
-		Globals.emit_signal("turn_changed", self)
-	
-	elif not your_turn :
+	else :
 		
 		health.visible = false
 		
@@ -64,12 +58,9 @@ func take_damage() :
 	
 	if health.value <= 0 :
 		
-		dead = true
-		
 		animation_player.play("dead")
-	
-	print("hit" + str(self.get_index()))
-
+		
+		queue_free()
 
 func attack() :
 	

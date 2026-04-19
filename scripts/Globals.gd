@@ -43,6 +43,6 @@ func _on_turn_changed(cur_char : Sprite3D) :
 	
 	else :
 		
-		if cur_char.get_index() == 3 :
+		if cur_char.get_index() == (cur_char.get_parent().get_child_count() - 1) :
 			
 			turn = 0

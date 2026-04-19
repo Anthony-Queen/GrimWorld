@@ -137,7 +137,7 @@ func _input(event: InputEvent) -> void:
 		target = enemies.get_child(target_index)
 		target.add_child(selector.instantiate())
 	
-	elif event.is_action_released("ui_left") and choosing and target_index != 3 :
+	elif event.is_action_released("ui_left") and choosing and target_index != (target.get_parent().get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
