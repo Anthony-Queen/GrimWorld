@@ -13,6 +13,8 @@ signal choiceScene
 # Combat signals
 signal entered_battle
 signal turn_changed
+signal you_lost
+signal you_won
 
 
 @warning_ignore_restore("unused_signal")
@@ -20,6 +22,7 @@ signal turn_changed
 var isChoiceBeingMade: bool = false
 var InBattle : bool = false
 var turn : int = 0
+var dead : int = 0
 var char_turn : Character
 
 var current_char1 : Player
@@ -31,7 +34,11 @@ func _ready() -> void:
 	
 	self.connect("turn_changed", _on_turn_changed)
 
-func _on_turn_changed(cur_char : Sprite3D) :
+func _on_turn_changed(cur_char : Sprite3D) -> void :
+	
+	if dead == 4 :
+		
+		emit_signal("you_lost")
 	
 	turn += 1
 	

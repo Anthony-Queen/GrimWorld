@@ -50,7 +50,7 @@ func _process(_delta: float) -> void:
 		self.position.x = -2.5
 
 
-func take_damage() :
+func take_damage() -> void :
 	
 	health.value -= 50
 	
@@ -62,7 +62,7 @@ func take_damage() :
 		
 		queue_free()
 
-func attack() :
+func attack() -> void :
 	
 	self.attacked = true 
 	

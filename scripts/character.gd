@@ -55,7 +55,7 @@ func _process(_delta: float) -> void:
 		self.position.x = 2.5
 
 
-func take_damage() :
+func take_damage() -> void :
 	
 	stats.health.value -= 50
 	
@@ -65,9 +65,11 @@ func take_damage() :
 		
 		dead = true
 		
+		Globals.dead += 1
+		
 		animation_player.play("dead")
 
-func attack() :
+func attack() -> void :
 	
 	target = enemies.get_child(target_index)
 	
@@ -81,7 +83,7 @@ func attack() :
 	
 	Globals.emit_signal("turn_changed", self)
 
-func cast_spell() :
+func cast_spell() -> void :
 	
 	stats.mana.value -= 10
 	
@@ -89,31 +91,31 @@ func cast_spell() :
 	
 	Globals.emit_signal("turn_changed", self)
 
-func defend() :
+func defend() -> void :
 	
 	animation_player.play("defend")
 	
 	Globals.emit_signal("turn_changed", self)
 
-func use_item() :
+func use_item() -> void :
 	
 	animation_player.play("use_item")
 	
 	Globals.emit_signal("turn_changed", self)
 
-func spare() :
+func spare() -> void :
 	
 	animation_player.play("spare")
 	
 	Globals.emit_signal("turn_changed", self)
 
-func run() :
+func run() -> void :
 	
 	animation_player.play("run")
 	
 	Globals.emit_signal("turn_changed", self)
 
-func choose_enemy() :
+func choose_enemy() -> void :
 	
 	if not choosing :
 		

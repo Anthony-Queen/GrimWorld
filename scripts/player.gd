@@ -29,18 +29,17 @@ func _physics_process(_delta: float) -> void :  #Need to add state walking
 	if state != States.dead and Globals.InBattle == false :
 		
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		directionz = Input.get_axis("move_up", "move_down")
 		
 		velocity.x = (direction.x * speed)
 		
-		velocity.z = (directionz * speed)
+		velocity.z = (direction.y * speed)
 		
 		if state != States.hurt :
 			
 			if velocity.x == 0 and velocity.z == 0:
 				moving = false
 				state = States.idle
-
+			
 			elif velocity.x < 200 or velocity.z < 200:
 				moving = true
 				state = States.walking

@@ -26,6 +26,9 @@ resource_name = "cast"
 [sub_resource type="Animation" id="Animation_dp8ca"]
 resource_name = "dead"
 
+[sub_resource type="Animation" id="Animation_0lw5n"]
+resource_name = "defend"
+
 [sub_resource type="Animation" id="Animation_agfs1"]
 resource_name = "hurt"
 length = 0.2
@@ -43,13 +46,22 @@ tracks/0/keys = {
 "values": [46, 46, 0]
 }
 
+[sub_resource type="Animation" id="Animation_2cgup"]
+resource_name = "run"
+
+[sub_resource type="Animation" id="Animation_a5ia6"]
+resource_name = "spare"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lrhn5"]
 _data = {
 &"RESET": SubResource("Animation_lrhn5"),
 &"attack": SubResource("Animation_rkhd4"),
 &"cast": SubResource("Animation_my7n2"),
 &"dead": SubResource("Animation_dp8ca"),
-&"hurt": SubResource("Animation_agfs1")
+&"defend": SubResource("Animation_0lw5n"),
+&"hurt": SubResource("Animation_agfs1"),
+&"run": SubResource("Animation_2cgup"),
+&"spare": SubResource("Animation_a5ia6")
 }
 
 [node name="Character" type="Sprite3D" unique_id=1078168755]
