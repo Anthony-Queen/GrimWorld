@@ -5,16 +5,18 @@ extends Area3D
 var current_pos: Vector3
 var old_pos: Vector3
 var randFloat: float
-var timer = get_tree().create_timer(1.0)
 
+func _process(_delta: float) -> void:
+	check_encounter()
 
-func _physics_process(delta: float) -> void:
-	#old_pos = current_pos
-	current_pos = Vector3(player.position.y, player.position.z, player.position.x)
-	if self in playerCollision.get_overlapping_areas() and player.moving == true and timer.timeout:
-		await timer.timeout
+func check_encounter():
+	set_process(false)
+	var timer = get_tree().create_timer(1.0)
+	await timer.timeout
+	if self in playerCollision.get_overlapping_areas() and player.moving == true:
 		randFloat = randf()
-		if randFloat < 0.8:
+		if randFloat < 0.9:
 			print("Nothing happened lolz")
 		else:
 			print("Random Encounter")
+	set_process(true)
