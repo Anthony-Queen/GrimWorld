@@ -16,5 +16,3 @@ func _process(_delta: float) -> void:
 func _on_you_lost() -> void :
 	
 	print("dead")
-	
-	

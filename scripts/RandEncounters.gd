@@ -19,12 +19,16 @@ func check_encounter() -> void:
 	if self in playerCollision.get_overlapping_areas() and player.moving == true:
 		
 		randFloat = randf()
-		if randFloat < 0.9:
+		
+		if randFloat < 0.75:
 			
 			print("Nothing happened lolz")
 		
 		else:
 			
 			print("Random Encounter")
+			
+			Globals.InBattle = true
+			Globals.emit_signal("entered_battle")
 	
 	set_process(true)
