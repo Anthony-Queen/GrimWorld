@@ -21,7 +21,7 @@ var pos : Vector3
 
 var intereactable : bool = false
 
-func _ready() -> void: 
+func _ready() -> void : 
 	
 	Globals.connect("choice1", _on_choice_1)
 	Globals.connect("choice2", _on_choice_2)
@@ -42,12 +42,12 @@ func _physics_process(_delta: float) -> void :
 		dialogue.visible = false
 		intereactable = false
 
-func _on_choice_1() :
+func _on_choice_1() -> void :
 	
 	Globals.InBattle = true
 	
 	Globals.emit_signal("entered_battle")
 
-func _on_choice_2() :
+func _on_choice_2() -> void :
 	
 	pass

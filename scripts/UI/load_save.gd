@@ -5,7 +5,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func change_scene_to_game(n_save : int) : 
+func change_scene_to_game(n_save : int) -> void : 
 	
 	var game : PackedScene = load("res://scenes/world.tscn")
 	

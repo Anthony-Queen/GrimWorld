@@ -1,7 +1,7 @@
 extends Node3D
 
-var ChoiceScene = load("res://scenes/UI/Dialoguechoices.tscn")
-var ExitScene = load("res://scenes/UI/exit_menu.tscn")
+var ChoiceScene : PackedScene = load("res://scenes/UI/Dialoguechoices.tscn")
+var ExitScene : PackedScene = load("res://scenes/UI/exit_menu.tscn")
 
 var exit_scene : bool = false
 

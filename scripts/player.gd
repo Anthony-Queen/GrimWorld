@@ -13,7 +13,6 @@ var state: States = States.idle : set = set_state
 const speed : int = 4
 
 var direction : Vector2
-var directionz
 var moving: bool = false
 
 func _ready() -> void:

@@ -9,7 +9,7 @@ class_name Character
 @onready var enemies: Node3D = $"../../Enemies"
 @onready var battle_hud: Control = $"../../battle HUD"
 
-@onready var selector = load("res://scenes/UI/selector.tscn")
+@onready var selector : PackedScene = load("res://scenes/UI/selector.tscn")
 
 var dead : bool = false
 

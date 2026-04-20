@@ -1,19 +1,20 @@
 extends Area3D
 
-@onready var player = $"../Player"
-@onready var playerCollision = $"../Player/PlayerArea"
+@onready var player :Player = $"../Player"
+@onready var playerCollision : Area2D = $"../Player/PlayerArea"
+
 var current_pos: Vector3
 var old_pos: Vector3
 var randFloat: float
 
-func _process(_delta: float) -> void:
+func _process(_delta: float) -> void :
 	
 	check_encounter()
 
-func check_encounter() -> void:
+func check_encounter() -> void :
 	
 	set_process(false)
-	var timer = get_tree().create_timer(1.0)
+	var timer : SceneTreeTimer = get_tree().create_timer(1.0)
 	await timer.timeout
 	
 	if self in playerCollision.get_overlapping_areas() and player.moving == true:

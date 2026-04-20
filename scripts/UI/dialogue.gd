@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	Dialogue = [Text, Text2, Text3, Text4, Text5, Text6, Text7, Text8, Text9]
 
-func _input(event):
+func _input(event) -> void :
 	
 	if event.is_action_pressed("ui_accept") and npc.intereactable :
 		
@@ -29,7 +29,7 @@ func _input(event):
 			
 			change_text()
 
-func change_text():
+func change_text() -> void :
 	# Check if you wrote something in the text, othwerwise finish conversation
 	if Dialogue[x] != "":
 		$Label.text = Dialogue[x]
@@ -44,7 +44,7 @@ func change_text():
 			
 			print("Nothing to see here...")
 
-func make_choice():
+func make_choice() -> void :
 	
 	Globals.choiceScene.emit() # Connects to world.gd
 	

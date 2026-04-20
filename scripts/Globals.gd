@@ -30,7 +30,7 @@ var current_char2 : Player
 var current_char3 : Player
 var current_char4 : Player
 
-func _ready() -> void:
+func _ready() -> void :
 	
 	self.connect("turn_changed", _on_turn_changed)
 

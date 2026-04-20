@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 
-func _on_battle_entered() :
+func _on_battle_entered() -> void :
 	
 	get_child(2).queue_free()
 	
