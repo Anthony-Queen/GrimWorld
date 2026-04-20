@@ -6,7 +6,6 @@ class_name Player
 @export var animation_player : AnimationPlayer
  
 @export var player_sprite: Sprite3D
-
 enum States {idle, running, walking, attacking, hurt, dead}
 
 var state: States = States.idle : set = set_state
@@ -14,6 +13,8 @@ var state: States = States.idle : set = set_state
 const speed : int = 4
 
 var direction : Vector2
+var directionz
+var moving: bool = false
 
 func _ready() -> void:
 	
@@ -28,23 +29,24 @@ func _physics_process(_delta: float) -> void :  #Need to add state walking
 	if state != States.dead and Globals.InBattle == false :
 		
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		directionz = Input.get_axis("move_up", "move_down")
 		
 		velocity.x = (direction.x * speed)
 		
-		velocity.z = direction.y * speed
+		velocity.z = (directionz * speed)
 		
 		if state != States.hurt :
 			
-			if velocity.x == 0 :
-				
+			if velocity.x == 0 and velocity.z == 0:
+				moving = false
 				state = States.idle
-			
-			elif velocity.x < 200:
-				
+
+			elif velocity.x < 200 or velocity.z < 200:
+				moving = true
 				state = States.walking
 			
-			elif velocity.x >= 200:
-				
+			elif velocity.x >= 200 or velocity.z >= 200:
+				moving = true
 				state = States.running
 		
 		else :
@@ -62,7 +64,7 @@ func set_state(new_state : States) -> void :
 	state = new_state
 	
 	if state == States.idle :
-		
+		moving = false
 		animation_player.play("idle")
 	
 	elif state == States.running :
