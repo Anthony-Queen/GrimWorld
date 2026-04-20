@@ -1,19 +1,16 @@
-Make = Program
-Draw = Draw (No shit)
 
--Anthony is cooking up some sprites frfr rn
+
+
+
 
 
 To-Do List: (Priorities first)
 	
-	-Make Spawn Map
+	- Make Spawn Map
 	
-	-Make Turn Based System for fighting
+	- Add Shield and weaknesses to enemies (https://img.game8.co/3642716/4dd423d655cebd64c30176a406b5d2ee.png/show)
 	
-		-Add Shield and weaknesses to enemies (https://img.game8.co/3642716/4dd423d655cebd64c30176a406b5d2ee.png/show)
-		-Inspo: 
-		
-	-Figure out how to make Dialogue Panel more Translucent
-	-Draw RPG Battlefield, Main Charachter, and NPC's
-	-Draw Spawn
-	-Add Sanity System
+	- Figure out how to make Dialogue Panel more Translucent
+	- Draw RPG Battlefield, Main Charachter, and NPC's
+	- Draw Spawn
+	- Add Sanity System
