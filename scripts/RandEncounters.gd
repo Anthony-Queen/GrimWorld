@@ -1,7 +1,7 @@
 extends Area3D
 
 @onready var player :Player = $"../Player"
-@onready var playerCollision : Area2D = $"../Player/PlayerArea"
+@onready var playerCollision : Area3D = $"../Player/PlayerArea"
 
 var current_pos: Vector3
 var old_pos: Vector3

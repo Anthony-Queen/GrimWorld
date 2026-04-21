@@ -4,9 +4,10 @@
 
 [node name="Selector" type="Control" unique_id=328396245]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.009000001
+anchor_bottom = 0.054
+offset_right = -0.36800098
+offset_bottom = 0.00799942
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -16,4 +17,4 @@ offset_right = 10.0
 offset_bottom = 35.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_l37ci")
-self_offset = Vector2(-2, -70)
+self_offset = Vector2(-2, -115)

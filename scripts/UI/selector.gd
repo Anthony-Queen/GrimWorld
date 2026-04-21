@@ -5,8 +5,12 @@ extends ColorRect
 
 @onready var camera_3d: Camera3D = $"../../../../Camera3D"
 
+var enemy : Enemy
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _ready() -> void :
 	
-	self.position = (camera_3d.unproject_position(get_parent().get_parent().position) + self_offset)
+	enemy = get_parent().get_parent()
+	
+	self.position = (camera_3d.unproject_position(enemy.position) + self_offset)
+	
+	self.position.y += (camera_3d.position.z - enemy.position.z) * 10
