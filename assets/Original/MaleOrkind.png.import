@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca7r50b43dh25"
-path="res://.godot/imported/BoxyBox.png-499390e92ef97bfe2a3302bcfd1ef13a.ctex"
+uid="uid://cijvxv7b5aagb"
+path="res://.godot/imported/MaleOrkind.png-f2e49e10a007d75341e2829856e8c6ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Original/BoxyBox.png"
-dest_files=["res://.godot/imported/BoxyBox.png-499390e92ef97bfe2a3302bcfd1ef13a.ctex"]
+source_file="res://assets/Original/MaleOrkind.png"
+dest_files=["res://.godot/imported/MaleOrkind.png-f2e49e10a007d75341e2829856e8c6ef.ctex"]
 
 [params]
 

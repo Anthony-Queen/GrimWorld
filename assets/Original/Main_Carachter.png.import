@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uleyi5fslloh"
-path.s3tc="res://.godot/imported/Small-Dialogue-Box.png-ca5bc0a1baecede571bf6cdddef5799c.s3tc.ctex"
+uid="uid://qk62ygsjptjb"
+path.s3tc="res://.godot/imported/Main_Carachter.png-9b18fd184ce897ddf898fe9a8f7ba7d8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Original/Small-Dialogue-Box.png"
-dest_files=["res://.godot/imported/Small-Dialogue-Box.png-ca5bc0a1baecede571bf6cdddef5799c.s3tc.ctex"]
+source_file="res://assets/Original/Main_Carachter.png"
+dest_files=["res://.godot/imported/Main_Carachter.png-9b18fd184ce897ddf898fe9a8f7ba7d8.s3tc.ctex"]
 
 [params]
 
