@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5q7lw3fcmoh3"]
 
 [ext_resource type="Script" uid="uid://c0ljc3cvtm5ig" path="res://scripts/UI/DialogueChoices.gd" id="1_dr3ll"]
-[ext_resource type="Texture2D" uid="uid://ca7r50b43dh25" path="res://assets/Original/BoxyBox.png" id="2_hj3ci"]
+[ext_resource type="Texture2D" uid="uid://ca7r50b43dh25" path="res://assets/Original/UI/BoxyBox.png" id="2_hj3ci"]
 
 [node name="Choice" type="Control" unique_id=26714987]
 layout_mode = 3

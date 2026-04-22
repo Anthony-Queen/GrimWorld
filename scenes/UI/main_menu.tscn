@@ -35,9 +35,11 @@ offset_bottom = 604.0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_constants/icon_max_width = 0
 theme_override_font_sizes/font_size = 32
 text = "new game"
 flat = true
+icon_alignment = 1
 
 [node name="Load" type="Button" parent="VBoxContainer" unique_id=1353223277]
 layout_mode = 2
