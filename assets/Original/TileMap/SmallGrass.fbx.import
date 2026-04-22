@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dscgexuogexj8"
-path="res://.godot/imported/Sample 3.fbx-9cd6feacfa2f06c922b8a8fa9e0f0790.scn"
+uid="uid://bqtydvspf8c0s"
+path="res://.godot/imported/SmallGrass.fbx-aebf201a034341ebbcf612683447ed8b.scn"
 
 [deps]
 
-source_file="res://assets/3DProtoPoly/Sample 3/Sample 3.fbx"
-dest_files=["res://.godot/imported/Sample 3.fbx-9cd6feacfa2f06c922b8a8fa9e0f0790.scn"]
+source_file="res://assets/Original/TileMap/SmallGrass.fbx"
+dest_files=["res://.godot/imported/SmallGrass.fbx-aebf201a034341ebbcf612683447ed8b.scn"]
 
 [params]
 

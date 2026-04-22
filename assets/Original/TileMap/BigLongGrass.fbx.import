@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://h2xyrfp6p46t"
-path="res://.godot/imported/Sample 2.fbx-4b7ee501885f223554bcc9ea341b9a72.scn"
+uid="uid://drp0ym86vo78y"
+path="res://.godot/imported/BigLongGrass.fbx-080345e434347c604dd6b334eb375966.scn"
 
 [deps]
 
-source_file="res://assets/3DProtoPoly/Sample 2/Sample 2.fbx"
-dest_files=["res://.godot/imported/Sample 2.fbx-4b7ee501885f223554bcc9ea341b9a72.scn"]
+source_file="res://assets/Original/TileMap/BigLongGrass.fbx"
+dest_files=["res://.godot/imported/BigLongGrass.fbx-080345e434347c604dd6b334eb375966.scn"]
 
 [params]
 
