@@ -71,8 +71,6 @@ func take_damage() -> void :
 
 func attack() -> void :
 	
-	target = enemies.get_child(target_index)
-	
 	animation_player.play("attack")
 	
 	target.take_damage()
@@ -126,6 +124,8 @@ func choose_enemy() -> void :
 		target = enemies.get_child(target_index)
 		
 		target.add_child(selector.instantiate())
+		
+		target.health.visible = false
 
 func _input(event: InputEvent) -> void:
 	
@@ -133,26 +133,30 @@ func _input(event: InputEvent) -> void:
 		
 		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
+		target.health.visible = true
 		
 		target_index -= 1
 		
 		target = enemies.get_child(target_index)
 		target.add_child(selector.instantiate())
+		target.health.visible = false
 	
 	elif event.is_action_released("ui_left") and choosing and target_index != (target.get_parent().get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
+		target.health.visible = true
 		
 		target_index += 1
 		
 		target = enemies.get_child(target_index)
 		target.add_child(selector.instantiate())
+		target.health.visible = false
 	
 	elif event.is_action_released("ui_accept") and choosing :
 		
-		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
+		target.health.visible = true
 		
 		if attacking :
 			

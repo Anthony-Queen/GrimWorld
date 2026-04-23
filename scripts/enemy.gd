@@ -24,10 +24,13 @@ var attacked : bool = false
 func _ready() -> void:
 	
 	self.texture = Globals.get("current_char" + str(get_index() + 1)).player_sprite.texture
-
+	
+	health.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	_on_health_visibility_changed()
 	
 	if (get_index() + 4) == Globals.turn :
 		
@@ -40,12 +43,8 @@ func _process(_delta: float) -> void:
 			self.attack()
 		
 		self.position.x = -1.5
-		
-		health.visible = true
 	
 	else :
-		
-		health.visible = false
 		
 		self.position.x = -2.5
 
@@ -93,3 +92,6 @@ func _on_timer_timeout() -> void:
 func _on_health_visibility_changed() -> void:
 	
 	health.position = (camera_3d.unproject_position(self.position) + hp_offset)
+	
+	health.position.y -= (self.position.z * 10)
+	health.position.x += (self.position.z)

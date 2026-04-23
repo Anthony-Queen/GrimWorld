@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba43cd1lwgtqt"]
 
 [ext_resource type="Script" uid="uid://dmyv36ocxb8xg" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://2pn8gnq5mcao" path="res://assets/Bars/Bar 3 Red0001 border.png" id="2_4ra3w"]
 [ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://assets/Bars/Bar 3 Red0001.png" id="2_md0e3"]
 
 [sub_resource type="Animation" id="Animation_lrhn5"]
@@ -69,6 +70,7 @@ offset_right = 100.0
 offset_bottom = 100.0
 value = 100.0
 nine_patch_stretch = true
+texture_over = ExtResource("2_4ra3w")
 texture_progress = ExtResource("2_md0e3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
