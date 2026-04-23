@@ -46,7 +46,7 @@ func _on_choice_1() -> void :
 	
 	Globals.InBattle = true
 	
-	Globals.emit_signal("entered_battle")
+	Globals.emit_signal("entered_battle", [self])
 
 func _on_choice_2() -> void :
 	

@@ -10,7 +10,12 @@ To-Do List: (Priorities first)
 	
 	- Add Shield and weaknesses to enemies (https://img.game8.co/3642716/4dd423d655cebd64c30176a406b5d2ee.png/show)
 	
-	- Figure out how to make Dialogue Panel more Translucent
+	- Figure out how to make Dialogue Panel more Translucent -> use StyleBoxFlat in Theme Overrides 
 	- Draw RPG Battlefield, Main Charachter, and NPC's
 	- Draw Spawn
 	- Add Sanity System
+
+
+hear me out, every enemy has is own id, when you enter battle you take that id (in case of a random encouter its created randomly form x to z) 
+and you pass it as an argument (array since it could be more than 1) to the "battle entered" signal
+wich uses that array to fetch the enemies sprites and stats... what do you think about it ?

@@ -11,7 +11,7 @@ signal choice2
 signal choiceScene
 
 # Combat signals
-signal entered_battle
+signal entered_battle(enemies : Array[Enemy])
 signal turn_changed
 signal you_lost
 signal you_won

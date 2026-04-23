@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 
-func _on_battle_entered() -> void :
+func _on_battle_entered(enemies : Array[Enemy]) -> void :
 	
 	get_child(2).queue_free()
 	
