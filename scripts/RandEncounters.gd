@@ -27,9 +27,25 @@ func check_encounter() -> void :
 		
 		else:
 			
+			await calc_enemies()
+			
 			print("Random Encounter")
 			
 			Globals.InBattle = true
 			Globals.emit_signal("entered_battle")
 	
 	set_process(true)
+
+func calc_enemies() :
+	
+	var enemies_n : int = (randi() % 4) + 1
+	
+	for i in enemies_n :
+		
+		var enemy : int = randi() % 2
+		
+		var enemy_resource = load("res://enemies_resources/enemy" + str(enemy) + ".tres")
+		
+		Globals.set("current_enemy" + str(i + 1), enemy_resource)
+		
+		i += 1

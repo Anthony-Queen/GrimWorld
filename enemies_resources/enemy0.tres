@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Enemy_Stats" format=3 uid="uid://cdb003hmxd5f2"]
+
+[ext_resource type="Script" uid="uid://ba12vnxqiw0nj" path="res://scripts/enemies_attributes.gd" id="1_74fpn"]
+[ext_resource type="Texture2D" uid="uid://py6kfmavn38" path="res://assets/Original/BabyOrkind.png" id="2_2hitu"]
+
+[resource]
+script = ExtResource("1_74fpn")
+texture = ExtResource("2_2hitu")
+scale = Vector3(0.25, 0.25, 0.25)
+health = 1
+attack = 1

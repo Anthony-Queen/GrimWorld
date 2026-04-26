@@ -15,6 +15,8 @@ var dead : bool = false
 
 var attacking : bool = false
 
+var attack : int = 50
+
 var choosing : bool = false
 
 var your_turn : bool = false
@@ -55,9 +57,9 @@ func _process(_delta: float) -> void:
 		self.position.x = 2.5
 
 
-func take_damage() -> void :
+func take_damage(attacker : Enemy) -> void :
 	
-	stats.health.value -= 50
+	stats.health.value -= attacker.attack
 	
 	animation_player.play("hurt")
 	
@@ -69,11 +71,11 @@ func take_damage() -> void :
 		
 		animation_player.play("dead")
 
-func attack() -> void :
+func _attack() -> void :
 	
 	animation_player.play("attack")
 	
-	target.take_damage()
+	target.take_damage(self)
 	
 	attacking = false
 	
@@ -160,4 +162,4 @@ func _input(event: InputEvent) -> void:
 		
 		if attacking :
 			
-			attack()
+			_attack()

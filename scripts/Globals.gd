@@ -11,7 +11,7 @@ signal choice2
 signal choiceScene
 
 # Combat signals
-signal entered_battle(enemies : Array[Enemy])
+signal entered_battle
 signal turn_changed
 signal you_lost
 signal you_won
@@ -24,6 +24,11 @@ var InBattle : bool = false
 var turn : int = 0
 var dead : int = 0
 var char_turn : Character
+
+var current_enemy1
+var current_enemy2
+var current_enemy3
+var current_enemy4
 
 var current_char1 : Player
 var current_char2 : Player

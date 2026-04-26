@@ -20,12 +20,24 @@ var your_turn : bool = false
 
 var attacked : bool = false
 
+var attack : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	self.texture = Globals.get("current_char" + str(get_index() + 1)).player_sprite.texture
+	if Globals.get("current_enemy" + str(get_index() + 1)) :
+		
+		self.texture = Globals.get("current_enemy" + str(get_index() + 1)).texture
+		self.scale = Globals.get("current_enemy" + str(get_index() + 1)).scale
+		self.attack = Globals.get("current_enemy" + str(get_index() + 1)).attack
+		
+		health.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
+		health.visible = true
 	
-	health.visible = true
+	else : 
+		
+		self.queue_free()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -40,7 +52,7 @@ func _process(_delta: float) -> void:
 		
 		if attacked == false :
 			
-			self.attack()
+			self._attack()
 		
 		self.position.x = -1.5
 	
@@ -49,9 +61,9 @@ func _process(_delta: float) -> void:
 		self.position.x = -2.5
 
 
-func take_damage() -> void :
+func take_damage(attacker : Character) -> void :
 	
-	health.value -= 50
+	health.value -= attacker.attack
 	
 	animation_player.play("hurt")
 	
@@ -61,7 +73,7 @@ func take_damage() -> void :
 		
 		queue_free()
 
-func attack() -> void :
+func _attack() -> void :
 	
 	self.attacked = true 
 	
@@ -80,7 +92,7 @@ func attack() -> void :
 
 func _on_timer_timeout() -> void:
 	
-	target.take_damage()
+	target.take_damage(self)
 	
 	animation_player.play("attack")
 	
