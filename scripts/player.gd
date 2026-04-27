@@ -17,6 +17,8 @@ var moving: bool = false
 
 func _ready() -> void:
 	
+	get_parent().get_parent().player = self
+	
 	Globals.current_char1 = self
 	Globals.current_char2 = self
 	Globals.current_char3 = self
@@ -62,6 +64,7 @@ func set_state(new_state : States) -> void :
 	state = new_state
 	
 	if state == States.idle :
+		
 		moving = false
 		animation_player.play("idle")
 	

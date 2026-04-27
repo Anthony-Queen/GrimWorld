@@ -13,8 +13,8 @@ signal choiceScene
 # Combat signals
 signal entered_battle
 signal turn_changed
-signal you_lost
-signal you_won
+signal battle_lost
+signal battle_won
 
 
 @warning_ignore_restore("unused_signal")

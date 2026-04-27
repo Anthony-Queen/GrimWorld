@@ -16,3 +16,5 @@ class_name PlayerData
 @export var attack : float = 0
 @export var wisdom : float = 0
 @export var luck : float = 0
+
+var position : Vector3 

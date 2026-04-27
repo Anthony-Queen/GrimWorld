@@ -42,6 +42,10 @@ func _process(_delta: float) -> void:
 	
 	if your_turn and not dead :
 		
+		if enemies.get_child_count() == 0 :
+			
+			Globals.emit_signal("battle_won")
+		
 		Globals.char_turn = self
 		
 		self.position.x = 1.5
@@ -55,6 +59,8 @@ func _process(_delta: float) -> void:
 	elif not your_turn :
 		
 		self.position.x = 2.5
+	
+
 
 
 func take_damage(attacker : Enemy) -> void :
@@ -143,7 +149,7 @@ func _input(event: InputEvent) -> void:
 		target.add_child(selector.instantiate())
 		target.health.visible = false
 	
-	elif event.is_action_released("ui_left") and choosing and target_index != (target.get_parent().get_child_count() - 1) :
+	elif event.is_action_released("ui_left") and choosing and target_index != (enemies.get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
