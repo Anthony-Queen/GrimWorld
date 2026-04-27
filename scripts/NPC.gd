@@ -44,8 +44,6 @@ func _physics_process(_delta: float) -> void :
 
 func _on_choice_1() -> void :
 	
-	Globals.InBattle = true
-	
 	Globals.emit_signal("entered_battle")
 
 func _on_choice_2() -> void :

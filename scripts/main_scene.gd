@@ -34,12 +34,18 @@ func _on_battle_entered() -> void :
 	get_child(2).queue_free()
 	
 	add_child(battle.instantiate())
+	
+	Globals.InBattle = true
 
 func _on_battle_won() :
 	
 	get_child(2).queue_free()
 	
-	call_deferred("add_child", world.instantiate())
+	add_child(world.instantiate())
+	
+	player.position = SaveData.player_data.position
+	
+	Globals.turn = 0
 
 func _on_battle_lost() : 
 	

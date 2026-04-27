@@ -42,10 +42,6 @@ func _process(_delta: float) -> void:
 	
 	if your_turn and not dead :
 		
-		if enemies.get_child_count() == 0 :
-			
-			Globals.emit_signal("battle_won")
-		
 		Globals.char_turn = self
 		
 		self.position.x = 1.5
@@ -60,6 +56,11 @@ func _process(_delta: float) -> void:
 		
 		self.position.x = 2.5
 	
+	if enemies.get_child_count() == 0 and Globals.InBattle == true :
+		
+		Globals.InBattle = false
+		
+		Globals.emit_signal("battle_won")
 
 
 

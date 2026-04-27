@@ -29,7 +29,6 @@ func _on_load_button_up() -> void :
 	self.queue_free()
 	
 	get_parent().add_child(load_menu.instantiate())
-	
 
 func _on_settings_button_up() -> void :
 	

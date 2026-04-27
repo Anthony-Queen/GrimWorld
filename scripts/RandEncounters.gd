@@ -31,7 +31,6 @@ func check_encounter() -> void :
 			
 			print("Random Encounter")
 			
-			Globals.InBattle = true
 			Globals.emit_signal("entered_battle")
 	
 	set_process(true)
