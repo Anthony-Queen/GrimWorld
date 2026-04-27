@@ -10,6 +10,7 @@ class_name NPC
 
 @export var npc_sprite: Sprite3D
 
+@export var self_resource : Resource 
 
 @export var max_health : int
 @export var weaknesses : Array[String]
@@ -43,6 +44,8 @@ func _physics_process(_delta: float) -> void :
 		intereactable = false
 
 func _on_choice_1() -> void :
+	
+	Globals.current_enemy3 = self.self_resource
 	
 	Globals.emit_signal("entered_battle")
 

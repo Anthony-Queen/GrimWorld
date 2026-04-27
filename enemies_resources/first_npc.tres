@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Enemy_Stats" format=3 uid="uid://c27b804h4lmi0"]
+
+[ext_resource type="Script" uid="uid://ba12vnxqiw0nj" path="res://scripts/enemies_attributes.gd" id="1_pur2f"]
+[ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://assets/Original/Main_Carachter.png" id="2_uyyaa"]
+
+[resource]
+script = ExtResource("1_pur2f")
+texture = ExtResource("2_uyyaa")
+scale = Vector3(0.105, 0.105, 0.105)
+health = 200
+mana = 100
+attack = 25
+xp = 65

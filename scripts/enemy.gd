@@ -32,6 +32,8 @@ func _ready() -> void:
 		self.attack = Globals.get("current_enemy" + str(get_index() + 1)).attack
 		
 		health.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
+		health.value = Globals.get("current_enemy" + str(get_index() + 1)).health
+		
 		health.visible = true
 	
 	else : 
