@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ck036m48ix3cx"]
 
-[ext_resource type="Script" uid="uid://dop02csqna0ec" path="res://scripts/main_scene.gd" id="1_w2twt"]
+[ext_resource type="Script" uid="uid://dop02csqna0ec" path="res://Scripts/main_scene.gd" id="1_52fb6"]
 
 [sub_resource type="Environment" id="Environment_w2twt"]
 background_mode = 3
@@ -21,7 +21,7 @@ loop = true
 loop_offset = 3.0
 
 [node name="MainScene" type="Node3D" unique_id=1438953692 node_paths=PackedStringArray("world_environment", "audio_player")]
-script = ExtResource("1_w2twt")
+script = ExtResource("1_52fb6")
 world_environment = NodePath("CanvasEnvironment")
 audio_player = NodePath("AudioStreamPlayer")
 

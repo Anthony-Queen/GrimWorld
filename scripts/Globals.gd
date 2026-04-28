@@ -25,10 +25,10 @@ var turn : int = 0
 var dead : int = 0
 var char_turn : Character
 
-var current_enemy1
-var current_enemy2
-var current_enemy3
-var current_enemy4
+var current_enemy1 : Node3D
+var current_enemy2 : Node3D
+var current_enemy3 : Node3D
+var current_enemy4 : Node3D
 
 var current_char1 : Player
 var current_char2 : Player
@@ -58,3 +58,10 @@ func _on_turn_changed(cur_char : Sprite3D) -> void :
 		if cur_char.get_index() == (cur_char.get_parent().get_child_count() - 1) :
 			
 			turn = 0
+
+func reset_enemies() -> void :
+	
+	current_enemy1 = null
+	current_enemy2 = null
+	current_enemy3 = null
+	current_enemy4 = null

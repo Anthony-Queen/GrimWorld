@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byncswt40wu8x"]
 
-[ext_resource type="Script" uid="uid://vk58vl6cut33" path="res://scripts/UI/main_menu.gd" id="1_qwnig"]
+[ext_resource type="Script" uid="uid://vk58vl6cut33" path="res://Scripts/UI/main_menu.gd" id="1_qwnig"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 120

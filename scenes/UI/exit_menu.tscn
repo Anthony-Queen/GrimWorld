@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://djsmxvly3xi3h"]
 
-[ext_resource type="Script" uid="uid://so8btfnff40v" path="res://scripts/UI/exit_menu.gd" id="1_clgl0"]
-[ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://scenes/UI/stats.tscn" id="2_fuvnj"]
-[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://assets/Bars/Bar 3 Red0001.png" id="3_sewfn"]
-[ext_resource type="Texture2D" uid="uid://b07w8uvrhsrj" path="res://assets/Bars/Bar 3 Blue0001.png" id="4_u6w4c"]
-[ext_resource type="Texture2D" uid="uid://0y1lqwla0evr" path="res://assets/Bars/Bar 3 Purple0001.png" id="5_67fdm"]
+[ext_resource type="Script" uid="uid://so8btfnff40v" path="res://Scripts/UI/exit_menu.gd" id="1_clgl0"]
+[ext_resource type="PackedScene" uid="uid://c3rpqut2nedpx" path="res://Scenes/UI/stats.tscn" id="2_fuvnj"]
+[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://Assets/Bars/Bar 3 Red0001.png" id="3_sewfn"]
+[ext_resource type="Texture2D" uid="uid://b07w8uvrhsrj" path="res://Assets/Bars/Bar 3 Blue0001.png" id="4_u6w4c"]
+[ext_resource type="Texture2D" uid="uid://0y1lqwla0evr" path="res://Assets/Bars/Bar 3 Purple0001.png" id="5_67fdm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clgl0"]
 draw_center = false

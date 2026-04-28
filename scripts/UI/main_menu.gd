@@ -12,7 +12,7 @@ func _on_new_game_button_up() -> void :
 	
 	SaveData.player_data = PlayerData.new() 
 	
-	var game : PackedScene = load("res://scenes/world.tscn")
+	var game : PackedScene = load("res://Scenes/World/world.tscn")
 	
 	self.queue_free()
 	
@@ -24,7 +24,7 @@ func _on_new_game_button_up() -> void :
 
 func _on_load_button_up() -> void :
 	
-	var load_menu : PackedScene = load("res://scenes/UI/load_save.tscn")
+	var load_menu : PackedScene = load("res://Scenes/UI/load_save.tscn")
 	
 	self.queue_free()
 	
@@ -32,7 +32,7 @@ func _on_load_button_up() -> void :
 
 func _on_settings_button_up() -> void :
 	
-	var settings_menu : PackedScene = load("res://scenes/UI/settings.tscn")
+	var settings_menu : PackedScene = load("res://Scenes/UI/settings.tscn")
 	
 	self.queue_free()
 	

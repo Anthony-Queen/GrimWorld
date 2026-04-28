@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ba43cd1lwgtqt"]
+
+[ext_resource type="Script" uid="uid://dmyv36ocxb8xg" path="res://Scripts/Battle/enemy.gd" id="1_lm780"]
+[ext_resource type="Texture2D" uid="uid://2pn8gnq5mcao" path="res://Assets/Bars/Bar 3 Red0001 border.png" id="2_6vbcs"]
+[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://Assets/Bars/Bar 3 Red0001.png" id="3_v41x1"]
+
+[sub_resource type="Animation" id="Animation_lrhn5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rkhd4"]
+resource_name = "attack"
+
+[sub_resource type="Animation" id="Animation_md0e3"]
+resource_name = "dead"
+
+[sub_resource type="Animation" id="Animation_agfs1"]
+resource_name = "hurt"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [46, 46, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p1mj"]
+_data = {
+&"RESET": SubResource("Animation_lrhn5"),
+&"attack": SubResource("Animation_rkhd4"),
+&"dead": SubResource("Animation_md0e3"),
+&"hurt": SubResource("Animation_agfs1")
+}
+
+[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("health", "timer")]
+script = ExtResource("1_lm780")
+health = NodePath("Health")
+timer = NodePath("Timer")
+hp_offset = Vector2(-50, -100)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=232169584]
+active = false
+libraries/ = SubResource("AnimationLibrary_7p1mj")
+
+[node name="Timer" type="Timer" parent="." unique_id=408492943]
+one_shot = true
+
+[node name="Health" type="TextureProgressBar" parent="." unique_id=1165830978]
+visible = false
+offset_right = 100.0
+offset_bottom = 100.0
+value = 100.0
+nine_patch_stretch = true
+texture_over = ExtResource("2_6vbcs")
+texture_progress = ExtResource("3_v41x1")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="visibility_changed" from="Health" to="." method="_on_health_visibility_changed"]

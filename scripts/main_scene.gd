@@ -3,9 +3,9 @@ extends Node3D
 @export var world_environment : WorldEnvironment
 @export var audio_player: AudioStreamPlayer
 
-var main_menu : PackedScene = load("res://scenes/UI/main_menu.tscn")
-var battle : PackedScene = load("res://scenes/battle.tscn") 
-var world : PackedScene = load("res://scenes/world.tscn")
+var main_menu : PackedScene = load("res://Scenes/UI/main_menu.tscn")
+var battle : PackedScene = load("res://Scenes/Battle/battle.tscn") 
+var world : PackedScene = load("res://Scenes/World/world.tscn")
 var player : Player
 
 func _ready() -> void:
@@ -37,7 +37,7 @@ func _on_battle_entered() -> void :
 	
 	Globals.InBattle = true
 
-func _on_battle_won() :
+func _on_battle_won() -> void :
 	
 	get_child(2).queue_free()
 	
@@ -45,8 +45,10 @@ func _on_battle_won() :
 	
 	player.position = SaveData.player_data.position
 	
+	Globals.reset_enemies()
+	
 	Globals.turn = 0
 
-func _on_battle_lost() : 
+func _on_battle_lost() -> void : 
 	
 	pass
