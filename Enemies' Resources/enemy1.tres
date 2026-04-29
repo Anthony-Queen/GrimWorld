@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Enemy_Stats" format=3 uid="uid://btla0r7ubw7cv"]
 
-[ext_resource type="Script" uid="uid://ba12vnxqiw0nj" path="res://Scripts/Battle/enemies_attributes.gd" id="1_dsk1h"]
+[ext_resource type="Script" uid="uid://ba12vnxqiw0nj" path="res://Scripts/Data/enemies_attributes.gd" id="1_dsk1h"]
 [ext_resource type="Texture2D" uid="uid://cijvxv7b5aagb" path="res://Assets/Original/Enemies & NPCs/MaleOrkind.png" id="2_u8aox"]
 
 [resource]

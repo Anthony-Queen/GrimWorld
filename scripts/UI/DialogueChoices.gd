@@ -1,6 +1,8 @@
 extends Control
 
-func _on_button_pressed() -> void:
+
+# Emit choice 1 on "yes" pressed
+func _on_button_pressed() -> void :
 	
 	print("Choice1")
 	
@@ -11,6 +13,7 @@ func _on_button_pressed() -> void:
 	self.queue_free()
 
 
+# Emit choice 2 on "no" pressed
 func _on_button_2_pressed() -> void:
 	
 	print("Choice2")

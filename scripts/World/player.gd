@@ -2,22 +2,29 @@ extends CharacterBody3D
 
 class_name Player
 
-@export var camera_3d: Camera3D
+
+@export var camera_3d : Camera3D
 @export var animation_player : AnimationPlayer
  
-@export var player_sprite: Sprite3D
-enum States {idle, running, walking, attacking, hurt, dead}
+# Export sprite to add in battle scene
+@export var player_sprite : Sprite3D
 
-var state: States = States.idle : set = set_state
+# State machine
+enum States {idle, running, walking}
 
-const speed : int = 4
+var state : States = States.idle : set = set_state
+
+const speed : int = 4 # Movement speed
 
 var direction : Vector2
-var moving: bool = false
 
-func _ready() -> void:
+var moving : bool = false # Check if moving, for random encounters
+
+
+# Set battle's character
+func _ready() -> void :
 	
-	get_parent().get_parent().player = self
+	get_parent().get_parent().player = self 
 	
 	Globals.current_char1 = self
 	Globals.current_char2 = self
@@ -27,7 +34,9 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void :
 	
-	if state != States.dead and Globals.InBattle == false :
+	if not Globals.InBattle :
+		
+		# Get X and Z axis movement
 		
 		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		
@@ -35,28 +44,23 @@ func _physics_process(_delta: float) -> void :
 		
 		velocity.z = (direction.y * speed)
 		
-		if state != States.hurt :
-			
-			if velocity.x == 0 and velocity.z == 0:
-				moving = false
-				state = States.idle
-			
-			elif velocity.x < 200 or velocity.z < 200:
-				moving = true
-				state = States.walking
-			
-			elif velocity.x >= 200 or velocity.z >= 200:
-				moving = true
-				state = States.running
+		# Toggle between walking and running state
+		if velocity.x == 0 and velocity.z == 0:
+			moving = false
+			state = States.idle
 		
-		else :
-			
-			if is_on_floor() :
-				
-				velocity.x = 0
+		elif velocity.x < 200 or velocity.z < 200:
+			moving = true
+			state = States.walking
+		
+		elif velocity.x >= 200 or velocity.z >= 200:
+			moving = true
+			state = States.running
 		
 		move_and_slide()
 
+
+# Handle states and animations
 func set_state(new_state : States) -> void :
 	
 	var _previous_state: States = state
@@ -71,11 +75,3 @@ func set_state(new_state : States) -> void :
 	elif state == States.running :
 		
 		animation_player.play("run")
-	
-	elif state == States.hurt :
-		
-		animation_player.play("hit")
-	
-	elif state == States.dead :
-		
-		animation_player.play("death")

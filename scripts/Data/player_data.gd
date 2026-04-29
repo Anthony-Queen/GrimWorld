@@ -2,6 +2,7 @@ extends Resource
 
 class_name PlayerData
 
+
 # Player's stats
 @export var max_health : float = 100
 @export var health : float = 100

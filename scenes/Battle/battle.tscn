@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bclxfjyihll7w"]
 
-[ext_resource type="Script" uid="uid://c4ex2k0armtyt" path="res://Scripts/Battle/battle.gd" id="1_lpir7"]
 [ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://Assets/MeshLibrary & Resources/basic_library.meshlib" id="1_p1qf1"]
 [ext_resource type="PackedScene" uid="uid://bnvtsw51tjj4a" path="res://Scenes/Battle/character.tscn" id="2_a12nh"]
 [ext_resource type="PackedScene" uid="uid://ba43cd1lwgtqt" path="res://Scenes/Battle/enemy.tscn" id="3_lpir7"]
@@ -23,7 +22,6 @@ adjustment_brightness = 0.9
 adjustment_contrast = 1.25
 
 [node name="Battle" type="Node3D" unique_id=836362756]
-script = ExtResource("1_lpir7")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1685641263]
 mesh_library = ExtResource("1_p1qf1")

@@ -1,5 +1,6 @@
 extends Node3D
 
+
 # Load exit and dialogue scenes
 var ChoiceScene : PackedScene = load("res://scenes/UI/Dialoguechoices.tscn")
 var ExitScene : PackedScene = load("res://scenes/UI/exit_menu.tscn")

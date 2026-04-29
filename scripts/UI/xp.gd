@@ -1,3 +1,3 @@
 extends TextureProgressBar
 
-#Future code for XP
+# Code for Updating Xp Bar 

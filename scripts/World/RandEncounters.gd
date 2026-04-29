@@ -1,5 +1,6 @@
 extends Area3D
 
+
 # Player and its area
 @onready var player :Player = $"../Player"
 @onready var playerCollision : Area3D = $"../Player/PlayerArea"

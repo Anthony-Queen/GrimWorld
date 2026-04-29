@@ -1,6 +1,8 @@
 extends Control
 
-func _ready() -> void:
+
+# Start soundtrack and calc save files
+func _ready() -> void :
 	
 	if Globals.audio_stream_player.playing == false :
 		
@@ -8,6 +10,8 @@ func _ready() -> void:
 	
 	SaveData.calc_files()
 
+
+# Instantiate world scene
 func _on_new_game_button_up() -> void :
 	
 	SaveData.player_data = PlayerData.new() 
@@ -22,6 +26,8 @@ func _on_new_game_button_up() -> void :
 	
 	SaveData.current_data = SaveData.save_files
 
+
+# Instantiate load save scene
 func _on_load_button_up() -> void :
 	
 	var load_menu : PackedScene = load("res://Scenes/UI/load_save.tscn")
@@ -30,6 +36,8 @@ func _on_load_button_up() -> void :
 	
 	get_parent().add_child(load_menu.instantiate())
 
+
+# Instantiate settings scene
 func _on_settings_button_up() -> void :
 	
 	var settings_menu : PackedScene = load("res://Scenes/UI/settings.tscn")
@@ -38,6 +46,7 @@ func _on_settings_button_up() -> void :
 	
 	get_parent().add_child(settings_menu.instantiate())
 
-func _on_exit_button_up() -> void:
+# Exit game
+func _on_exit_button_up() -> void :
 	
 	get_tree().quit()
