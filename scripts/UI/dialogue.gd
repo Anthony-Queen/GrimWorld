@@ -36,9 +36,9 @@ func change_text() -> void :
 		print("Texted")
 		x += 1
 	else:
-		if Globals.isChoiceBeingMade == false and not choice_made:
+		if Globals.is_choice_being_made == false and not choice_made:
 			
-			Globals.isChoiceBeingMade = true
+			Globals.is_choice_being_made = true
 			
 			make_choice()
 			
@@ -46,6 +46,6 @@ func change_text() -> void :
 
 func make_choice() -> void :
 	
-	Globals.choiceScene.emit() # Connects to world.gd
+	Globals.choice_scene.emit() # Connects to world.gd
 	
 	choice_made = true

@@ -74,7 +74,7 @@ func take_damage(attacker : Enemy) -> void :
 		
 		dead = true
 		
-		Globals.dead += 1
+		Globals.dead_characters += 1
 		
 		animation_player.play("dead")
 

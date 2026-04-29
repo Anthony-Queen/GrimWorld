@@ -10,11 +10,14 @@ var save_files : int = 0
 
 var load_game : int = 0
 
-@warning_ignore("unused_signal")
-signal save_requested
-@warning_ignore("unused_signal")
-signal load_requested
 
+@warning_ignore_start("unused_signal")
+signal save_requested
+signal load_requested
+@warning_ignore_restore("unused_signal")
+
+
+# Calc current save_files to not overwrite them when entering new game
 func calc_files() -> void :
 	
 	save_files = 0
