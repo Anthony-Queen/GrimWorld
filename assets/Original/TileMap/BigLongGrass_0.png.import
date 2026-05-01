@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqfd6ur0fey8s"
-path.s3tc="res://.godot/imported/BigLongGrass_0.png-444b3b21c6d59b6c7484b1d55df8fbd0.s3tc.ctex"
+path.s3tc="res://.godot/imported/BigLongGrass_0.png-b87ddad27e479fb916c9430088a7e785.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Original/TileMap/BigLongGrass_0.png"
-dest_files=["res://.godot/imported/BigLongGrass_0.png-444b3b21c6d59b6c7484b1d55df8fbd0.s3tc.ctex"]
+source_file="res://assets/Original/TileMap/BigLongGrass_0.png"
+dest_files=["res://.godot/imported/BigLongGrass_0.png-b87ddad27e479fb916c9430088a7e785.s3tc.ctex"]
 
 [params]
 

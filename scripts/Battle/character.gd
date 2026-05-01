@@ -158,7 +158,7 @@ func choose_enemy() -> void :
 func _input(event: InputEvent) -> void :
 	
 	# If right key pressed, selector goes to previous enemy (behind)
-	if event.is_action_released("ui_right") and choosing and target_index != 0 :
+	if event.is_action_pressed("ui_right") and choosing and target_index != 0 :
 		
 		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
@@ -171,7 +171,7 @@ func _input(event: InputEvent) -> void :
 		target.health.visible = false
 	
 	# If left key pressed, selector goes to next enemy (in front)
-	elif event.is_action_released("ui_left") and choosing and target_index != (enemies.get_child_count() - 1) :
+	elif event.is_action_pressed("ui_left") and choosing and target_index != (enemies.get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
 		target.get_child(3).queue_free()
@@ -184,7 +184,7 @@ func _input(event: InputEvent) -> void :
 		target.health.visible = false
 	
 	# Confirm action if enter is pressed
-	elif event.is_action_released("ui_accept") and choosing :
+	elif event.is_action_pressed("ui_accept") and choosing :
 		
 		target.get_child(3).queue_free()
 		target.health.visible = true

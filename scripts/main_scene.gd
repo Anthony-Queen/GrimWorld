@@ -5,9 +5,9 @@ extends Node3D
 @export var audio_player : AudioStreamPlayer
 
 # Load scenes to instantiate
-var MainMenu : PackedScene = load("res://Scenes/UI/main_menu.tscn")
-var Battle : PackedScene = load("res://Scenes/Battle/battle.tscn") 
-var World : PackedScene = load("res://Scenes/World/world.tscn")
+var MainMenu : PackedScene = load("res://scenes/UI/main_menu.tscn")
+var Battle : PackedScene = load("res://scenes/Battle/battle.tscn") 
+var World : PackedScene = load("res://scenes/World/world.tscn")
 
 
 var player : Player

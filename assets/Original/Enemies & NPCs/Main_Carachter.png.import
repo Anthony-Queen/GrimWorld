@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qk62ygsjptjb"
-path.s3tc="res://.godot/imported/Main_Carachter.png-142604271f8d1863128942114fb6365a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Main_Carachter.png-b6d4977b68689c997d5dcbed8a370195.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Original/Enemies & NPCs/Main_Carachter.png"
-dest_files=["res://.godot/imported/Main_Carachter.png-142604271f8d1863128942114fb6365a.s3tc.ctex"]
+source_file="res://assets/Original/Enemies & NPCs/Main_Carachter.png"
+dest_files=["res://.godot/imported/Main_Carachter.png-b6d4977b68689c997d5dcbed8a370195.s3tc.ctex"]
 
 [params]
 

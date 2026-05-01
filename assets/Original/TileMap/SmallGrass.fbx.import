@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://fawa2saxk4ku"
-path="res://.godot/imported/SmallGrass.fbx-f8402f819e1b63d3ab59f109532f3278.scn"
+path="res://.godot/imported/SmallGrass.fbx-aebf201a034341ebbcf612683447ed8b.scn"
 
 [deps]
 
-source_file="res://Assets/Original/TileMap/SmallGrass.fbx"
-dest_files=["res://.godot/imported/SmallGrass.fbx-f8402f819e1b63d3ab59f109532f3278.scn"]
+source_file="res://assets/Original/TileMap/SmallGrass.fbx"
+dest_files=["res://.godot/imported/SmallGrass.fbx-aebf201a034341ebbcf612683447ed8b.scn"]
 
 [params]
 

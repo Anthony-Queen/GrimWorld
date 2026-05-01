@@ -16,7 +16,7 @@ func _on_new_game_button_up() -> void :
 	
 	SaveData.player_data = PlayerData.new() 
 	
-	var game : PackedScene = load("res://Scenes/World/world.tscn")
+	var game : PackedScene = load("res://scenes/World/world.tscn")
 	
 	self.queue_free()
 	

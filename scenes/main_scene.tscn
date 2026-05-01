@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ck036m48ix3cx"]
 
-[ext_resource type="Script" uid="uid://dop02csqna0ec" path="res://Scripts/main_scene.gd" id="1_52fb6"]
+[ext_resource type="Script" uid="uid://dop02csqna0ec" path="res://scripts/main_scene.gd" id="1_52fb6"]
 
 [sub_resource type="Environment" id="Environment_w2twt"]
 background_mode = 3
@@ -30,4 +30,4 @@ environment = SubResource("Environment_w2twt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=599215233]
 stream = SubResource("AudioStreamOggVorbis_w2twt")
-volume_db = -5.0
+volume_db = -20.0
