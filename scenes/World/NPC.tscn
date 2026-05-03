@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d2focwdfg7gi5"]
 
-[ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://Scripts/World/NPC.gd" id="1_6xvi5"]
-[ext_resource type="Resource" uid="uid://c27b804h4lmi0" path="res://Enemies' Resources/first_npc.tres" id="2_7pv12"]
-[ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://Assets/Original/Enemies & NPCs/Main_Carachter.png" id="2_ktgr7"]
-[ext_resource type="Texture2D" uid="uid://uleyi5fslloh" path="res://Assets/Original/UI/Small-Dialogue-Box.png" id="3_jnjht"]
-[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://Scenes/UI/dialogue.tscn" id="4_7pv12"]
+[ext_resource type="Script" uid="uid://cc0cb6gei55bc" path="res://scripts/World/NPC.gd" id="1_6xvi5"]
+[ext_resource type="Resource" uid="uid://c27b804h4lmi0" path="res://EnemyResources/first_npc.tres" id="2_7pv12"]
+[ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://assets/Original/Enemies & NPCs/Main_Carachter.png" id="2_ktgr7"]
+[ext_resource type="Texture2D" uid="uid://uleyi5fslloh" path="res://assets/Original/UI/Small-Dialogue-Box.png" id="3_jnjht"]
+[ext_resource type="PackedScene" uid="uid://c23m57514oub6" path="res://scenes/UI/dialogue.tscn" id="4_7pv12"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_md0e3"]
 size = Vector3(0.58569336, 0.9370117, 0.1574707)

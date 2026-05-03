@@ -30,7 +30,7 @@ func _on_new_game_button_up() -> void :
 # Instantiate load save scene
 func _on_load_button_up() -> void :
 	
-	var load_menu : PackedScene = load("res://Scenes/UI/load_save.tscn")
+	var load_menu : PackedScene = load("res://scenes/UI/load_save.tscn")
 	
 	self.queue_free()
 	
@@ -40,7 +40,7 @@ func _on_load_button_up() -> void :
 # Instantiate settings scene
 func _on_settings_button_up() -> void :
 	
-	var settings_menu : PackedScene = load("res://Scenes/UI/settings.tscn")
+	var settings_menu : PackedScene = load("res://scenes/UI/settings.tscn")
 	
 	self.queue_free()
 	
