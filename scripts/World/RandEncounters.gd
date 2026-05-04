@@ -64,7 +64,7 @@ func calc_enemies() -> void :
 		var enemy : int = randi() % 2
 		
 		# Load enemy resource
-		var enemy_resource : Resource = load("res://Enemies' Resources/enemy" + str(enemy) + ".tres")
+		var enemy_resource : Resource = load("res://EnemyResources/enemy" + str(enemy) + ".tres")
 		
 		# Set enemy
 		Globals.set("current_enemy" + str(i + 1), enemy_resource)
