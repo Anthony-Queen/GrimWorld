@@ -14,12 +14,18 @@ sky_material = SubResource("ProceduralSkyMaterial_a12nh")
 [sub_resource type="Environment" id="Environment_lpir7"]
 background_mode = 2
 sky = SubResource("Sky_71j4m")
+ambient_light_source = 3
+reflected_light_source = 2
+glow_enabled = true
+glow_bloom = 1.0
+glow_blend_mode = 2
 fog_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.659, 0.671, 0.698, 1)
 adjustment_enabled = true
-adjustment_brightness = 0.9
+adjustment_brightness = 0.75
 adjustment_contrast = 1.25
+adjustment_saturation = 1.25
 
 [node name="Battle" type="Node3D" unique_id=836362756]
 
@@ -34,24 +40,32 @@ data = {
 
 [node name="Character1" parent="Characters" unique_id=1078168755 node_paths=PackedStringArray("stats") instance=ExtResource("2_a12nh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.5, 2.2, 0.75)
+billboard = 1
+shaded = true
 texture_filter = 0
 region_rect = Rect2(360.428, 224.608, 30.224, 41.494)
 stats = NodePath("../../battle HUD/VBoxContainer/MarginContainer/Stats")
 
 [node name="Character2" parent="Characters" unique_id=827284948 node_paths=PackedStringArray("stats") instance=ExtResource("2_a12nh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.5, 2.2, 2)
+billboard = 1
+shaded = true
 texture_filter = 0
 region_rect = Rect2(0, 224.608, 30.224, 41.494)
 stats = NodePath("../../battle HUD/VBoxContainer/MarginContainer2/Stats")
 
 [node name="Character3" parent="Characters" unique_id=193541527 node_paths=PackedStringArray("stats") instance=ExtResource("2_a12nh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.52, 2.2, 3)
+billboard = 1
+shaded = true
 texture_filter = 0
 region_rect = Rect2(0, 224.608, 30.224, 41.494)
 stats = NodePath("../../battle HUD/VBoxContainer/MarginContainer3/Stats")
 
 [node name="Character4" parent="Characters" unique_id=442130340 node_paths=PackedStringArray("stats") instance=ExtResource("2_a12nh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.5, 2.2, 3.75)
+billboard = 1
+shaded = true
 texture_filter = 0
 region_rect = Rect2(0, 224.608, 30.224, 41.494)
 stats = NodePath("../../battle HUD/VBoxContainer/MarginContainer4/Stats")
@@ -61,24 +75,32 @@ stats = NodePath("../../battle HUD/VBoxContainer/MarginContainer4/Stats")
 [node name="Enemy1" parent="Enemies" unique_id=1052066221 node_paths=PackedStringArray("camera_3d") instance=ExtResource("3_lpir7")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.5, 2.2, 0.75)
 flip_h = true
+billboard = 1
+shaded = true
 texture_filter = 0
 camera_3d = NodePath("../../Camera3D")
 
 [node name="Enemy2" parent="Enemies" unique_id=432211291 node_paths=PackedStringArray("camera_3d") instance=ExtResource("3_lpir7")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.5, 2.2, 2)
 flip_h = true
+billboard = 1
+shaded = true
 texture_filter = 0
 camera_3d = NodePath("../../Camera3D")
 
 [node name="Enemy3" parent="Enemies" unique_id=1312771525 node_paths=PackedStringArray("camera_3d") instance=ExtResource("3_lpir7")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.5, 2.2, 3)
 flip_h = true
+billboard = 1
+shaded = true
 texture_filter = 0
 camera_3d = NodePath("../../Camera3D")
 
 [node name="Enemy4" parent="Enemies" unique_id=715260169 node_paths=PackedStringArray("camera_3d") instance=ExtResource("3_lpir7")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.5, 2.2, 3.75)
 flip_h = true
+billboard = 1
+shaded = true
 texture_filter = 0
 camera_3d = NodePath("../../Camera3D")
 
@@ -93,10 +115,13 @@ offset = Vector2(67, -87.5)
 camera_3d = NodePath("../../Camera3D")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1022023833]
-transform = Transform3D(0.036746696, 0.46057892, 0.88685775, 0.01495898, -0.88761127, 0.46035036, 0.9992127, -0.0036498685, -0.03950657, 19.538343, 9.465458, -0.5096102)
-light_color = Color(0.7882353, 0.79607844, 0.8392157, 1)
-light_energy = 7.0
-light_angular_distance = 45.0
+transform = Transform3D(0.036746696, 0.46057892, 0.8868578, 0.01495898, -0.88761127, 0.4603504, 0.9992127, -0.0036498685, -0.039506566, 0, 20, 24)
+light_color = Color(0.7966219, 0.81539154, 0.8905156, 1)
+light_energy = 2.0
+light_angular_distance = 90.0
+light_bake_mode = 0
+shadow_enabled = true
+directional_shadow_mode = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2109246576]
 environment = SubResource("Environment_lpir7")
