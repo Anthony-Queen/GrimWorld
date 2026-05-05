@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://x8t5knadptca"
-path="res://.godot/imported/BigTallGrass.obj-13b9ee21983ccfb39c2f8ad2dafe8f48.mesh"
+path="res://.godot/imported/BigTallGrass.obj-359732de10bdd0ef699ec9607c3bdb45.mesh"
 
 [deps]
 
-files=["res://.godot/imported/BigTallGrass.obj-13b9ee21983ccfb39c2f8ad2dafe8f48.mesh"]
+files=["res://.godot/imported/BigTallGrass.obj-359732de10bdd0ef699ec9607c3bdb45.mesh"]
 
-source_file="res://assets/Original/TileMap/BigTallGrass.obj"
-dest_files=["res://.godot/imported/BigTallGrass.obj-13b9ee21983ccfb39c2f8ad2dafe8f48.mesh", "res://.godot/imported/BigTallGrass.obj-13b9ee21983ccfb39c2f8ad2dafe8f48.mesh"]
+source_file="res://Assets/Original/TileMap/BigTallGrass.obj"
+dest_files=["res://.godot/imported/BigTallGrass.obj-359732de10bdd0ef699ec9607c3bdb45.mesh", "res://.godot/imported/BigTallGrass.obj-359732de10bdd0ef699ec9607c3bdb45.mesh"]
 
 [params]
 

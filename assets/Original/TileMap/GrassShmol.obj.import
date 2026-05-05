@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://2ark3452t2y6"
-path="res://.godot/imported/GrassShmol.obj-290436214e28b28227a4f769f1d2c627.mesh"
+path="res://.godot/imported/GrassShmol.obj-e2884e972b1e55e707156acd37a7e9d4.mesh"
 
 [deps]
 
-files=["res://.godot/imported/GrassShmol.obj-290436214e28b28227a4f769f1d2c627.mesh"]
+files=["res://.godot/imported/GrassShmol.obj-e2884e972b1e55e707156acd37a7e9d4.mesh"]
 
-source_file="res://assets/Original/TileMap/GrassShmol.obj"
-dest_files=["res://.godot/imported/GrassShmol.obj-290436214e28b28227a4f769f1d2c627.mesh", "res://.godot/imported/GrassShmol.obj-290436214e28b28227a4f769f1d2c627.mesh"]
+source_file="res://Assets/Original/TileMap/GrassShmol.obj"
+dest_files=["res://.godot/imported/GrassShmol.obj-e2884e972b1e55e707156acd37a7e9d4.mesh", "res://.godot/imported/GrassShmol.obj-e2884e972b1e55e707156acd37a7e9d4.mesh"]
 
 [params]
 

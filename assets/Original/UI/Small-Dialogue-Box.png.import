@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uleyi5fslloh"
-path.s3tc="res://.godot/imported/Small-Dialogue-Box.png-e18a5ee0656fe33fd234daeaae7ad9f9.s3tc.ctex"
+path.s3tc="res://.godot/imported/Small-Dialogue-Box.png-eb9c1d65f53c8c058195ac19dacee254.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Original/UI/Small-Dialogue-Box.png"
-dest_files=["res://.godot/imported/Small-Dialogue-Box.png-e18a5ee0656fe33fd234daeaae7ad9f9.s3tc.ctex"]
+source_file="res://Assets/Original/UI/Small-Dialogue-Box.png"
+dest_files=["res://.godot/imported/Small-Dialogue-Box.png-eb9c1d65f53c8c058195ac19dacee254.s3tc.ctex"]
 
 [params]
 

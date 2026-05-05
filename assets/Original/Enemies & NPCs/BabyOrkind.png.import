@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://py6kfmavn38"
-path="res://.godot/imported/BabyOrkind.png-7be80552dd19393bfabbaac8540d0ba3.ctex"
+path="res://.godot/imported/BabyOrkind.png-36e95b37c957b716b253f52cda7993e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Original/Enemies & NPCs/BabyOrkind.png"
-dest_files=["res://.godot/imported/BabyOrkind.png-7be80552dd19393bfabbaac8540d0ba3.ctex"]
+source_file="res://Assets/Original/Enemies & NPCs/BabyOrkind.png"
+dest_files=["res://.godot/imported/BabyOrkind.png-36e95b37c957b716b253f52cda7993e4.ctex"]
 
 [params]
 
