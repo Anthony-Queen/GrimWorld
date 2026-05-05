@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cw4duke6wlj6d"]
 
-[ext_resource type="Script" uid="uid://c5183l7jrg5t5" path="res://scripts/World/world.gd" id="1_k0juu"]
-[ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://scenes/World/player.tscn" id="1_nnsk1"]
-[ext_resource type="PackedScene" uid="uid://d2focwdfg7gi5" path="res://scenes/World/NPC.tscn" id="2_4wyf3"]
-[ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://assets/MeshLibrary & Resources/basic_library.meshlib" id="2_rwgxs"]
-[ext_resource type="Script" uid="uid://6xei2db0j8c6" path="res://scripts/World/RandEncounters.gd" id="5_71j4m"]
+[ext_resource type="Script" uid="uid://c5183l7jrg5t5" path="res://Scripts/World/world.gd" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dat4ndwm0kei0" path="res://Scenes/World/player.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://d2focwdfg7gi5" path="res://Scenes/World/NPC.tscn" id="2_4wyf3"]
+[ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://Assets/MeshLibrary & Resources/basic_library.meshlib" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://6xei2db0j8c6" path="res://Scripts/World/RandEncounters.gd" id="5_71j4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
 sky_top_color = Color(0.1702587, 0.1165634, 0, 1)

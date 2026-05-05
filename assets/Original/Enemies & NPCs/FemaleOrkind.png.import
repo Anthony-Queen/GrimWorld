@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hkkcaqgnyq3t"
-path="res://.godot/imported/FemaleOrkind.png-a324cd743d3cca79218660fffe13a759.ctex"
+path="res://.godot/imported/FemaleOrkind.png-9322aead835ae6ef1c2517569f464b24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Original/Enemies & NPCs/FemaleOrkind.png"
-dest_files=["res://.godot/imported/FemaleOrkind.png-a324cd743d3cca79218660fffe13a759.ctex"]
+source_file="res://Assets/Original/Enemies & NPCs/FemaleOrkind.png"
+dest_files=["res://.godot/imported/FemaleOrkind.png-9322aead835ae6ef1c2517569f464b24.ctex"]
 
 [params]
 
