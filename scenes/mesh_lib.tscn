@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://it4lgoxksppx"]
 
 [ext_resource type="Texture2D" uid="uid://cvdkwbqjhbbnk" path="res://Assets/MeshLibrary & Resources/floor_2.png" id="1_iafgv"]
-[ext_resource type="ArrayMesh" uid="uid://2ark3452t2y6" path="res://Assets/Original/TileMap/GrassShmol.obj" id="1_pcvjf"]
 [ext_resource type="Texture2D" uid="uid://byiooiqd6mien" path="res://Assets/MeshLibrary & Resources/wall_mid.png" id="2_vdg1p"]
-[ext_resource type="ArrayMesh" uid="uid://x8t5knadptca" path="res://Assets/Original/TileMap/BigTallGrass.obj" id="4_iggnb"]
+[ext_resource type="ArrayMesh" uid="uid://bg48ro14r7fsl" path="res://Assets/Original/TileMap/ShmollGrass.obj" id="3_vdg1p"]
+[ext_resource type="ArrayMesh" uid="uid://dr7042v1us3na" path="res://Assets/Original/TileMap/BigTallGrass.obj" id="4_iggnb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3io1"]
 diffuse_mode = 2
@@ -27,8 +27,8 @@ material = SubResource("StandardMaterial3D_vdg1p")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vdg1p"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nw5bj"]
-size = Vector3(5.9654865, 0.1, 5.970452)
+[sub_resource type="BoxShape3D" id="BoxShape3D_iggnb"]
+size = Vector3(1, 0.05, 1)
 
 [node name="MeshLib" type="Node3D" unique_id=1897648186]
 
@@ -50,24 +50,24 @@ mesh = SubResource("BoxMesh_vdg1p")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall/StaticBody3D" unique_id=894249339]
 shape = SubResource("BoxShape3D_vdg1p")
 
-[node name="short grass" type="MeshInstance3D" parent="." unique_id=1592447898]
-transform = Transform3D(0.167, 0, 0, 0, 0.167, 0, 0, 0, 0.167, 0, 0, 0)
+[node name="ShmollGrass" type="MeshInstance3D" parent="." unique_id=613575586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0.5)
 visible = false
-mesh = ExtResource("1_pcvjf")
+mesh = ExtResource("3_vdg1p")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="short grass" unique_id=1189513649]
+[node name="StaticBody3D" type="StaticBody3D" parent="ShmollGrass" unique_id=1604203142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.025, -0.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="short grass/StaticBody3D" unique_id=181566914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
-shape = SubResource("BoxShape3D_nw5bj")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShmollGrass/StaticBody3D" unique_id=1915761234]
+shape = SubResource("BoxShape3D_iggnb")
 
-[node name="BigTallGrass" type="MeshInstance3D" parent="." unique_id=1384063131]
-transform = Transform3D(0.167, 0, 0, 0, 0.167, 0, 0, 0, 0.167, 0, 0, 0)
+[node name="BigTallGrass" type="MeshInstance3D" parent="." unique_id=307644305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 visible = false
 mesh = ExtResource("4_iggnb")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BigTallGrass" unique_id=1294942257]
+[node name="StaticBody3D" type="StaticBody3D" parent="BigTallGrass" unique_id=1527091255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BigTallGrass/StaticBody3D" unique_id=434214216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
-shape = SubResource("BoxShape3D_nw5bj")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigTallGrass/StaticBody3D" unique_id=1312181512]
+shape = SubResource("BoxShape3D_iggnb")

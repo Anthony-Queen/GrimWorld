@@ -15,8 +15,6 @@ sky_material = SubResource("ProceduralSkyMaterial_k0juu")
 [sub_resource type="Environment" id="Environment_k0juu"]
 background_mode = 2
 sky = SubResource("Sky_71j4m")
-fog_enabled = true
-volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.659, 0.671, 0.698, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.9
