@@ -6,6 +6,5 @@
 [resource]
 script = ExtResource("1_dsk1h")
 texture = ExtResource("2_u8aox")
-scale = Vector3(0.25, 0.25, 0.25)
 health = 100
 attack = 50

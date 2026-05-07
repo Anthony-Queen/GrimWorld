@@ -59,11 +59,10 @@ max_health = 20
 speed = 2
 
 [node name="NpcCollision" type="CollisionShape3D" parent="." unique_id=1816543312]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005493168, -0.11338503, -0.0028076172)
 shape = SubResource("BoxShape3D_md0e3")
 
 [node name="NpcSprite" type="Sprite3D" parent="." unique_id=1286249314]
-transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, -0.0014112592, -0.12506372, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shaded = true
 texture_filter = 0
 texture = ExtResource("2_ktgr7")
@@ -83,7 +82,6 @@ libraries/ = SubResource("AnimationLibrary_c4w8v")
 [node name="NpcArea" type="Area3D" parent="." unique_id=38306647]
 
 [node name="EnemyAreaShape" type="CollisionShape3D" parent="NpcArea" unique_id=931430894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0019607544, -0.11639404, -0.0025482178)
 shape = SubResource("BoxShape3D_4ra3w")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1132334256]

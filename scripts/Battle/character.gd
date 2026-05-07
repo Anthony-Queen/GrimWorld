@@ -17,6 +17,8 @@ var dead : bool = false
 var attacking : bool = false
 var attack : int = 50
 var choosing : bool = false
+var starting_position : Vector3
+var attacking_position : Vector3
 var your_turn : bool = false
 
 var class_name_ : String = "Character" # Accessible class_name
@@ -25,12 +27,14 @@ var class_name_ : String = "Character" # Accessible class_name
 var target_index : int = 0
 var target : Enemy
 
-
 # Assign texture
 func _ready() -> void :
 	
 	self.texture = Globals.get("current_char" + str(get_index() + 1)).player_sprite.texture
-
+	self.position.y = (self.texture.get_height() / 100.00) / 2
+	
+	self.starting_position = position
+	self.attacking_position = Vector3(0, starting_position.y, starting_position.z)
 
 func _process(_delta: float) -> void :
 	
@@ -44,7 +48,7 @@ func _process(_delta: float) -> void :
 		
 		Globals.char_turn = self
 		
-		self.position.x = 1.5
+		self.position = attacking_position
 		
 		battle_hud.get_child(1).visible = true
 	
@@ -56,7 +60,7 @@ func _process(_delta: float) -> void :
 	# Move character backwards
 	elif not your_turn :
 		
-		self.position.x = 2.5
+		self.position = starting_position
 	
 	# Check for killed enemies
 	if enemies.get_child_count() == 0 and Globals.InBattle == true :

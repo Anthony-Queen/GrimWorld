@@ -15,6 +15,8 @@ class_name Enemy
 
 # Combat variables
 var your_turn : bool = false
+var starting_position : Vector3
+var attacking_position : Vector3
 var attacked : bool = false
 var attack : int
 
@@ -24,19 +26,27 @@ var target : Sprite3D # Target
 
 
 # Get enemy data, stats, and sprite if existent
-func _ready() -> void:
+func _ready() -> void :
 	
 	if Globals.get("current_enemy" + str(get_index() + 1)) :
 		
 		self.texture = Globals.get("current_enemy" + str(get_index() + 1)).texture
-		self.scale = Globals.get("current_enemy" + str(get_index() + 1)).scale
 		self.attack = Globals.get("current_enemy" + str(get_index() + 1)).attack
 		
 		health.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
 		health.value = Globals.get("current_enemy" + str(get_index() + 1)).health
 		
+		self.position.y = (self.texture.get_height() / 100.00) / 2
+		
+		# Set position when out of turn and when attacking
+		self.starting_position = position
+		self.attacking_position = Vector3(0, starting_position.y, starting_position.z)
+		
+		# Set hp bar offset position
+		self.hp_offset.y = (self.texture.get_height() / 4.0) 
+		self.hp_offset.x = - (25 + (self.texture.get_width() / 4.0))
+		
 		health.visible = true
-	
 	
 	# Free if no current enemy
 	else : 
@@ -56,16 +66,16 @@ func _process(_delta: float) -> void:
 	# Move enemy forward and attack if it's its turn
 	if your_turn :
 		
+		self.position = attacking_position
+		
 		if attacked == false :
 			
 			self._attack()
-		
-		self.position.x = -1.5
 	
 	# Move enemy backwards
 	else :
 		
-		self.position.x = -2.5
+		self.position = starting_position
 
 
 # Take damage and check if dead
@@ -117,6 +127,3 @@ func _on_timer_timeout() -> void:
 func _on_health_visibility_changed() -> void:
 	
 	health.position = (camera_3d.unproject_position(self.position) + hp_offset)
-	
-	health.position.y -= (self.position.z * 10)
-	health.position.x += (self.position.z)
