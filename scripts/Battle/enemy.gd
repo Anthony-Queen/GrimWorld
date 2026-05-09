@@ -44,7 +44,7 @@ func _ready() -> void :
 		
 		# Set hp bar offset position
 		self.hp_offset.y = (self.texture.get_height() / 4.0) 
-		self.hp_offset.x = - (25 + (self.texture.get_width() / 4.0))
+		self.hp_offset.x = self.texture.get_width() / 2.0
 		
 		health.visible = true
 	
@@ -126,4 +126,5 @@ func _on_timer_timeout() -> void:
 # Change health position
 func _on_health_visibility_changed() -> void:
 	
-	health.position = (camera_3d.unproject_position(self.position) + hp_offset)
+	health.position.y = (camera_3d.unproject_position(self.position) + hp_offset).y
+	health.position.x = ((10 - abs(self.position.x)) * 20 + hp_offset.x)

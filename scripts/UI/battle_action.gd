@@ -7,8 +7,7 @@ extends PanelContainer
 
 # Change position to current turn's character
 func _on_visibility_changed() -> void :
-	
-	self.position = camera_3d.unproject_position(Globals.char_turn.position) + offset
+		self.position = camera_3d.unproject_position(Globals.char_turn.position) + offset
 
 
 # Attack button

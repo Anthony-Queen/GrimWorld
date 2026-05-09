@@ -21,8 +21,8 @@ ambient_light_source = 3
 reflected_light_source = 2
 ssr_enabled = true
 glow_enabled = true
-glow_bloom = 1.0
-glow_blend_mode = 2
+glow_strength = 2.0
+volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.659, 0.671, 0.698, 1)
 adjustment_enabled = true
 adjustment_brightness = 0.75
@@ -96,7 +96,6 @@ current = true
 [node name="battle HUD" parent="." unique_id=1109364801 instance=ExtResource("4_a12nh")]
 
 [node name="PanelContainer" parent="battle HUD" index="1" unique_id=472318959 node_paths=PackedStringArray("camera_3d")]
-offset = Vector2(67, -87.5)
 camera_3d = NodePath("../../Camera3D")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1022023833]

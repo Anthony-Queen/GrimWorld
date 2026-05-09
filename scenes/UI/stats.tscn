@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://c3rpqut2nedpx"]
 
-[ext_resource type="Texture2D" uid="uid://cx77fuqesbnlr" path="res://Assets/Bars/Bar 3 Red0001.png" id="1_h331c"]
 [ext_resource type="Script" uid="uid://b0au6f41xj7x5" path="res://Scripts/UI/stats.gd" id="1_ybc7q"]
-[ext_resource type="Texture2D" uid="uid://b07w8uvrhsrj" path="res://Assets/Bars/Bar 3 Blue0001.png" id="3_ybc7q"]
+[ext_resource type="Texture2D" uid="uid://tbxpifohs1qa" path="res://Assets/Bars/border.png" id="2_jo3ji"]
+[ext_resource type="Texture2D" uid="uid://ceo2stlxgsbj5" path="res://Assets/Bars/health_bar.png" id="3_w48ma"]
+[ext_resource type="Texture2D" uid="uid://befhafdb5kvh4" path="res://Assets/Bars/mana_bar.png" id="4_fa1ao"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpsoi"]
 bg_color = Color(0, 0, 0, 0.21960784)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r85cf"]
+font_size = 6
 
 [node name="Stats" type="Panel" unique_id=1358228673 node_paths=PackedStringArray("health", "mana")]
 anchors_preset = -1
@@ -30,19 +34,39 @@ horizontal_alignment = 1
 [node name="Health" type="TextureProgressBar" parent="." unique_id=1186429030]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -4.000002
-offset_top = -45.0
-offset_right = 141.0
-offset_bottom = 100.0
+offset_left = 22.0
+offset_top = 37.0
+offset_right = 146.0
+offset_bottom = 42.0
 value = 100.0
-texture_progress = ExtResource("1_h331c")
+texture_over = ExtResource("2_jo3ji")
+texture_progress = ExtResource("3_w48ma")
+
+[node name="Label" type="Label" parent="Health" unique_id=419106311]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -3.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "HP : "
+label_settings = SubResource("LabelSettings_r85cf")
 
 [node name="Mana" type="TextureProgressBar" parent="." unique_id=45482719]
 layout_mode = 1
 anchors_preset = -1
-offset_left = -4.000002
-offset_top = -30.0
-offset_right = 141.0
-offset_bottom = 115.0
+offset_left = 22.0
+offset_top = 46.0
+offset_right = 146.0
+offset_bottom = 51.0
 value = 100.0
-texture_progress = ExtResource("3_ybc7q")
+texture_over = ExtResource("2_jo3ji")
+texture_progress = ExtResource("4_fa1ao")
+
+[node name="Label" type="Label" parent="Mana" unique_id=1545440413]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -3.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "MP : "
+label_settings = SubResource("LabelSettings_r85cf")
