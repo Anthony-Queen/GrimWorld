@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ba43cd1lwgtqt"]
 
 [ext_resource type="Script" uid="uid://dmyv36ocxb8xg" path="res://Scripts/Battle/enemy.gd" id="1_lm780"]
+[ext_resource type="Texture2D" uid="uid://lrydoqqysqfg" path="res://Assets/Original/UI/HandThingy.png" id="2_6vbcs"]
 [ext_resource type="Texture2D" uid="uid://tbxpifohs1qa" path="res://Assets/Bars/border.png" id="2_lm780"]
 [ext_resource type="Texture2D" uid="uid://ceo2stlxgsbj5" path="res://Assets/Bars/health_bar.png" id="3_6vbcs"]
 
@@ -29,19 +30,25 @@ _data = {
 &"hurt": SubResource("Animation_agfs1")
 }
 
-[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("health_sprite", "health_bar", "timer")]
+[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("health_sprite", "health_bar", "selector_sprite", "timer")]
 billboard = 1
 shaded = true
 texture_filter = 0
 script = ExtResource("1_lm780")
 health_sprite = NodePath("health_bar")
 health_bar = NodePath("SubViewportContainer/SubViewport/Health")
+selector_sprite = NodePath("selector_sprite")
 timer = NodePath("Timer")
 
 [node name="health_bar" type="Sprite3D" parent="." unique_id=911285859]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 centered = false
 texture = SubResource("ViewportTexture_lm780")
+
+[node name="selector_sprite" type="Sprite3D" parent="." unique_id=859916295]
+transform = Transform3D(-2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
+texture = ExtResource("2_6vbcs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=232169584]
 active = false

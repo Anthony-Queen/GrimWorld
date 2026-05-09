@@ -5,6 +5,7 @@ class_name Enemy
 
 @export var health_sprite : Sprite3D
 @export var health_bar : TextureProgressBar
+@export var selector_sprite : Sprite3D
 @export var camera_3d : Camera3D
 @export var timer : Timer
 
@@ -44,8 +45,10 @@ func _ready() -> void :
 		self.attacking_position = Vector3(0, starting_position.y, starting_position.z)
 		
 		# Set hp bar offset position
-		self.hp_offset.y = - (self.texture.get_height() / 4.0) / 100
-		self.hp_offset.x = - (self.texture.get_width() / 2.0) / 100
+		self.hp_offset.y = - (self.texture.get_height() / 4.0) / 100.0
+		self.hp_offset.x = - (self.texture.get_width() / 2.0) / 100.0
+		
+		self.selector_sprite.position.y = (self.texture.get_height() + 10) / 100.0
 		
 		health_sprite.visible = true
 	

@@ -9,9 +9,6 @@ class_name Character
 @onready var enemies : Node3D = $"../../Enemies"
 @onready var battle_hud : Control = $"../../battle HUD"
 
-# Load selector scene
-@onready var selector : PackedScene = load("res://scenes/UI/selector.tscn")
-
 # Combat variables
 var dead : bool = false
 var attacking : bool = false
@@ -153,7 +150,7 @@ func choose_enemy() -> void :
 		
 		target = enemies.get_child(target_index)
 		
-		target.add_child(selector.instantiate())
+		target.selector_sprite.visible = true
 		
 		target.health_sprite.visible = false
 
@@ -165,32 +162,32 @@ func _input(event: InputEvent) -> void :
 	if event.is_action_pressed("ui_right") and choosing and target_index != (enemies.get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
-		target.get_child(4).queue_free()
+		target.selector_sprite.visible = false
 		target.health_sprite.visible = true
 		
 		target_index += 1
 		
 		target = enemies.get_child(target_index)
-		target.add_child(selector.instantiate())
+		target.selector_sprite.visible = true
 		target.health_sprite.visible = false
 	
 	# If left key pressed, selector goes to next enemy (in front)
 	elif event.is_action_pressed("ui_left") and choosing and target_index != 0 :
 		
 		target = enemies.get_child(target_index)
-		target.get_child(4).queue_free()
+		target.selector_sprite.visible = false
 		target.health_sprite.visible = true
 		
 		target_index -= 1
 		
 		target = enemies.get_child(target_index)
-		target.add_child(selector.instantiate())
+		target.selector_sprite.visible = true
 		target.health_sprite.visible = false
 	
 	# Confirm action if enter is pressed
 	elif event.is_action_pressed("ui_accept") and choosing :
 		
-		target.get_child(4).queue_free()
+		target.selector_sprite.visible = false
 		target.health_sprite.visible = true
 		
 		if attacking :
