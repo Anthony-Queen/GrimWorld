@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://tbxpifohs1qa" path="res://Assets/Bars/border.png" id="2_lm780"]
 [ext_resource type="Texture2D" uid="uid://ceo2stlxgsbj5" path="res://Assets/Bars/health_bar.png" id="3_6vbcs"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_lm780"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
 [sub_resource type="Animation" id="Animation_lrhn5"]
 length = 0.001
 
@@ -26,13 +29,19 @@ _data = {
 &"hurt": SubResource("Animation_agfs1")
 }
 
-[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("health", "timer")]
+[node name="Enemy" type="Sprite3D" unique_id=1052066221 node_paths=PackedStringArray("health_sprite", "health_bar", "timer")]
 billboard = 1
 shaded = true
 texture_filter = 0
 script = ExtResource("1_lm780")
-health = NodePath("Health")
+health_sprite = NodePath("health_bar")
+health_bar = NodePath("SubViewportContainer/SubViewport/Health")
 timer = NodePath("Timer")
+
+[node name="health_bar" type="Sprite3D" parent="." unique_id=911285859]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+centered = false
+texture = SubResource("ViewportTexture_lm780")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=232169584]
 active = false
@@ -41,15 +50,31 @@ libraries/ = SubResource("AnimationLibrary_7p1mj")
 [node name="Timer" type="Timer" parent="." unique_id=408492943]
 one_shot = true
 
-[node name="Health" type="TextureProgressBar" parent="." unique_id=1165830978]
-visible = false
-offset_right = 128.0
-offset_bottom = 23.026297
-rotation = -1.5707964
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1894407640]
+anchors_preset = -1
+anchor_left = -0.0050000004
+anchor_bottom = 0.19800001
+offset_left = -0.23999977
+offset_right = 122.0
+offset_bottom = -123.304016
+rotation = 1.5707964
 scale = Vector2(1, -1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=538102949]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(128, 5)
+render_target_update_mode = 4
+
+[node name="Health" type="TextureProgressBar" parent="SubViewportContainer/SubViewport" unique_id=1165830978]
+offset_right = 128.0
+offset_bottom = 23.026306
 value = 100.0
 texture_over = ExtResource("2_lm780")
 texture_progress = ExtResource("3_6vbcs")
 
+[connection signal="visibility_changed" from="health_bar" to="." method="_on_health_visibility_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="visibility_changed" from="Health" to="." method="_on_health_visibility_changed"]

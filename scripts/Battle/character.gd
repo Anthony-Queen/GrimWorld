@@ -155,43 +155,43 @@ func choose_enemy() -> void :
 		
 		target.add_child(selector.instantiate())
 		
-		target.health.visible = false
+		target.health_sprite.visible = false
 
 
 # Get input to chance target
 func _input(event: InputEvent) -> void :
 	
 	# If right key pressed, selector goes to previous enemy (behind)
-	if event.is_action_pressed("ui_right") and choosing and target_index != 0 :
+	if event.is_action_pressed("ui_right") and choosing and target_index != (enemies.get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
-		target.get_child(3).queue_free()
-		target.health.visible = true
-		
-		target_index -= 1
-		
-		target = enemies.get_child(target_index)
-		target.add_child(selector.instantiate())
-		target.health.visible = false
-	
-	# If left key pressed, selector goes to next enemy (in front)
-	elif event.is_action_pressed("ui_left") and choosing and target_index != (enemies.get_child_count() - 1) :
-		
-		target = enemies.get_child(target_index)
-		target.get_child(3).queue_free()
-		target.health.visible = true
+		target.get_child(4).queue_free()
+		target.health_sprite.visible = true
 		
 		target_index += 1
 		
 		target = enemies.get_child(target_index)
 		target.add_child(selector.instantiate())
-		target.health.visible = false
+		target.health_sprite.visible = false
+	
+	# If left key pressed, selector goes to next enemy (in front)
+	elif event.is_action_pressed("ui_left") and choosing and target_index != 0 :
+		
+		target = enemies.get_child(target_index)
+		target.get_child(4).queue_free()
+		target.health_sprite.visible = true
+		
+		target_index -= 1
+		
+		target = enemies.get_child(target_index)
+		target.add_child(selector.instantiate())
+		target.health_sprite.visible = false
 	
 	# Confirm action if enter is pressed
 	elif event.is_action_pressed("ui_accept") and choosing :
 		
-		target.get_child(3).queue_free()
-		target.health.visible = true
+		target.get_child(4).queue_free()
+		target.health_sprite.visible = true
 		
 		if attacking :
 			

@@ -19,4 +19,3 @@ rotation = 1.5707964
 texture = ExtResource("1_2ykag")
 centered = false
 script = ExtResource("1_l37ci")
-self_offset = Vector2(-20, -75)

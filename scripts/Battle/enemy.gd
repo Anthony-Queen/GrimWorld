@@ -3,7 +3,8 @@ extends Sprite3D
 class_name Enemy
 
 
-@export var health : TextureProgressBar
+@export var health_sprite : Sprite3D
+@export var health_bar : TextureProgressBar
 @export var camera_3d : Camera3D
 @export var timer : Timer
 
@@ -33,8 +34,8 @@ func _ready() -> void :
 		self.texture = Globals.get("current_enemy" + str(get_index() + 1)).texture
 		self.attack = Globals.get("current_enemy" + str(get_index() + 1)).attack
 		
-		health.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
-		health.value = Globals.get("current_enemy" + str(get_index() + 1)).health
+		health_bar.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
+		health_bar.value = Globals.get("current_enemy" + str(get_index() + 1)).health
 		
 		self.position.y = (self.texture.get_height() / 100.00) / 2
 		
@@ -43,10 +44,10 @@ func _ready() -> void :
 		self.attacking_position = Vector3(0, starting_position.y, starting_position.z)
 		
 		# Set hp bar offset position
-		self.hp_offset.y = (self.texture.get_height() / 4.0) 
-		self.hp_offset.x = self.texture.get_width() / 2.0
+		self.hp_offset.y = - (self.texture.get_height() / 4.0) / 100
+		self.hp_offset.x = - (self.texture.get_width() / 2.0) / 100
 		
-		health.visible = true
+		health_sprite.visible = true
 	
 	# Free if no current enemy
 	else : 
@@ -81,11 +82,11 @@ func _process(_delta: float) -> void:
 # Take damage and check if dead
 func take_damage(attacker : Character) -> void :
 	
-	health.value -= attacker.attack
+	health_bar.value -= attacker.attack
 	
 	animation_player.play("hurt")
 	
-	if health.value <= 0 :
+	if health_bar.value <= 0 :
 		
 		animation_player.play("dead")
 		
@@ -126,5 +127,5 @@ func _on_timer_timeout() -> void:
 # Change health position
 func _on_health_visibility_changed() -> void:
 	
-	health.position.y = (camera_3d.unproject_position(self.position) + hp_offset).y
-	health.position.x = ((10 - abs(self.position.x)) * 20 + hp_offset.x)
+	health_sprite.position.y = hp_offset.y - 0.2
+	health_sprite.position.x = hp_offset.x - 0.2

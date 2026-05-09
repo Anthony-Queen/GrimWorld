@@ -12,7 +12,7 @@ func _ready() -> void :
 	
 	enemy = get_parent().get_parent()
 	
-	get_parent().position = (camera_3d.unproject_position(enemy.position) + self_offset)
+	#get_parent().position = (camera_3d.unproject_position(enemy.position) + self_offset)
 	
-	self.position.y -= (enemy.position.z * 50)
-	self.position.x += (enemy.position.z * 20)
+	#self.position.y -= (enemy.position.z) / 2
+	#self.position.x += (enemy.position.z) / 2
