@@ -42,7 +42,7 @@ func _ready() -> void :
 		
 		# Set position when out of turn and when attacking
 		self.starting_position = position
-		self.attacking_position = Vector3(0, starting_position.y, starting_position.z)
+		self.attacking_position = Vector3(1, starting_position.y, starting_position.z)
 		
 		# Set hp bar offset position
 		self.hp_offset.y = - (self.texture.get_height() / 4.0) / 100.0

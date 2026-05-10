@@ -6,19 +6,26 @@
 [ext_resource type="MeshLibrary" uid="uid://cxwui5qf8hwp" path="res://Assets/MeshLibrary & Resources/basic_library.meshlib" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://6xei2db0j8c6" path="res://Scripts/World/RandEncounters.gd" id="5_71j4m"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l1hd3"]
 sky_top_color = Color(0.1702587, 0.1165634, 0, 1)
+energy_multiplier = 0.0
 
 [sub_resource type="Sky" id="Sky_71j4m"]
-sky_material = SubResource("ProceduralSkyMaterial_k0juu")
+sky_material = SubResource("ProceduralSkyMaterial_l1hd3")
 
-[sub_resource type="Environment" id="Environment_k0juu"]
+[sub_resource type="Environment" id="Environment_adcqc"]
 background_mode = 2
 sky = SubResource("Sky_71j4m")
+ambient_light_source = 3
+reflected_light_source = 2
+ssr_enabled = true
+glow_enabled = true
+glow_strength = 2.0
 volumetric_fog_albedo = Color(0.659, 0.671, 0.698, 1)
 adjustment_enabled = true
-adjustment_brightness = 0.9
+adjustment_brightness = 0.75
 adjustment_contrast = 1.25
+adjustment_saturation = 1.25
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k0juu"]
 
@@ -44,8 +51,8 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 transform = Transform3D(0.036746696, 0.46057892, 0.88685775, 0.01495898, -0.88761127, 0.46035036, 0.9992127, -0.0036498685, -0.03950657, 19.538343, 9.465458, -0.5096102)
 light_color = Color(0.7882353, 0.79607844, 0.8392157, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1090298084]
-environment = SubResource("Environment_k0juu")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1075881931]
+environment = SubResource("Environment_adcqc")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=643733740]
 script = ExtResource("5_71j4m")
