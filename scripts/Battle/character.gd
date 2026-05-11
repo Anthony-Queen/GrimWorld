@@ -31,7 +31,7 @@ func _ready() -> void :
 	self.position.y = (self.texture.get_height() / 100.00) / 2
 	
 	self.starting_position = position
-	self.attacking_position = Vector3(-1, starting_position.y, starting_position.z)
+	self.attacking_position = Vector3(0, starting_position.y, 6)
 
 func _process(_delta: float) -> void :
 	

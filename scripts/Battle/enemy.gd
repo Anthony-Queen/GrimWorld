@@ -17,8 +17,6 @@ class_name Enemy
 
 # Combat variables
 var your_turn : bool = false
-var starting_position : Vector3
-var attacking_position : Vector3
 var attacked : bool = false
 var attack : int
 
@@ -39,10 +37,6 @@ func _ready() -> void :
 		health_bar.value = Globals.get("current_enemy" + str(get_index() + 1)).health
 		
 		self.position.y = (self.texture.get_height() / 100.00) / 2
-		
-		# Set position when out of turn and when attacking
-		self.starting_position = position
-		self.attacking_position = Vector3(1, starting_position.y, starting_position.z)
 		
 		# Set hp bar offset position
 		self.hp_offset.y = - (self.texture.get_height() / 4.0) / 100.0
@@ -70,16 +64,14 @@ func _process(_delta: float) -> void:
 	# Move enemy forward and attack if it's its turn
 	if your_turn :
 		
-		self.position = attacking_position
-		
 		if attacked == false :
 			
 			self._attack()
 	
-	# Move enemy backwards
+	# _Pass turn
 	else :
 		
-		self.position = starting_position
+		pass
 
 
 # Take damage and check if dead
