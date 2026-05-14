@@ -2,21 +2,10 @@ extends Resource
 
 class_name PlayerData
 
-
-# Player's stats
-@export var max_health : float = 100
-@export var health : float = 100
-@export var max_mana : float = 100
-@export var mana : float = 100
-@export var max_exp : float = 100
-@export var current_exp : float = 0
-
-@export var damage : float = 5
-
-# Player's levels
-@export var resistance : float = 0
-@export var attack : float = 0
-@export var wisdom : float = 0
-@export var luck : float = 0
+@export_category("characters data")
+@export var character0_data : CharacterData = CharacterData.new()
+@export var character1_data : CharacterData = CharacterData.new()
+@export var character2_data : CharacterData = CharacterData.new()
+@export var character3_data : CharacterData = CharacterData.new()
 
 var position : Vector3 

@@ -92,6 +92,7 @@ camera_3d = NodePath("../../Camera3D")
 transform = Transform3D(0.9945219, 0, -0.104528464, 0, 1, 0, 0.104528464, 0, 0.9945219, -2, 3, 20)
 current = true
 fov = 50.0
+far = 30.0
 
 [node name="battle HUD" parent="." unique_id=1109364801 instance=ExtResource("4_a12nh")]
 

@@ -3,16 +3,16 @@ extends Sprite3D
 class_name Character
 
 
-@export var stats : Stats # Export enemy stats
+@export var stats : Stats # Export battle hud stats
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var enemies : Node3D = $"../../Enemies"
 @onready var battle_hud : Control = $"../../battle HUD"
 
-# Combat variables
+# Combat statevariables
 var dead : bool = false
 var attacking : bool = false
-var attack : int = 50
+var attack : int
 var choosing : bool = false
 var starting_position : Vector3
 var attacking_position : Vector3
@@ -24,11 +24,19 @@ var class_name_ : String = "Character" # Accessible class_name
 var target_index : int = 0
 var target : Enemy
 
-# Assign texture
+# Assign texture and stats
 func _ready() -> void :
 	
 	self.texture = Globals.get("current_char" + str(get_index() + 1)).player_sprite.texture
 	self.position.y = (self.texture.get_height() / 100.00) / 2
+	
+	stats.health.max_value = SaveData.player_data.get("character" + str(self.get_index()) + "_data").max_health
+	stats.health.value = SaveData.player_data.get("character" + str(self.get_index()) + "_data").health
+	
+	stats.mana.max_value = SaveData.player_data.get("character" + str(self.get_index()) + "_data").max_mana
+	stats.mana.value = SaveData.player_data.get("character" + str(self.get_index()) + "_data").mana
+	
+	self.attack = SaveData.player_data.get("character" + str(self.get_index()) + "_data").damage
 	
 	self.starting_position = position
 	self.attacking_position = Vector3(0, starting_position.y, 6)
@@ -71,6 +79,7 @@ func _process(_delta: float) -> void :
 func take_damage(attacker : Enemy) -> void :
 	
 	stats.health.value -= attacker.attack
+	SaveData.player_data.get("character" + str(self.get_index()) + "_data").health = stats.health.value 
 	
 	animation_player.play("hurt")
 	
@@ -101,6 +110,7 @@ func _attack() -> void :
 func cast_spell() -> void :
 	
 	stats.mana.value -= 10
+	SaveData.player_data.get("character" + str(self.get_index()) + "_data").mana = stats.mana.value 
 	
 	animation_player.play("cast")
 	

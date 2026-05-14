@@ -57,10 +57,10 @@ func _on_turn_changed(cur_char : Sprite3D) -> void :
 	
 	cur_char.your_turn = false 
 	
-	# If the current node is a character, the action panel is shown
+	# If the current node is a character, the action panel is hidden
 	if cur_char.class_name_ == "Character" :
 		
-		cur_char.battle_hud.get_child(1).visible = false
+		await cur_char.battle_hud.get_child(1).fade_out_right_left()
 	
 	# if the current node is the last, turn is reset to 0
 	else :
