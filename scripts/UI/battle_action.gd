@@ -10,8 +10,11 @@ extends PanelContainer
 func _on_visibility_changed() -> void :
 	
 	disable_buttons(false)
-	fade_in_left_right()
-	self.position = camera_3d.unproject_position(Globals.char_turn.position) + offset
+	
+	if Globals.char_turn.class_name_ == "Character" :
+		self.position = camera_3d.unproject_position(Globals.char_turn.position) + offset
+		
+	await fade_in_left_right()
 
 
 # Attack or Spells pressed 
@@ -33,15 +36,11 @@ func _on_defend_button_up() -> void :
 # Use item button
 func _on_item_button_up() -> void :
 	
-	Globals.char_turn.choose_enemy()
-	
 	disable_buttons(true)
 
 
 # Spare enemy button
 func _on_spare_button_up() -> void :
-	
-	Globals.char_turn.choose_enemy()
 	
 	disable_buttons(true)
 
@@ -68,10 +67,11 @@ func fade_in_left_right() :
 	var t1 = get_tree().create_tween()
 	var t2 = get_tree().create_tween()
 	
-	t1.tween_property(self, "size", Vector2(100, 175), 0.5)
-	t2.tween_property(self, "modulate", Color(1.0, 1.0, 1.0), 0.5)
+	t1.tween_property(self, "size", Vector2(100, 175), 0.3)
+	t2.tween_property(self, "modulate", Color(1.0, 1.0, 1.0), 0.3)
 	
 	await t2.finished
+
 
 # Tween out
 func fade_out_right_left() :
@@ -83,8 +83,8 @@ func fade_out_right_left() :
 	var t1 = get_tree().create_tween()
 	var t2 = get_tree().create_tween()
 	
-	t1.tween_property(self, "size", Vector2(0, 0), 0.5)
-	t2.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.5)
+	t1.tween_property(self, "size", Vector2(0, 0), 0.3)
+	t2.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.3)
 	
 	await t2.finished
 	self.visible = false

@@ -24,6 +24,7 @@ var class_name_ : String = "Enemy" # Accessible class_name
 
 var target : Sprite3D # Target
 
+var weaknesses : Array[String]
 
 # Get enemy data, stats, and sprite if existent
 func _ready() -> void :
@@ -32,6 +33,7 @@ func _ready() -> void :
 		
 		self.texture = Globals.get("current_enemy" + str(get_index() + 1)).texture
 		self.attack = Globals.get("current_enemy" + str(get_index() + 1)).attack
+		self.weaknesses = Globals.get("current_enemy" + str(get_index() + 1)).weaknesses
 		
 		health_bar.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
 		health_bar.value = Globals.get("current_enemy" + str(get_index() + 1)).health
@@ -75,9 +77,13 @@ func _process(_delta: float) -> void:
 
 
 # Take damage and check if dead
-func take_damage(attacker : Character) -> void :
+func take_damage(damage : int, type : String) -> void :
 	
-	health_bar.value -= attacker.attack
+	if type in weaknesses :
+		
+		damage *= 2
+	
+	health_bar.value -= damage
 	
 	animation_player.play("hurt")
 	

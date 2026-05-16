@@ -8,6 +8,9 @@ length = 0.001
 [sub_resource type="Animation" id="Animation_rkhd4"]
 resource_name = "attack"
 
+[sub_resource type="Animation" id="Animation_scham"]
+resource_name = "burn"
+
 [sub_resource type="Animation" id="Animation_my7n2"]
 resource_name = "cast"
 
@@ -25,6 +28,9 @@ step = 0.1
 [sub_resource type="Animation" id="Animation_2cgup"]
 resource_name = "run"
 
+[sub_resource type="Animation" id="Animation_c4507"]
+resource_name = "slash"
+
 [sub_resource type="Animation" id="Animation_a5ia6"]
 resource_name = "spare"
 
@@ -32,11 +38,13 @@ resource_name = "spare"
 _data = {
 &"RESET": SubResource("Animation_lrhn5"),
 &"attack": SubResource("Animation_rkhd4"),
+&"burn": SubResource("Animation_scham"),
 &"cast": SubResource("Animation_my7n2"),
 &"dead": SubResource("Animation_dp8ca"),
 &"defend": SubResource("Animation_0lw5n"),
 &"hurt": SubResource("Animation_agfs1"),
 &"run": SubResource("Animation_2cgup"),
+&"slash": SubResource("Animation_c4507"),
 &"spare": SubResource("Animation_a5ia6")
 }
 

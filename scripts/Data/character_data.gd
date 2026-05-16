@@ -20,5 +20,5 @@ class_name CharacterData
 
 
 # character's skills 
-@export var attacks : Array[String] = ["nigga", "blu", "skipidip", "yes yes", "no no", "uhuhu"]
-@export var spells : Array[String] = ["nigger", "blue", "skipidipop", "yess yess", "noo noo", "uhuhuuu"]
+@export var attacks : Array[String] = ["slash"]
+@export var spells : Array[String] = ["burn"]

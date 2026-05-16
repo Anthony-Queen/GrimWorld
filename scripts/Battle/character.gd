@@ -11,7 +11,6 @@ class_name Character
 
 # Combat statevariables
 var dead : bool = false
-var attacking : bool = false
 var attack : int
 var choosing : bool = false
 var starting_position : Vector3
@@ -23,6 +22,10 @@ var class_name_ : String = "Character" # Accessible class_name
 # Handle target
 var target_index : int = 0
 var target : Enemy
+
+# Choose attack
+var attack_type : String
+var attack_or_spell : String
 
 # Assign texture and stats
 func _ready() -> void :
@@ -93,13 +96,13 @@ func take_damage(attacker : Enemy) -> void :
 
 
 # Attack
-func _attack() -> void :
+func attacks() -> void :
 	
-	animation_player.play("attack")
+	var attack_resource : Resource = ResourceLoader.load("res://AttacksResources/attacks/" + attack_type + ".tres")
 	
-	target.take_damage(self)
+	animation_player.play(attack_type)
 	
-	attacking = false
+	target.take_damage(attack_resource.damage, attack_resource.type)
 	
 	choosing = false
 	
@@ -107,12 +110,18 @@ func _attack() -> void :
 
 
 # Cast spell
-func cast_spell() -> void :
+func spells() -> void :
+	
+	var attack_resource : Resource = ResourceLoader.load("res://AttacksResources/spells/" + attack_type + ".tres")
 	
 	stats.mana.value -= 10
 	SaveData.player_data.get("character" + str(self.get_index()) + "_data").mana = stats.mana.value 
 	
-	animation_player.play("cast")
+	animation_player.play(attack_type)
+	
+	target.take_damage(attack_resource.damage, attack_resource.type)
+	
+	choosing = false
 	
 	Globals.emit_signal("turn_changed", self)
 
@@ -150,9 +159,12 @@ func run() -> void :
 
 
 # Begin choosing-target phase
-func choose_enemy() -> void :
+func choose_enemy(spell_or_attack : String, attack_chosen : String) -> void :
 	
 	if not choosing :
+		
+		attack_or_spell = spell_or_attack
+		attack_type = attack_chosen
 		
 		choosing = true
 		
@@ -168,7 +180,7 @@ func choose_enemy() -> void :
 # Get input to chance target
 func _input(event: InputEvent) -> void :
 	
-	# If right key pressed, selector goes to previous enemy (behind)
+	# If right key pressed, selector goes to previous enemy
 	if event.is_action_pressed("ui_right") and choosing and target_index != (enemies.get_child_count() - 1) :
 		
 		target = enemies.get_child(target_index)
@@ -181,7 +193,7 @@ func _input(event: InputEvent) -> void :
 		target.selector_sprite.visible = true
 		target.health_sprite.visible = false
 	
-	# If left key pressed, selector goes to next enemy (in front)
+	# If left key pressed, selector goes to next enemy
 	elif event.is_action_pressed("ui_left") and choosing and target_index != 0 :
 		
 		target = enemies.get_child(target_index)
@@ -200,6 +212,4 @@ func _input(event: InputEvent) -> void :
 		target.selector_sprite.visible = false
 		target.health_sprite.visible = true
 		
-		if attacking :
-			
-			_attack()
+		self.call(attack_or_spell)

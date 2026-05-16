@@ -1,0 +1,8 @@
+[gd_resource type="Resource" format=3 uid="uid://b7leuubgqfo3f"]
+
+[ext_resource type="Script" uid="uid://dbvttd6wafjsm" path="res://Scripts/Data/attack_and_spells_attributes.gd" id="1_6w6mj"]
+
+[resource]
+script = ExtResource("1_6w6mj")
+damage = 100
+type = "fire"
