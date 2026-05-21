@@ -25,39 +25,32 @@ var moving : bool = false # Check if moving, for random encounters
 func _ready() -> void :
 	
 	get_parent().get_parent().player = self 
-	
-	Globals.current_char1 = self
-	Globals.current_char2 = self
-	Globals.current_char3 = self
-	Globals.current_char4 = self
 
 
 func _physics_process(_delta: float) -> void :
 	
-	if not Globals.InBattle :
-		
-		# Get X and Z axis movement
-		
-		direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-		
-		velocity.x = (direction.x * speed)
-		
-		velocity.z = (direction.y * speed)
-		
-		# Toggle between walking and running state
-		if velocity.x == 0 and velocity.z == 0:
-			moving = false
-			state = States.idle
-		
-		elif velocity.x < 200 or velocity.z < 200:
-			moving = true
-			state = States.walking
-		
-		elif velocity.x >= 200 or velocity.z >= 200:
-			moving = true
-			state = States.running
-		
-		move_and_slide()
+	# Get X and Z axis movement
+	
+	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	velocity.x = (direction.x * speed)
+	
+	velocity.z = (direction.y * speed)
+	
+	# Toggle between walking and running state
+	if velocity.x == 0 and velocity.z == 0:
+		moving = false
+		state = States.idle
+	
+	elif velocity.x < 200 or velocity.z < 200:
+		moving = true
+		state = States.walking
+	
+	elif velocity.x >= 200 or velocity.z >= 200:
+		moving = true
+		state = States.running
+	
+	move_and_slide()
 
 
 # Handle states and animations

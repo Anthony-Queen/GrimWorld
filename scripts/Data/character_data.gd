@@ -2,6 +2,9 @@ extends Resource
 
 class_name CharacterData
 
+# Sprite
+@export var character_sprite : Texture2D
+
 # character's stats
 @export var max_health : float = 100
 @export var health : float = 100
@@ -11,8 +14,9 @@ class_name CharacterData
 @export var current_exp : float = 0
 
 @export var damage : float = 50
+@export var speed : int = 100
 
-# character's levels
+# character's levels2ndCharacter
 @export var resistance : float = 1
 @export var attack : float = 1
 @export var wisdom : float = 1

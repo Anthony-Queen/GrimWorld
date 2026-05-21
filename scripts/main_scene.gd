@@ -4,6 +4,8 @@ extends Node3D
 @export var world_environment : WorldEnvironment
 @export var audio_player : AudioStreamPlayer
 
+@export var battle: Node3D
+
 # Load scenes to instantiate
 var MainMenu : PackedScene = load("res://scenes/UI/main_menu.tscn")
 var Battle : PackedScene = load("res://scenes/Battle/battle.tscn") 
@@ -19,7 +21,6 @@ func _ready() -> void:
 	
 	# Connect to battle signals
 	Globals.connect("entered_battle", _on_battle_entered)
-	Globals.connect("battle_won", _on_battle_won)
 	
 	# Check for setting's files
 	if FileAccess.file_exists("user://settings.tres") :
@@ -43,7 +44,7 @@ func _on_battle_entered() -> void :
 	
 	add_child(Battle.instantiate())
 	
-	Globals.InBattle = true
+	battle.in_battle = true
 
 
 # Called when battle is won, to instiantiate the world scene, load the player's previous position and reset enemies
@@ -56,8 +57,6 @@ func _on_battle_won() -> void :
 	player.position = SaveData.player_data.position
 	
 	Globals.reset_enemies()
-	
-	Globals.turn = 0
 
 # Need to add loosing conditions
 func _on_battle_lost() -> void : 

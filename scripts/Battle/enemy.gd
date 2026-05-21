@@ -2,6 +2,7 @@ extends Sprite3D
 
 class_name Enemy
 
+@export var battle: Node3D
 
 @export var health_sprite : Sprite3D
 @export var health_bar : TextureProgressBar
@@ -17,8 +18,10 @@ class_name Enemy
 
 # Combat variables
 var your_turn : bool = false
+var played : bool = false
 var attacked : bool = false
 var attack : int
+var speed : int 
 
 var class_name_ : String = "Enemy" # Accessible class_name
 
@@ -33,6 +36,7 @@ func _ready() -> void :
 		
 		self.texture = Globals.get("current_enemy" + str(get_index() + 1)).texture
 		self.attack = Globals.get("current_enemy" + str(get_index() + 1)).attack
+		self.speed = Globals.get("current_enemy" + str(get_index() + 1)).speed
 		self.weaknesses = Globals.get("current_enemy" + str(get_index() + 1)).weaknesses
 		
 		health_bar.max_value = Globals.get("current_enemy" + str(get_index() + 1)).health
@@ -52,16 +56,12 @@ func _ready() -> void :
 	else : 
 		
 		self.queue_free()
+		battle.calc_speed_and_turns()
 
 
 func _process(_delta: float) -> void:
 	
 	_on_health_visibility_changed() # Change health position
-	
-	# Check turn
-	if (get_index() + 4) == Globals.turn :
-		
-		your_turn = true
 	
 	# Move enemy forward and attack if it's its turn
 	if your_turn :
@@ -69,6 +69,7 @@ func _process(_delta: float) -> void:
 		if attacked == false :
 			
 			self._attack()
+			self.attacked = true # To not repeat more than 1 per turn
 	
 	# _Pass turn
 	else :
@@ -92,12 +93,11 @@ func take_damage(damage : int, type : String) -> void :
 		animation_player.play("dead")
 		
 		queue_free()
+		battle.calc_speed_and_turns()
 
 
 # Attack and calc target
 func _attack() -> void :
-	
-	self.attacked = true # To not repeat more than 1 per turn
 	
 	var target_index : int = randi() % 4 # get random target index
 	
@@ -120,9 +120,9 @@ func _on_timer_timeout() -> void:
 	
 	animation_player.play("attack")
 	
-	Globals.emit_signal("turn_changed", self)
+	self.played = true
 	
-	self.attacked = false
+	battle.emit_signal("turn_changed", self)
 
 
 # Change health position

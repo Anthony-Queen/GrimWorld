@@ -10,3 +10,4 @@ class_name Enemy_Stats
 @export var attack : int
 @export var xp : int
 @export var weaknesses : Array[String]
+@export var speed : int

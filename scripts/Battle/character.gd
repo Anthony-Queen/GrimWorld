@@ -2,6 +2,7 @@ extends Sprite3D
 
 class_name Character
 
+@export var battle: Node3D
 
 @export var stats : Stats # Export battle hud stats
 
@@ -11,11 +12,12 @@ class_name Character
 
 # Combat statevariables
 var dead : bool = false
-var attack : int
+var played : bool = false
 var choosing : bool = false
 var starting_position : Vector3
 var attacking_position : Vector3
 var your_turn : bool = false
+var speed : int
 
 var class_name_ : String = "Character" # Accessible class_name
 
@@ -24,13 +26,14 @@ var target_index : int = 0
 var target : Enemy
 
 # Choose attack
+var attack : int
 var attack_type : String
 var attack_or_spell : String
 
 # Assign texture and stats
 func _ready() -> void :
 	
-	self.texture = Globals.get("current_char" + str(get_index() + 1)).player_sprite.texture
+	self.texture = SaveData.player_data.get("character" + str(self.get_index()) + "_data").character_sprite
 	self.position.y = (self.texture.get_height() / 100.00) / 2
 	
 	stats.health.max_value = SaveData.player_data.get("character" + str(self.get_index()) + "_data").max_health
@@ -40,21 +43,17 @@ func _ready() -> void :
 	stats.mana.value = SaveData.player_data.get("character" + str(self.get_index()) + "_data").mana
 	
 	self.attack = SaveData.player_data.get("character" + str(self.get_index()) + "_data").damage
+	speed = SaveData.player_data.get("character" + str(self.get_index()) + "_data").speed
 	
 	self.starting_position = position
 	self.attacking_position = Vector3(0, starting_position.y, 6)
 
 func _process(_delta: float) -> void :
 	
-	# Check turn
-	if get_index() == Globals.turn :
-		
-		your_turn = true
-	
 	# Move character forward and make action panel visible
 	if your_turn and not dead :
 		
-		Globals.char_turn = self
+		battle.char_attacking = self
 		
 		self.position = attacking_position
 		
@@ -63,7 +62,7 @@ func _process(_delta: float) -> void :
 	# Change turn if deaad
 	elif your_turn and dead :
 		
-		Globals.emit_signal("turn_changed", self)
+		battle.emit_signal("turn_changed", self)
 	
 	# Move character backwards
 	elif not your_turn :
@@ -71,11 +70,11 @@ func _process(_delta: float) -> void :
 		self.position = starting_position
 	
 	# Check for killed enemies
-	if enemies.get_child_count() == 0 and Globals.InBattle == true :
+	if enemies.get_child_count() == 0 and battle.in_battle == true :
 		
-		Globals.InBattle = false
+		battle.in_battle = false
 		
-		Globals.emit_signal("battle_won")
+		battle.emit_signal("battle_won")
 
 
 # Take damage and check dead conditions
@@ -90,7 +89,7 @@ func take_damage(attacker : Enemy) -> void :
 		
 		dead = true
 		
-		Globals.dead_characters += 1
+		battle.dead_characters += 1
 		
 		animation_player.play("dead")
 
@@ -106,7 +105,7 @@ func attacks() -> void :
 	
 	choosing = false
 	
-	Globals.emit_signal("turn_changed", self)
+	battle.emit_signal("turn_changed", self)
 
 
 # Cast spell
@@ -123,7 +122,7 @@ func spells() -> void :
 	
 	choosing = false
 	
-	Globals.emit_signal("turn_changed", self)
+	battle.emit_signal("turn_changed", self)
 
 
 # Defend
@@ -131,7 +130,9 @@ func defend() -> void :
 	
 	animation_player.play("defend")
 	
-	Globals.emit_signal("turn_changed", self)
+	battle.emit_signal("turn_changed", self)
+	
+	played = true
 
 
 # Use item
@@ -139,7 +140,7 @@ func use_item() -> void :
 	
 	animation_player.play("use_item")
 	
-	Globals.emit_signal("turn_changed", self)
+	battle.emit_signal("turn_changed", self)
 
 
 # Spare enemy
@@ -147,7 +148,7 @@ func spare() -> void :
 	
 	animation_player.play("spare")
 	
-	Globals.emit_signal("turn_changed", self)
+	battle.emit_signal("turn_changed", self)
 
 
 # Run away
@@ -155,7 +156,9 @@ func run() -> void :
 	
 	animation_player.play("run")
 	
-	Globals.emit_signal("turn_changed", self)
+	battle.emit_signal("turn_changed", self)
+	
+	played = true
 
 
 # Begin choosing-target phase
@@ -213,3 +216,5 @@ func _input(event: InputEvent) -> void :
 		target.health_sprite.visible = true
 		
 		self.call(attack_or_spell)
+		
+		self.played = true

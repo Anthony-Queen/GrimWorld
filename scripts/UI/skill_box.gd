@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@export var battle: Node3D
+
 @export var back_button : Button
 @export var action_box : PanelContainer
 
@@ -13,10 +15,10 @@ func set_texts(node_name : String) -> void :
 	
 	for i in self.get_child(0).get_children() :
 		
-		if SaveData.player_data.get("character" + str(Globals.char_turn.get_index()) + "_data").get(node_name).size() > n :
+		if SaveData.player_data.get("character" + str(battle.char_attacking.get_index()) + "_data").get(node_name).size() > n :
 			i.disabled = false
 			i.flat = false
-			i.text = SaveData.player_data.get("character" + str(Globals.char_turn.get_index()) + "_data").get(node_name)[n]
+			i.text = SaveData.player_data.get("character" + str(battle.char_attacking.get_index()) + "_data").get(node_name)[n]
 		
 		else :
 			i.disabled = true
@@ -54,9 +56,9 @@ func fade_out_right_left() :
 	var t1 = get_tree().create_tween()
 	var t2 = get_tree().create_tween()
 	
-	t1.tween_property(self, "size", Vector2(0, 0), 0.25)
+	t1.tween_property(self, "size", Vector2(0, 175), 0.25)
 	t1.set_parallel()
-	t1.tween_property(back_button, "size", Vector2(0, 0), 0.25)
+	t1.tween_property(back_button, "size", Vector2(0, 31), 0.25)
 	
 	t2.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.25)
 	t2.set_parallel()
@@ -70,5 +72,5 @@ func fade_out_right_left() :
 
 func _on_attack_or_spell_chosen(source: BaseButton) -> void:
 	
-	Globals.char_turn.call("choose_enemy", attack_or_spell, source.text)
+	battle.char_attacking.choose_enemy(attack_or_spell, source.text)
 	back_button.disabled = true

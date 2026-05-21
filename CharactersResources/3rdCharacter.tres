@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://s1ygdckubx45"]
+
+[ext_resource type="Texture2D" uid="uid://qk62ygsjptjb" path="res://Assets/Original/Enemies & NPCs/Main_Carachter.png" id="1_fuikn"]
+[ext_resource type="Script" uid="uid://2v58iac80808" path="res://Scripts/Data/character_data.gd" id="1_ua6pe"]
+
+[resource]
+script = ExtResource("1_ua6pe")
+character_sprite = ExtResource("1_fuikn")

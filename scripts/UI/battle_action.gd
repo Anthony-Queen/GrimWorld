@@ -1,5 +1,6 @@
 extends PanelContainer
 
+@export var battle: Node3D
 
 @export var offset : Vector2
 @export var camera_3d : Camera3D
@@ -11,8 +12,8 @@ func _on_visibility_changed() -> void :
 	
 	disable_buttons(false)
 	
-	if Globals.char_turn.class_name_ == "Character" :
-		self.position = camera_3d.unproject_position(Globals.char_turn.position) + offset
+	if battle.char_attacking.class_name_ == "Character" :
+		self.position = camera_3d.unproject_position(battle.char_attacking.position) + offset
 		
 	await fade_in_left_right()
 
@@ -28,7 +29,7 @@ func _on_attack_spell_pressed(source: BaseButton) -> void:
 # Defend button
 func _on_defend_button_up() -> void :
 	
-	Globals.char_turn.defend()
+	battle.char_attacking.defend()
 	
 	disable_buttons(true)
 
@@ -48,7 +49,7 @@ func _on_spare_button_up() -> void :
 # Run away button
 func _on_run_button_up() -> void :
 	
-	Globals.char_turn.run()
+	battle.char_attacking.run()
 	
 	disable_buttons(true)
 
@@ -78,12 +79,12 @@ func fade_out_right_left() :
 	
 	if skill_box.visible :
 		
-		skill_box.fade_out_right_left()
+		await skill_box.fade_out_right_left()
 	
 	var t1 = get_tree().create_tween()
 	var t2 = get_tree().create_tween()
 	
-	t1.tween_property(self, "size", Vector2(0, 0), 0.3)
+	t1.tween_property(self, "size", Vector2(0, 175), 0.3)
 	t2.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.3)
 	
 	await t2.finished
