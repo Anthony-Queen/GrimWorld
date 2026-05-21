@@ -72,7 +72,18 @@ func calc_speed_and_turns() -> void :
 	
 	var dictionary_keys : Array = dictionary.keys()
 	
-	get_node(dictionary_keys[-1]).your_turn = true
+	if not dictionary_keys.is_empty() :
+		get_node(dictionary_keys[-1]).your_turn = true
+	
+	else :
+		
+		for i in characters_node.get_children() :
+			i.played = false
+		
+		for i in enemies_node.get_children():
+			i.played = false
+		
+		calc_speed_and_turns()
 
 
 func sort_dictionary_by_value(dictionary : Dictionary) :
